@@ -1,0 +1,7 @@
+patient_id,idade,sexo,diagnostico,setor,alergias,bidmc_record,audio,video,cenario
+PAC-0001,45,M,Pós-operatório de colecistectomia videolaparoscópica,Enfermaria cirúrgica,nenhuma,02,PAC-0001_consulta.wav,PAC-0001_fisio_ombro.mp4,"Controle — evolução esperada, sem anomalias injetadas"
+PAC-0002,72,F,DPOC exacerbada,UTI,dipirona,32,PAC-0002_consulta.wav,,Hipoxemia persistente real (BIDMC 32) + voz com sinais respiratórios + salto de corticoide
+PAC-0003,68,M,AVC isquêmico em reabilitação,Enfermaria neurológica,nenhuma,45,PAC-0003_consulta.wav,PAC-0003_fisio_ombro.mp4,"FC basal baixa com episódios de bradicardia (BIDMC 45, 44–72 bpm) + disartria + assimetria na fisioterapia + imobilidade prolongada"
+PAC-0004,59,F,Sepse de foco urinário,UTI,penicilina,25,PAC-0004_consulta.wav,,Taquicardia real (BIDMC 25) + hipotensão + fadiga vocal + prescrição com conflito de alergia
+PAC-0005,81,F,"Pneumonia comunitária, alto risco de queda",Enfermaria clínica,sulfa,22,PAC-0005_consulta.wav,PAC-0005_fisio_agachamento.mp4,Dessaturações reais (BIDMC 22) + fadiga + perda de equilíbrio na fisio + agitação noturna e queda
+PAC-0006,63,M,Pós-operatório de revascularização do miocárdio,UTI cardiológica,nenhuma,46,PAC-0006_consulta.wav,PAC-0006_cirurgia.mp4,Taquipneia real (BIDMC 46) + falha de contagem de instrumental na cirurgia + suspensão abrupta de heparina

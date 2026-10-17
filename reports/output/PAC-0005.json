@@ -1,0 +1,1663 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0005",
+    "idade": "81",
+    "sexo": "F",
+    "diagnostico": "Pneumonia comunitária, alto risco de queda",
+    "setor": "Enfermaria clínica",
+    "alergias": "sulfa",
+    "bidmc_record": "22",
+    "audio": "PAC-0005_consulta.wav",
+    "video": "PAC-0005_fisio_agachamento.mp4",
+    "cenario": "Dessaturações reais (BIDMC 22) + fadiga + perda de equilíbrio na fisio + agitação noturna e queda"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 22",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 0,
+      "estatisticas": {
+        "HR": {
+          "min": 77.0,
+          "media": 81.6,
+          "max": 93.0
+        },
+        "SpO2": {
+          "min": 88.0,
+          "media": 92.3,
+          "max": 94.0
+        },
+        "RESP": {
+          "min": 18.0,
+          "media": 18.8,
+          "max": 20.0
+        },
+        "SBP": {
+          "min": 122.0,
+          "media": 128.0,
+          "max": 136.2
+        },
+        "DBP": {
+          "min": 68.9,
+          "media": 74.0,
+          "max": 78.7
+        }
+      },
+      "n_achados": 3,
+      "risco_vitais": 0.76
+    },
+    "audio": {
+      "patient_id": "PAC-0005",
+      "arquivo": "PAC-0005_consulta.wav",
+      "duracao_s": 40.38,
+      "biomarcadores": {
+        "duration_s": 40.3831,
+        "phonation_time_s": 17.1,
+        "speech_rate_syl_s": 1.5409,
+        "articulation_rate_syl_s": 3.3918,
+        "pause_ratio": 0.5276,
+        "mean_pause_s": 1.1682,
+        "long_pauses_per_min": 12.7524,
+        "f0_median_hz": 181.8182,
+        "f0_std_semitones": 2.8034,
+        "jitter_pct": 2.8281,
+        "shimmer_db": 1.469,
+        "hnr_db": 3.0392,
+        "hf_energy_db": -26.1576,
+        "energy_slope_db_min": -15.0674,
+        "tremor_index": 0.0403,
+        "mean_phrase_s": 0.8143
+      },
+      "eventos_audioset": [
+        {
+          "label": "Breathing",
+          "start_s": 12.84,
+          "end_s": 13.16,
+          "peak_db": -37.4,
+          "duration_s": 0.32,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 16.79,
+          "end_s": 17.45,
+          "peak_db": -32.1,
+          "duration_s": 0.66,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Cough",
+          "start_s": 18.06,
+          "end_s": 18.2,
+          "peak_db": -15.7,
+          "duration_s": 0.14,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Cough",
+          "start_s": 18.71,
+          "end_s": 18.85,
+          "peak_db": -20.9,
+          "duration_s": 0.14,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Cough",
+          "start_s": 19.35,
+          "end_s": 19.45,
+          "peak_db": -28.5,
+          "duration_s": 0.1,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Cough",
+          "start_s": 37.34,
+          "end_s": 37.57,
+          "peak_db": -22.7,
+          "duration_s": 0.23,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        }
+      ],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 0.0,
+            "fim_s": 4.0,
+            "score": 0.154
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 0.0,
+            "fim_s": 4.0,
+            "score": 0.061
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 2.0,
+            "fim_s": 6.0,
+            "score": 0.078
+          },
+          {
+            "label": "Sneeze",
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "inicio_s": 2.0,
+            "fim_s": 6.0,
+            "score": 0.067
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 2.0,
+            "fim_s": 6.0,
+            "score": 0.055
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 4.0,
+            "fim_s": 8.0,
+            "score": 0.149
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 6.0,
+            "fim_s": 10.0,
+            "score": 0.101
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 6.0,
+            "fim_s": 10.0,
+            "score": 0.082
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.212
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.068
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 12.0,
+            "fim_s": 16.0,
+            "score": 0.21
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 12.0,
+            "fim_s": 16.0,
+            "score": 0.055
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 14.0,
+            "fim_s": 18.0,
+            "score": 0.112
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 14.0,
+            "fim_s": 18.0,
+            "score": 0.063
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 16.0,
+            "fim_s": 20.0,
+            "score": 0.401
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 18.0,
+            "fim_s": 22.0,
+            "score": 0.867
+          },
+          {
+            "label": "Cough",
+            "nome_pt": "Tosse",
+            "mid": "/m/01b_21",
+            "inicio_s": 18.0,
+            "fim_s": 22.0,
+            "score": 0.073
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 20.0,
+            "fim_s": 24.0,
+            "score": 0.128
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 20.0,
+            "fim_s": 24.0,
+            "score": 0.083
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 22.0,
+            "fim_s": 26.0,
+            "score": 0.132
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 22.0,
+            "fim_s": 26.0,
+            "score": 0.097
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 24.0,
+            "fim_s": 28.0,
+            "score": 0.076
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 24.0,
+            "fim_s": 28.0,
+            "score": 0.065
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 24.0,
+            "fim_s": 28.0,
+            "score": 0.063
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 26.0,
+            "fim_s": 30.0,
+            "score": 0.109
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 28.0,
+            "fim_s": 32.0,
+            "score": 0.173
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 28.0,
+            "fim_s": 32.0,
+            "score": 0.095
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 32.0,
+            "fim_s": 36.0,
+            "score": 0.289
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 32.0,
+            "fim_s": 36.0,
+            "score": 0.106
+          },
+          {
+            "label": "Sneeze",
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "inicio_s": 34.0,
+            "fim_s": 38.0,
+            "score": 0.377
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 36.0,
+            "fim_s": 40.0,
+            "score": 0.641
+          },
+          {
+            "label": "Sneeze",
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "inicio_s": 36.0,
+            "fim_s": 40.0,
+            "score": 0.172
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 38.0,
+            "fim_s": 40.38,
+            "score": 0.899
+          }
+        ],
+        "resumo": {
+          "Gasp": {
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "janelas": 13,
+            "score_max": 0.289
+          },
+          "Snort": {
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "janelas": 9,
+            "score_max": 0.106
+          },
+          "Sneeze": {
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "janelas": 3,
+            "score_max": 0.377
+          },
+          "Sigh": {
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "janelas": 3,
+            "score_max": 0.068
+          },
+          "Throat clearing": {
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "janelas": 4,
+            "score_max": 0.899
+          },
+          "Cough": {
+            "nome_pt": "Tosse",
+            "mid": "/m/01b_21",
+            "janelas": 1,
+            "score_max": 0.073
+          }
+        }
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.874,
+          "disartria": 0.229,
+          "respiratorio": 0.676
+        },
+        "marcadores_disparados": {
+          "fadiga": [
+            "taxa de fala (sílabas/s) = 1.54",
+            "proporção de pausas = 0.53",
+            "queda de energia vocal (dB/min) = -15.07",
+            "pausas longas por minuto = 12.75",
+            "duração média das frases (s) = 0.81"
+          ],
+          "disartria": [
+            "perturbação de F0 (jitter %) = 2.83",
+            "duração média das frases (s) = 0.81"
+          ],
+          "respiratorio": [
+            "episódios de tosse = 2.00",
+            "duração média das frases (s) = 0.81",
+            "proporção de pausas = 0.53"
+          ]
+        },
+        "metricas": {
+          "duration_s": 40.383,
+          "phonation_time_s": 17.1,
+          "speech_rate_syl_s": 1.541,
+          "articulation_rate_syl_s": 3.392,
+          "pause_ratio": 0.528,
+          "mean_pause_s": 1.168,
+          "long_pauses_per_min": 12.752,
+          "f0_median_hz": 181.818,
+          "f0_std_semitones": 2.803,
+          "jitter_pct": 2.828,
+          "shimmer_db": 1.469,
+          "hnr_db": 3.039,
+          "hf_energy_db": -26.158,
+          "energy_slope_db_min": -15.067,
+          "tremor_index": 0.04,
+          "mean_phrase_s": 0.814,
+          "cough_episodes": 2.0,
+          "breaths_per_min": 2.972
+        },
+        "flags": [
+          "voz_fadiga",
+          "voz_respiratorio"
+        ],
+        "risco_voz": 0.874
+      },
+      "transcricao": {
+        "texto": "Estou fraca e com sono o tempo todo. Ontem à noite fiquei confusa e levantei sozinha para ir ao banheiro. Acho que caí, estou com dor no quadril. Ainda sinto falta de ar e tosse.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "fraca",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "fadiga",
+            "negado": false,
+            "offset": 6,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "confusa",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "delirium",
+            "negado": false,
+            "offset": 58,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "caí",
+            "categoria": "Event",
+            "severidade": "alto",
+            "sinal": "queda",
+            "negado": false,
+            "offset": 115,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "dor no quadril",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "possivel_fratura_pos_queda",
+            "negado": false,
+            "offset": 130,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "falta de ar",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "desconforto_respiratorio",
+            "negado": false,
+            "offset": 158,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "tosse",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "sintoma_respiratorio",
+            "negado": false,
+            "offset": 172,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [
+          "caí",
+          "confusa",
+          "dor no quadril",
+          "falta de ar"
+        ],
+        "risco_texto": 1.0,
+        "erro_azure": null
+      },
+      "achados": [
+        {
+          "modality": "audio",
+          "kind": "voz_fadiga",
+          "severity": "alto",
+          "message": "Fadiga / cansaço vocal detectada na voz (score 0.87)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.874,
+            "marcadores": [
+              "taxa de fala (sílabas/s) = 1.54",
+              "proporção de pausas = 0.53",
+              "queda de energia vocal (dB/min) = -15.07",
+              "pausas longas por minuto = 12.75",
+              "duração média das frases (s) = 0.81"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "voz_respiratorio",
+          "severity": "moderado",
+          "message": "Dificuldade respiratória detectada na voz (score 0.68)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.676,
+            "marcadores": [
+              "episódios de tosse = 2.00",
+              "duração média das frases (s) = 0.81",
+              "proporção de pausas = 0.53"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "tosse_detectada",
+          "severity": "moderado",
+          "message": "2 episódio(s) de tosse durante a consulta",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+          "evidence": {
+            "inicios_s": [
+              18.06,
+              18.71,
+              19.35,
+              37.34
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_delirium",
+          "severity": "alto",
+          "message": "Paciente relatou \"confusa\" (delirium)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_queda",
+          "severity": "alto",
+          "message": "Paciente relatou \"caí\" (queda)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "Event",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_possivel_fratura_pos_queda",
+          "severity": "alto",
+          "message": "Paciente relatou \"dor no quadril\" (possivel fratura pos queda)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_desconforto_respiratorio",
+          "severity": "critico",
+          "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "sentimento_negativo",
+          "severity": "info",
+          "message": "Sentimento predominantemente negativo na consulta (100%)",
+          "patient_id": "PAC-0005",
+          "time_ref": null,
+          "method": "local_lexico",
+          "evidence": {
+            "sentimento": "negative",
+            "positivo": 0.0,
+            "neutro": 0.0,
+            "negativo": 1.0
+          }
+        }
+      ],
+      "risco_audio": 1.0
+    },
+    "video": {
+      "patient_id": "PAC-0005",
+      "video": "PAC-0005_fisio_agachamento.mp4",
+      "tipo": "agachamento",
+      "fonte_deteccao": "keypoints_sidecar (COCO-17)",
+      "analise": {
+        "exercicio": "agachamento",
+        "protocolo": {
+          "nome": "Agachamento (sentar-levantar)",
+          "flexao_joelho_alvo_graus": 80,
+          "oscilacao_tronco_max_graus": 3
+        },
+        "repeticoes": 3,
+        "metricas": {
+          "flexao_joelho_media": 100.3,
+          "oscilacao_tronco_max": 5.56,
+          "queda": true
+        },
+        "por_repeticao": [
+          {
+            "rep": 1,
+            "flexao_joelho_max": 100.9,
+            "oscilacao_tronco": 0.94,
+            "pico_s": 3.03
+          },
+          {
+            "rep": 2,
+            "flexao_joelho_max": 99.7,
+            "oscilacao_tronco": 1.01,
+            "pico_s": 7.07
+          },
+          {
+            "rep": 3,
+            "flexao_joelho_max": 100.2,
+            "oscilacao_tronco": 5.56,
+            "pico_s": 11.07
+          }
+        ],
+        "achados": [
+          {
+            "modality": "video",
+            "kind": "instabilidade_postural",
+            "severity": "alto",
+            "message": "Oscilação do tronco crescente (até 5.6°, limite 3°) — instabilidade/risco de queda",
+            "patient_id": "PAC-0005",
+            "time_ref": "rep 3 em 11.1s",
+            "method": "desvio-padrão da oscilação rápida do tronco",
+            "evidence": {
+              "oscilacao_por_rep": [
+                0.94,
+                1.01,
+                5.56
+              ],
+              "tendencia": 4.62
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "queda_detectada",
+            "severity": "critico",
+            "message": "QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+            "patient_id": "PAC-0005",
+            "time_ref": "015.6s",
+            "method": "pose: ângulo do tronco + velocidade vertical do quadril",
+            "evidence": {
+              "frame": 467,
+              "inicio_frame": 422,
+              "tronco_graus": 60.3,
+              "queda_quadril_px": 148.9
+            }
+          }
+        ],
+        "frames_chave": [
+          {
+            "frame": 332,
+            "motivo": "maior oscilação do tronco"
+          },
+          {
+            "frame": 467,
+            "motivo": "queda"
+          }
+        ]
+      },
+      "achados": [
+        {
+          "modality": "video",
+          "kind": "instabilidade_postural",
+          "severity": "alto",
+          "message": "Oscilação do tronco crescente (até 5.6°, limite 3°) — instabilidade/risco de queda",
+          "patient_id": "PAC-0005",
+          "time_ref": "rep 3 em 11.1s",
+          "method": "desvio-padrão da oscilação rápida do tronco",
+          "evidence": {
+            "oscilacao_por_rep": [
+              0.94,
+              1.01,
+              5.56
+            ],
+            "tendencia": 4.62
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "queda_detectada",
+          "severity": "critico",
+          "message": "QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+          "patient_id": "PAC-0005",
+          "time_ref": "015.6s",
+          "method": "pose: ângulo do tronco + velocidade vertical do quadril",
+          "evidence": {
+            "frame": 467,
+            "inicio_frame": 422,
+            "tronco_graus": 60.3,
+            "queda_quadril_px": 148.9
+          }
+        }
+      ],
+      "frames_chave": [
+        "output/video/PAC-0005_fisio_agachamento_f00332.png",
+        "output/video/PAC-0005_fisio_agachamento_f00467.png"
+      ],
+      "relatorio": "output/video/PAC-0005_fisio_agachamento.md",
+      "risco_video": 0.98
+    },
+    "prescriptions": {
+      "n_prescricoes": 3,
+      "ativos_atuais": [
+        "amoxicilina_clavulanato",
+        "enoxaparina"
+      ],
+      "n_achados": 0,
+      "risco_prescricoes": 0.0
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 32.7,
+      "saidas_leito": 3,
+      "n_achados": 2,
+      "risco_movimentacao": 0.98
+    }
+  },
+  "achados": {
+    "vitals": [
+      {
+        "modality": "vitals",
+        "kind": "spo2_baixo_regra",
+        "severity": "alto",
+        "message": "Saturação de O₂ ↓ fora da faixa segura: 91 % por 68s",
+        "patient_id": "PAC-0005",
+        "time_ref": "t=1s–68s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "SpO2",
+          "inicio_s": 1,
+          "fim_s": 68,
+          "extremo": 91.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 85 bpm, Saturação de O₂ média 92 %, Frequência respiratória média 19 irpm)",
+        "patient_id": "PAC-0005",
+        "time_ref": "t=30s–59s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 30,
+          "fim_s": 59,
+          "extremo": -0.574
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "hr_alto_zscore",
+        "severity": "moderado",
+        "message": "Frequência cardíaca ↑ mudança abrupta: 93 bpm por 7s",
+        "patient_id": "PAC-0005",
+        "time_ref": "t=424s–430s",
+        "method": "zscore_robusto_janela_60s",
+        "evidence": {
+          "sinal": "HR",
+          "inicio_s": 424,
+          "fim_s": 430,
+          "extremo": 93.0
+        }
+      }
+    ],
+    "audio": [
+      {
+        "modality": "audio",
+        "kind": "voz_fadiga",
+        "severity": "alto",
+        "message": "Fadiga / cansaço vocal detectada na voz (score 0.87)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.874,
+          "marcadores": [
+            "taxa de fala (sílabas/s) = 1.54",
+            "proporção de pausas = 0.53",
+            "queda de energia vocal (dB/min) = -15.07",
+            "pausas longas por minuto = 12.75",
+            "duração média das frases (s) = 0.81"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "voz_respiratorio",
+        "severity": "moderado",
+        "message": "Dificuldade respiratória detectada na voz (score 0.68)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.676,
+          "marcadores": [
+            "episódios de tosse = 2.00",
+            "duração média das frases (s) = 0.81",
+            "proporção de pausas = 0.53"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "tosse_detectada",
+        "severity": "moderado",
+        "message": "2 episódio(s) de tosse durante a consulta",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+        "evidence": {
+          "inicios_s": [
+            18.06,
+            18.71,
+            19.35,
+            37.34
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_delirium",
+        "severity": "alto",
+        "message": "Paciente relatou \"confusa\" (delirium)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_queda",
+        "severity": "alto",
+        "message": "Paciente relatou \"caí\" (queda)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "Event",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_possivel_fratura_pos_queda",
+        "severity": "alto",
+        "message": "Paciente relatou \"dor no quadril\" (possivel fratura pos queda)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_desconforto_respiratorio",
+        "severity": "critico",
+        "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "sentimento_negativo",
+        "severity": "info",
+        "message": "Sentimento predominantemente negativo na consulta (100%)",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "local_lexico",
+        "evidence": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        }
+      }
+    ],
+    "video": [
+      {
+        "modality": "video",
+        "kind": "instabilidade_postural",
+        "severity": "alto",
+        "message": "Oscilação do tronco crescente (até 5.6°, limite 3°) — instabilidade/risco de queda",
+        "patient_id": "PAC-0005",
+        "time_ref": "rep 3 em 11.1s",
+        "method": "desvio-padrão da oscilação rápida do tronco",
+        "evidence": {
+          "oscilacao_por_rep": [
+            0.94,
+            1.01,
+            5.56
+          ],
+          "tendencia": 4.62
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "queda_detectada",
+        "severity": "critico",
+        "message": "QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+        "patient_id": "PAC-0005",
+        "time_ref": "015.6s",
+        "method": "pose: ângulo do tronco + velocidade vertical do quadril",
+        "evidence": {
+          "frame": 467,
+          "inicio_frame": 422,
+          "tronco_graus": 60.3,
+          "queda_quadril_px": 148.9
+        }
+      }
+    ],
+    "prescriptions": [],
+    "movement": [
+      {
+        "modality": "movement",
+        "kind": "agitacao_noturna",
+        "severity": "alto",
+        "message": "Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+        "patient_id": "PAC-0005",
+        "time_ref": "2026-10-12T01:00:00",
+        "method": "z-score robusto vs. outras noites do paciente",
+        "evidence": {
+          "minutos": 165,
+          "fim": "2026-10-12T03:40:00",
+          "z_max": 51.3,
+          "saidas_leito": 3
+        }
+      },
+      {
+        "modality": "movement",
+        "kind": "queda_leito",
+        "severity": "critico",
+        "message": "Provável QUEDA às 12/10 03:40: impacto de 3.6 g seguido de 30 min de imobilidade",
+        "patient_id": "PAC-0005",
+        "time_ref": "2026-10-12T03:40:00",
+        "method": "regra: impacto ≥ 2,5 g + imobilidade subsequente",
+        "evidence": {
+          "impacto_g": 3.6,
+          "atividade_pos": 0.5
+        }
+      }
+    ],
+    "fusion": [
+      {
+        "modality": "fusion",
+        "kind": "insuficiencia_respiratoria",
+        "severity": "critico",
+        "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+          "evidencias": [
+            "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 91 % por 68s",
+            "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+            "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.68)",
+            "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+          ],
+          "modalidades": [
+            "audio",
+            "vitals"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "queda_confirmada",
+        "severity": "critico",
+        "message": "Queda com possível lesão — corroborado por 3 modalidade(s): Áudio/voz + texto, Movimentação, Vídeo",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliar o paciente no leito (trauma, nível de consciência); notificar evento adverso",
+          "evidencias": [
+            "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+            "Movimentação: Provável QUEDA às 12/10 03:40: impacto de 3.6 g seguido de 30 min de imobilidade",
+            "Vídeo: QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+            "Áudio/voz + texto: Paciente relatou \"caí\" (queda)",
+            "Áudio/voz + texto: Paciente relatou \"dor no quadril\" (possivel fratura pos queda)"
+          ],
+          "modalidades": [
+            "audio",
+            "movement",
+            "video"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "delirium",
+        "severity": "alto",
+        "message": "Risco de delirium — corroborado por 2 modalidade(s): Áudio/voz + texto, Movimentação",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliar com escala CAM-ICU; revisar medicações e privação de sono",
+          "evidencias": [
+            "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+            "Áudio/voz + texto: Fadiga / cansaço vocal detectada na voz (score 0.87)",
+            "Áudio/voz + texto: Paciente relatou \"confusa\" (delirium)"
+          ],
+          "modalidades": [
+            "audio",
+            "movement"
+          ]
+        }
+      }
+    ]
+  },
+  "fusao": {
+    "patient_id": "PAC-0005",
+    "score": 1.0,
+    "nivel": "critico",
+    "risco_por_modalidade": {
+      "vitals": 0.76,
+      "audio": 1.0,
+      "video": 0.98,
+      "prescriptions": 0.0,
+      "movement": 0.98
+    },
+    "sindromes": [
+      {
+        "modality": "fusion",
+        "kind": "insuficiencia_respiratoria",
+        "severity": "critico",
+        "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+          "evidencias": [
+            "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 91 % por 68s",
+            "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+            "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.68)",
+            "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+          ],
+          "modalidades": [
+            "audio",
+            "vitals"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "queda_confirmada",
+        "severity": "critico",
+        "message": "Queda com possível lesão — corroborado por 3 modalidade(s): Áudio/voz + texto, Movimentação, Vídeo",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliar o paciente no leito (trauma, nível de consciência); notificar evento adverso",
+          "evidencias": [
+            "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+            "Movimentação: Provável QUEDA às 12/10 03:40: impacto de 3.6 g seguido de 30 min de imobilidade",
+            "Vídeo: QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+            "Áudio/voz + texto: Paciente relatou \"caí\" (queda)",
+            "Áudio/voz + texto: Paciente relatou \"dor no quadril\" (possivel fratura pos queda)"
+          ],
+          "modalidades": [
+            "audio",
+            "movement",
+            "video"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "delirium",
+        "severity": "alto",
+        "message": "Risco de delirium — corroborado por 2 modalidade(s): Áudio/voz + texto, Movimentação",
+        "patient_id": "PAC-0005",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliar com escala CAM-ICU; revisar medicações e privação de sono",
+          "evidencias": [
+            "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+            "Áudio/voz + texto: Fadiga / cansaço vocal detectada na voz (score 0.87)",
+            "Áudio/voz + texto: Paciente relatou \"confusa\" (delirium)"
+          ],
+          "modalidades": [
+            "audio",
+            "movement"
+          ]
+        }
+      }
+    ],
+    "acoes_sugeridas": [
+      "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+      "Avaliar o paciente no leito (trauma, nível de consciência); notificar evento adverso",
+      "Avaliar com escala CAM-ICU; revisar medicações e privação de sono"
+    ]
+  },
+  "alertas": [
+    {
+      "alert_id": "d32c7cd8",
+      "created_at": "2026-10-17T15:20:40.956835+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "audio",
+      "kind": "termo_desconforto_respiratorio",
+      "title": "🎙️ [P1] PAC-0005 — termo desconforto respiratorio",
+      "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "b03f2469",
+      "created_at": "2026-10-17T15:20:40.957899+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "video",
+      "kind": "queda_detectada",
+      "title": "🎥 [P1] PAC-0005 — queda detectada",
+      "message": "QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+      "time_ref": "015.6s",
+      "method": "pose: ângulo do tronco + velocidade vertical do quadril",
+      "evidence": {
+        "frame": 467,
+        "inicio_frame": 422,
+        "tronco_graus": 60.3,
+        "queda_quadril_px": 148.9
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "cfd9959d",
+      "created_at": "2026-10-17T15:20:40.958750+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "movement",
+      "kind": "queda_leito",
+      "title": "🛏️ [P1] PAC-0005 — queda leito",
+      "message": "Provável QUEDA às 12/10 03:40: impacto de 3.6 g seguido de 30 min de imobilidade",
+      "time_ref": "2026-10-12T03:40:00",
+      "method": "regra: impacto ≥ 2,5 g + imobilidade subsequente",
+      "evidence": {
+        "impacto_g": 3.6,
+        "atividade_pos": 0.5
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "59dafa8f",
+      "created_at": "2026-10-17T15:20:40.959612+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "insuficiencia_respiratoria",
+      "title": "🧩 [P1] PAC-0005 — insuficiencia respiratoria",
+      "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+        "evidencias": [
+          "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 91 % por 68s",
+          "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+          "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.68)",
+          "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+        ],
+        "modalidades": [
+          "audio",
+          "vitals"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "357789c7",
+      "created_at": "2026-10-17T15:20:40.960486+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "queda_confirmada",
+      "title": "🧩 [P1] PAC-0005 — queda confirmada",
+      "message": "Queda com possível lesão — corroborado por 3 modalidade(s): Áudio/voz + texto, Movimentação, Vídeo",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Avaliar o paciente no leito (trauma, nível de consciência); notificar evento adverso",
+        "evidencias": [
+          "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+          "Movimentação: Provável QUEDA às 12/10 03:40: impacto de 3.6 g seguido de 30 min de imobilidade",
+          "Vídeo: QUEDA durante o exercício: tronco a 60° da vertical, quadril desceu 149px",
+          "Áudio/voz + texto: Paciente relatou \"caí\" (queda)",
+          "Áudio/voz + texto: Paciente relatou \"dor no quadril\" (possivel fratura pos queda)"
+        ],
+        "modalidades": [
+          "audio",
+          "movement",
+          "video"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "72a16348",
+      "created_at": "2026-10-17T15:20:40.961366+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "vitals",
+      "kind": "spo2_baixo_regra",
+      "title": "❤️ [P2] PAC-0005 — spo2 baixo regra",
+      "message": "Saturação de O₂ ↓ fora da faixa segura: 91 % por 68s",
+      "time_ref": "t=1s–68s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "SpO2",
+        "inicio_s": 1,
+        "fim_s": 68,
+        "extremo": 91.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "7a617393",
+      "created_at": "2026-10-17T15:20:40.962215+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "voz_fadiga",
+      "title": "🎙️ [P2] PAC-0005 — voz fadiga",
+      "message": "Fadiga / cansaço vocal detectada na voz (score 0.87)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.874,
+        "marcadores": [
+          "taxa de fala (sílabas/s) = 1.54",
+          "proporção de pausas = 0.53",
+          "queda de energia vocal (dB/min) = -15.07",
+          "pausas longas por minuto = 12.75",
+          "duração média das frases (s) = 0.81"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "83704452",
+      "created_at": "2026-10-17T15:20:40.963034+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_delirium",
+      "title": "🎙️ [P2] PAC-0005 — termo delirium",
+      "message": "Paciente relatou \"confusa\" (delirium)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "b15b96d6",
+      "created_at": "2026-10-17T15:20:40.963865+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_queda",
+      "title": "🎙️ [P2] PAC-0005 — termo queda",
+      "message": "Paciente relatou \"caí\" (queda)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "Event",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "8a670754",
+      "created_at": "2026-10-17T15:20:40.964668+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_possivel_fratura_pos_queda",
+      "title": "🎙️ [P2] PAC-0005 — termo possivel fratura pos queda",
+      "message": "Paciente relatou \"dor no quadril\" (possivel fratura pos queda)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "ca2942a9",
+      "created_at": "2026-10-17T15:20:40.965493+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "video",
+      "kind": "instabilidade_postural",
+      "title": "🎥 [P2] PAC-0005 — instabilidade postural",
+      "message": "Oscilação do tronco crescente (até 5.6°, limite 3°) — instabilidade/risco de queda",
+      "time_ref": "rep 3 em 11.1s",
+      "method": "desvio-padrão da oscilação rápida do tronco",
+      "evidence": {
+        "oscilacao_por_rep": [
+          0.94,
+          1.01,
+          5.56
+        ],
+        "tendencia": 4.62
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "07aa7c22",
+      "created_at": "2026-10-17T15:20:40.966340+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "movement",
+      "kind": "agitacao_noturna",
+      "title": "🛏️ [P2] PAC-0005 — agitacao noturna",
+      "message": "Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+      "time_ref": "2026-10-12T01:00:00",
+      "method": "z-score robusto vs. outras noites do paciente",
+      "evidence": {
+        "minutos": 165,
+        "fim": "2026-10-12T03:40:00",
+        "z_max": 51.3,
+        "saidas_leito": 3
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "6fd0098e",
+      "created_at": "2026-10-17T15:20:40.967176+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "fusion",
+      "kind": "delirium",
+      "title": "🧩 [P2] PAC-0005 — delirium",
+      "message": "Risco de delirium — corroborado por 2 modalidade(s): Áudio/voz + texto, Movimentação",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Avaliar com escala CAM-ICU; revisar medicações e privação de sono",
+        "evidencias": [
+          "Movimentação: Agitação noturna: 165 min contínuos de atividade atípica a partir de 12/10 01:00, 3 saída(s) do leito — avaliar delirium",
+          "Áudio/voz + texto: Fadiga / cansaço vocal detectada na voz (score 0.87)",
+          "Áudio/voz + texto: Paciente relatou \"confusa\" (delirium)"
+        ],
+        "modalidades": [
+          "audio",
+          "movement"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "381037ba",
+      "created_at": "2026-10-17T15:20:40.968022+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "vitais_padrao_atipico",
+      "title": "❤️ [P3] PAC-0005 — vitais padrao atipico",
+      "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 85 bpm, Saturação de O₂ média 92 %, Frequência respiratória média 19 irpm)",
+      "time_ref": "t=30s–59s",
+      "method": "isolation_forest_populacional",
+      "evidence": {
+        "sinal": "multivariado",
+        "inicio_s": 30,
+        "fim_s": 59,
+        "extremo": -0.574
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "4ae0fd8b",
+      "created_at": "2026-10-17T15:20:40.968842+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "hr_alto_zscore",
+      "title": "❤️ [P3] PAC-0005 — hr alto zscore",
+      "message": "Frequência cardíaca ↑ mudança abrupta: 93 bpm por 7s",
+      "time_ref": "t=424s–430s",
+      "method": "zscore_robusto_janela_60s",
+      "evidence": {
+        "sinal": "HR",
+        "inicio_s": 424,
+        "fim_s": 430,
+        "extremo": 93.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "2227e14b",
+      "created_at": "2026-10-17T15:20:40.969706+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "voz_respiratorio",
+      "title": "🎙️ [P3] PAC-0005 — voz respiratorio",
+      "message": "Dificuldade respiratória detectada na voz (score 0.68)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.676,
+        "marcadores": [
+          "episódios de tosse = 2.00",
+          "duração média das frases (s) = 0.81",
+          "proporção de pausas = 0.53"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "9d9f403d",
+      "created_at": "2026-10-17T15:20:40.970548+00:00",
+      "patient_id": "PAC-0005",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "tosse_detectada",
+      "title": "🎙️ [P3] PAC-0005 — tosse detectada",
+      "message": "2 episódio(s) de tosse durante a consulta",
+      "time_ref": null,
+      "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+      "evidence": {
+        "inicios_s": [
+          18.06,
+          18.71,
+          19.35,
+          37.34
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    }
+  ]
+}

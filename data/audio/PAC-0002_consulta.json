@@ -1,0 +1,61 @@
+{
+  "patient_id": "PAC-0002",
+  "perfil_injetado": "respiratorio",
+  "sintese": "Windows SAPI pt-BR (Microsoft Maria)",
+  "prosodia": {
+    "rate": "medium",
+    "pitch": "medium"
+  },
+  "sons_nao_verbais": "ESC-50 (gravações reais)",
+  "eventos_injetados": [
+    {
+      "tipo": "Breathing",
+      "inicio_s": 0.87
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 4.87
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 9.77
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 11.34
+    },
+    {
+      "tipo": "Cough",
+      "inicio_s": 12.62
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 18.27
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 20.4
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 22.93
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 26.26
+    },
+    {
+      "tipo": "Cough",
+      "inicio_s": 27.67
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 30.5
+    },
+    {
+      "tipo": "Breathing",
+      "inicio_s": 33.26
+    }
+  ],
+  "duracao_s": 34.72
+}

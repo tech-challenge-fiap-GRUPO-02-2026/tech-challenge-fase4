@@ -1,0 +1,330 @@
+{
+  "fonte": "Google AudioSet (ontology.json + eval_segments.csv)",
+  "total_classes_ontologia": 632,
+  "classes_clinicas": [
+    {
+      "mid": "/m/07s2xch",
+      "name": "Groan",
+      "nome_pt": "Gemido",
+      "indicador": "dor",
+      "descricao": "An utterance expressing pain or disapproval. Specifically refers to humans.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-RLILmQmubM?t=30",
+        "https://youtu.be/0-N62G9etNE?t=30",
+        "https://youtu.be/2bdZuOcZCi4?t=240",
+        "https://youtu.be/5gyMt0YzPQ0?t=30",
+        "https://youtu.be/5kQF4r03yRI?t=0"
+      ]
+    },
+    {
+      "mid": "/m/07r4k75",
+      "name": "Grunt",
+      "nome_pt": "Grunhido",
+      "indicador": "dor",
+      "descricao": "A short low gruff noise, resembling the sound made by animals such as pigs. Specifically refers to humans.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-TxhuS0jsI4?t=70",
+        "https://youtu.be/-toIkHblwZU?t=70",
+        "https://youtu.be/0-2Onbywljo?t=380",
+        "https://youtu.be/0Cl6hXpryhY?t=30",
+        "https://youtu.be/0bhY7v5dJDY?t=310"
+      ]
+    },
+    {
+      "mid": "/m/07qz6j3",
+      "name": "Whimper",
+      "nome_pt": "Choramingo",
+      "indicador": "dor",
+      "descricao": "A plaintive, whining vocalization with some abrupt changes in loudness.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-Sd-j0rKeKw?t=30",
+        "https://youtu.be/-jFSYIHh6zc?t=30",
+        "https://youtu.be/03zeVlBWhdY?t=30",
+        "https://youtu.be/4GxRRVp3hD4?t=18",
+        "https://youtu.be/83XmpVJP-YY?t=1"
+      ]
+    },
+    {
+      "mid": "/m/07plz5l",
+      "name": "Sigh",
+      "nome_pt": "Suspiro",
+      "indicador": "fadiga",
+      "descricao": "An utterance made by exhaling audibly.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-vBj0PZ1RF0?t=9",
+        "https://youtu.be/0kNCB0oGiL4?t=0",
+        "https://youtu.be/1NMDi2ZmUdo?t=30",
+        "https://youtu.be/2zKyMjBnL0Y?t=60",
+        "https://youtu.be/3kXukXBvDQQ?t=220"
+      ]
+    },
+    {
+      "mid": "/m/09x0r",
+      "name": "Speech",
+      "nome_pt": "Fala",
+      "indicador": "fala",
+      "descricao": "Speech is the vocalized form of human communication, created out of the phonetic combination of a limited set of vowel and consonant speech sound units.",
+      "segmentos_eval": 5324,
+      "exemplos_referencia": [
+        "https://youtu.be/--i-y1v8Hy8?t=0",
+        "https://youtu.be/-0CamVQdP_Y?t=0",
+        "https://youtu.be/-0jeONf82dE?t=21",
+        "https://youtu.be/-0p7hKXZ1ww?t=30",
+        "https://youtu.be/-0yRK50zyTI?t=30"
+      ]
+    },
+    {
+      "mid": "/m/02zsn",
+      "name": "Female speech, woman speaking",
+      "nome_pt": "Fala feminina",
+      "indicador": "fala",
+      "descricao": "Speech uttered by an adult female human.",
+      "segmentos_eval": 75,
+      "exemplos_referencia": [
+        "https://youtu.be/-1LQP2wemiQ?t=30",
+        "https://youtu.be/-fAGzY9rnaA?t=30",
+        "https://youtu.be/1hba9jmspEQ?t=30",
+        "https://youtu.be/2RGNTRHToFs?t=120",
+        "https://youtu.be/2ofK2gAQue4?t=180"
+      ]
+    },
+    {
+      "mid": "/m/05zppz",
+      "name": "Male speech, man speaking",
+      "nome_pt": "Fala masculina",
+      "indicador": "fala",
+      "descricao": "Speech uttered by an adult male human.",
+      "segmentos_eval": 63,
+      "exemplos_referencia": [
+        "https://youtu.be/0QabiRBcEKc?t=50",
+        "https://youtu.be/1OFDyTzUj24?t=30",
+        "https://youtu.be/45h1cMSHzYU?t=110",
+        "https://youtu.be/5kQF4r03yRI?t=0",
+        "https://youtu.be/6-RIiM19Be8?t=160"
+      ]
+    },
+    {
+      "mid": "/m/02rtxlg",
+      "name": "Whispering",
+      "nome_pt": "Sussurro",
+      "indicador": "fala",
+      "descricao": "Unvoiced speech, usually intended to be quieter to avoid causing disturbance or being overheard.",
+      "segmentos_eval": 62,
+      "exemplos_referencia": [
+        "https://youtu.be/0yxJzCQW5zI?t=30",
+        "https://youtu.be/2TprtMP1RDo?t=30",
+        "https://youtu.be/2Wr7o5BG6e0?t=30",
+        "https://youtu.be/4CCErQFp018?t=30",
+        "https://youtu.be/4DJIt2MEgV4?t=30"
+      ]
+    },
+    {
+      "mid": "/m/01h8n0",
+      "name": "Conversation",
+      "nome_pt": "Conversa",
+      "indicador": "fala",
+      "descricao": "Interactive, spontaneous spoken communication between two or more people.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/1OFDyTzUj24?t=30",
+        "https://youtu.be/1s-oXryGnCw?t=30",
+        "https://youtu.be/4-8NRSfk_a8?t=100",
+        "https://youtu.be/6V_3HbfFcSc?t=50",
+        "https://youtu.be/72b5UupN-Nw?t=150"
+      ]
+    },
+    {
+      "mid": "/m/02p3nc",
+      "name": "Hiccup",
+      "nome_pt": "Soluço",
+      "indicador": "outros",
+      "descricao": "A strong, involuntary contraction of the diaphragm that may repeat several times per minute.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/1nKxptqHGyY?t=60",
+        "https://youtu.be/2qZqgRg5E6o?t=260",
+        "https://youtu.be/5e8dnZnkLkw?t=60",
+        "https://youtu.be/5k9PJcsu8BY?t=100",
+        "https://youtu.be/7qE47XOqcG0?t=100"
+      ]
+    },
+    {
+      "mid": "/m/0lyf6",
+      "name": "Breathing",
+      "nome_pt": "Respiração",
+      "indicador": "respiratorio",
+      "descricao": "Air being moved in and out of the lungs in order to sustain life.",
+      "segmentos_eval": 61,
+      "exemplos_referencia": [
+        "https://youtu.be/0kIIGL-xFhY?t=360",
+        "https://youtu.be/2-PQndbZ70c?t=60",
+        "https://youtu.be/2Wd2wqMzDYc?t=500",
+        "https://youtu.be/39IZIbmQPzA?t=40",
+        "https://youtu.be/4X3upUSL54I?t=240"
+      ]
+    },
+    {
+      "mid": "/m/01b_21",
+      "name": "Cough",
+      "nome_pt": "Tosse",
+      "indicador": "respiratorio",
+      "descricao": "A sudden and often repetitively occurring reflex which consists of an inhalation, a forced exhalation against a closed glottis, and a violent release of air following opening of the glottis.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/--U7joUcTCo?t=0",
+        "https://youtu.be/0iiwZ2_9Vi8?t=90",
+        "https://youtu.be/0mZQ6Q-viPw?t=10",
+        "https://youtu.be/130v5XJl8G0?t=70",
+        "https://youtu.be/1Xmw9VUzvLY?t=150"
+      ]
+    },
+    {
+      "mid": "/m/07mzm6",
+      "name": "Wheeze",
+      "nome_pt": "Sibilância (chiado)",
+      "indicador": "respiratorio",
+      "descricao": "A continuous, coarse, whistling sound produced by obstruction of the respiratory airways during breathing.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-q6f1XIGuL4?t=100",
+        "https://youtu.be/1Np_QsrCsjk?t=30",
+        "https://youtu.be/2A7xNU3TtbA?t=0",
+        "https://youtu.be/54LSA7aZTBA?t=0",
+        "https://youtu.be/6J9XeiKqzw0?t=18"
+      ]
+    },
+    {
+      "mid": "/m/07s0dtb",
+      "name": "Gasp",
+      "nome_pt": "Arquejo",
+      "indicador": "respiratorio",
+      "descricao": "A short labored intake of breath with the mouth open. Often indicates shock or surprise.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-8s8gqSkRzI?t=30",
+        "https://youtu.be/23HFFX271TU?t=60",
+        "https://youtu.be/3VTd87WA294?t=210",
+        "https://youtu.be/3g_GUoCbzTc?t=30",
+        "https://youtu.be/54LSA7aZTBA?t=0"
+      ]
+    },
+    {
+      "mid": "/m/07pyy8b",
+      "name": "Pant",
+      "nome_pt": "Respiração ofegante",
+      "indicador": "respiratorio",
+      "descricao": "Fast and noisy breathing, often associated with physical exertion.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/1Aokrz07aSA?t=360",
+        "https://youtu.be/1wXZSrVoNs8?t=320",
+        "https://youtu.be/37QWwibfvXU?t=30",
+        "https://youtu.be/3DltVi8aMh4?t=200",
+        "https://youtu.be/3KG7sjgsZnY?t=40"
+      ]
+    },
+    {
+      "mid": "/m/01d3sd",
+      "name": "Snoring",
+      "nome_pt": "Ronco",
+      "indicador": "respiratorio",
+      "descricao": "The sound resulting from obstructed respiratory airways during breathing while sleeping.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-FITRqeXl9Q?t=30",
+        "https://youtu.be/06rCpqwkcDw?t=10",
+        "https://youtu.be/0Cd8q2Zg1Mc?t=25",
+        "https://youtu.be/0ml1KwECOo8?t=30",
+        "https://youtu.be/1-TnkdEPXEw?t=20"
+      ]
+    },
+    {
+      "mid": "/m/0dl9sf8",
+      "name": "Throat clearing",
+      "nome_pt": "Pigarro",
+      "indicador": "respiratorio",
+      "descricao": "Forced exhalation through a partially-closed glottis to disrupt built-up mucus, or used as a social signal to draw attention to one's presence.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-jcBFqcdpuI?t=6",
+        "https://youtu.be/0k6KjLouAHs?t=30",
+        "https://youtu.be/19baBw3WGsE?t=30",
+        "https://youtu.be/2XictKgGPnM?t=0",
+        "https://youtu.be/3069HAJZkHo?t=30"
+      ]
+    },
+    {
+      "mid": "/m/07ppn3j",
+      "name": "Sniff",
+      "nome_pt": "Fungada",
+      "indicador": "respiratorio",
+      "descricao": "Inhale audibly through the nose.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-21_SXelVNo?t=30",
+        "https://youtu.be/-Opbeu2Y2yg?t=10",
+        "https://youtu.be/-R8MAtu1vWY?t=20",
+        "https://youtu.be/-lcKnmO7gfo?t=10",
+        "https://youtu.be/14qo-R5Veog?t=30"
+      ]
+    },
+    {
+      "mid": "/m/07q0yl5",
+      "name": "Snort",
+      "nome_pt": "Bufo nasal",
+      "indicador": "respiratorio",
+      "descricao": "The sound of a single, hard exhalation through the nose.",
+      "segmentos_eval": 60,
+      "exemplos_referencia": [
+        "https://youtu.be/-T3Td30k7hA?t=35",
+        "https://youtu.be/2OalrQmczO4?t=50",
+        "https://youtu.be/2QKJuc_Hscc?t=50",
+        "https://youtu.be/6zbsUtQL4nY?t=40",
+        "https://youtu.be/7KkKa0Enlfg?t=16"
+      ]
+    },
+    {
+      "mid": "/m/01hsr_",
+      "name": "Sneeze",
+      "nome_pt": "Espirro",
+      "indicador": "respiratorio",
+      "descricao": "A convulsive expulsion of air from the lungs through the nose and mouth, usually caused by foreign particles irritating the nasal mucous.",
+      "segmentos_eval": 59,
+      "exemplos_referencia": [
+        "https://youtu.be/0_B2YnBAz3A?t=220",
+        "https://youtu.be/0_FFqLukmHk?t=80",
+        "https://youtu.be/1EiNSiO0UvU?t=0",
+        "https://youtu.be/1U8Y6VifI-M?t=50",
+        "https://youtu.be/2RGNTRHToFs?t=120"
+      ]
+    },
+    {
+      "mid": "/m/09hlz4",
+      "name": "Respiratory sounds",
+      "nome_pt": "Sons respiratórios",
+      "indicador": "respiratorio",
+      "descricao": "Sounds generated by the movement of air through the respiratory system (nose, mouth, trachea, and lungs).",
+      "segmentos_eval": 0,
+      "exemplos_referencia": []
+    },
+    {
+      "mid": "/m/0463cq4",
+      "name": "Crying, sobbing",
+      "nome_pt": "Choro",
+      "indicador": "sofrimento",
+      "descricao": "Sound associated with the shedding of tears in response to an emotional state, arising from slow but erratic inhalation, occasional instances of breath holding and muscular tremor.",
+      "segmentos_eval": 62,
+      "exemplos_referencia": [
+        "https://youtu.be/2fKgYlCx_As?t=26",
+        "https://youtu.be/4GPDqOodSUU?t=140",
+        "https://youtu.be/4K6nNmzeTk0?t=30",
+        "https://youtu.be/551_Hd9w8RY?t=80",
+        "https://youtu.be/5wbc84KnDS0?t=60"
+      ]
+    }
+  ]
+}

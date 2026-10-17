@@ -1,0 +1,17 @@
+{
+  "patient_id": "PAC-0004",
+  "perfil_injetado": "fadiga",
+  "sintese": "Windows SAPI pt-BR (Microsoft Maria)",
+  "prosodia": {
+    "rate": "slow",
+    "pitch": "low"
+  },
+  "sons_nao_verbais": "ESC-50 (gravações reais)",
+  "eventos_injetados": [
+    {
+      "tipo": "Breathing",
+      "inicio_s": 13.25
+    }
+  ],
+  "duracao_s": 27.35
+}

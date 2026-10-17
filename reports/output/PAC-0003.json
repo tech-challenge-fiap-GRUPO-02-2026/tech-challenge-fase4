@@ -1,0 +1,1035 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0003",
+    "idade": "68",
+    "sexo": "M",
+    "diagnostico": "AVC isquêmico em reabilitação",
+    "setor": "Enfermaria neurológica",
+    "alergias": "nenhuma",
+    "bidmc_record": "45",
+    "audio": "PAC-0003_consulta.wav",
+    "video": "PAC-0003_fisio_ombro.mp4",
+    "cenario": "FC basal baixa com episódios de bradicardia (BIDMC 45, 44–72 bpm) + disartria + assimetria na fisioterapia + imobilidade prolongada"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 45",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 0,
+      "estatisticas": {
+        "HR": {
+          "min": 44.0,
+          "media": 61.3,
+          "max": 72.0
+        },
+        "SpO2": {
+          "min": 100.0,
+          "media": 100.0,
+          "max": 100.0
+        },
+        "RESP": {
+          "min": 15.0,
+          "media": 16.0,
+          "max": 17.0
+        },
+        "SBP": {
+          "min": 140.4,
+          "media": 148.0,
+          "max": 155.3
+        },
+        "DBP": {
+          "min": 83.6,
+          "media": 88.0,
+          "max": 92.5
+        }
+      },
+      "n_achados": 1,
+      "risco_vitais": 0.4
+    },
+    "audio": {
+      "patient_id": "PAC-0003",
+      "arquivo": "PAC-0003_consulta.wav",
+      "duracao_s": 34.64,
+      "biomarcadores": {
+        "duration_s": 34.6353,
+        "phonation_time_s": 18.52,
+        "speech_rate_syl_s": 1.7688,
+        "articulation_rate_syl_s": 3.1317,
+        "pause_ratio": 0.4004,
+        "mean_pause_s": 0.7294,
+        "long_pauses_per_min": 7.3193,
+        "f0_median_hz": 173.913,
+        "f0_std_semitones": 2.2867,
+        "jitter_pct": 2.9911,
+        "shimmer_db": 1.2244,
+        "hnr_db": 2.8717,
+        "hf_energy_db": -38.1386,
+        "energy_slope_db_min": -6.7697,
+        "tremor_index": 0.0839,
+        "mean_phrase_s": 0.7717
+      },
+      "eventos_audioset": [],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [],
+        "resumo": {}
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.66,
+          "disartria": 0.701,
+          "respiratorio": 0.27
+        },
+        "marcadores_disparados": {
+          "fadiga": [
+            "taxa de fala (sílabas/s) = 1.77",
+            "proporção de pausas = 0.40",
+            "pausas longas por minuto = 7.32",
+            "duração média das frases (s) = 0.77"
+          ],
+          "disartria": [
+            "energia de consoantes (dB) = -38.14",
+            "taxa de articulação (sílabas/s) = 3.13",
+            "perturbação de F0 (jitter %) = 2.99",
+            "duração média das frases (s) = 0.77"
+          ],
+          "respiratorio": [
+            "duração média das frases (s) = 0.77",
+            "proporção de pausas = 0.40"
+          ]
+        },
+        "metricas": {
+          "duration_s": 34.635,
+          "phonation_time_s": 18.52,
+          "speech_rate_syl_s": 1.769,
+          "articulation_rate_syl_s": 3.132,
+          "pause_ratio": 0.4,
+          "mean_pause_s": 0.729,
+          "long_pauses_per_min": 7.319,
+          "f0_median_hz": 173.913,
+          "f0_std_semitones": 2.287,
+          "jitter_pct": 2.991,
+          "shimmer_db": 1.224,
+          "hnr_db": 2.872,
+          "hf_energy_db": -38.139,
+          "energy_slope_db_min": -6.77,
+          "tremor_index": 0.084,
+          "mean_phrase_s": 0.772,
+          "cough_episodes": 0.0,
+          "breaths_per_min": 0.0
+        },
+        "flags": [
+          "voz_fadiga",
+          "voz_disartria"
+        ],
+        "risco_voz": 0.701
+      },
+      "transcricao": {
+        "texto": "Doutor, minha fala está enrolada desde ontem. Sinto o braço esquerdo fraco e formigamento no rosto. Às vezes engasgo quando tomo água. Minha família disse que minha boca está torta.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "fala está enrolada",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "suspeita_avc",
+            "negado": false,
+            "offset": 14,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "braço esquerdo fraco",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "suspeita_avc",
+            "negado": false,
+            "offset": 54,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "formigamento",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "deficit_neurologico",
+            "negado": false,
+            "offset": 77,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "engasgo",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "disfagia_risco_aspiracao",
+            "negado": false,
+            "offset": 109,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "boca está torta",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "suspeita_avc",
+            "negado": false,
+            "offset": 165,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [
+          "boca está torta",
+          "braço esquerdo fraco",
+          "engasgo",
+          "fala está enrolada",
+          "formigamento"
+        ],
+        "risco_texto": 1.0,
+        "erro_azure": null
+      },
+      "achados": [
+        {
+          "modality": "audio",
+          "kind": "voz_fadiga",
+          "severity": "moderado",
+          "message": "Fadiga / cansaço vocal detectada na voz (score 0.66)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.66,
+            "marcadores": [
+              "taxa de fala (sílabas/s) = 1.77",
+              "proporção de pausas = 0.40",
+              "pausas longas por minuto = 7.32",
+              "duração média das frases (s) = 0.77"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "voz_disartria",
+          "severity": "moderado",
+          "message": "Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.701,
+            "marcadores": [
+              "energia de consoantes (dB) = -38.14",
+              "taxa de articulação (sílabas/s) = 3.13",
+              "perturbação de F0 (jitter %) = 2.99",
+              "duração média das frases (s) = 0.77"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_suspeita_avc",
+          "severity": "critico",
+          "message": "Paciente relatou \"fala está enrolada\" (suspeita avc)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_deficit_neurologico",
+          "severity": "alto",
+          "message": "Paciente relatou \"formigamento\" (deficit neurologico)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_disfagia_risco_aspiracao",
+          "severity": "alto",
+          "message": "Paciente relatou \"engasgo\" (disfagia risco aspiracao)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "sentimento_negativo",
+          "severity": "info",
+          "message": "Sentimento predominantemente negativo na consulta (100%)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "local_lexico",
+          "evidence": {
+            "sentimento": "negative",
+            "positivo": 0.0,
+            "neutro": 0.0,
+            "negativo": 1.0
+          }
+        }
+      ],
+      "risco_audio": 1.0
+    },
+    "video": {
+      "patient_id": "PAC-0003",
+      "video": "PAC-0003_fisio_ombro.mp4",
+      "tipo": "abducao_ombro",
+      "fonte_deteccao": "keypoints_sidecar (COCO-17)",
+      "analise": {
+        "exercicio": "abducao_ombro",
+        "protocolo": {
+          "nome": "Abdução de ombro bilateral",
+          "adm_alvo_graus": 150,
+          "adm_minima_pct": 0.6,
+          "assimetria_max_graus": 20,
+          "inclinacao_tronco_max_graus": 10,
+          "tremor_max": 0.2
+        },
+        "repeticoes": 5,
+        "metricas": {
+          "adm_media_esq": 75.3,
+          "adm_media_dir": 158.3,
+          "assimetria_media": 83.0,
+          "inclinacao_tronco_max": 14.6,
+          "tremor_esq": 0.322,
+          "tremor_dir": 0.1089
+        },
+        "por_repeticao": [
+          {
+            "rep": 1,
+            "adm_esq": 75.5,
+            "adm_dir": 157.8,
+            "assimetria": 82.3,
+            "inclinacao_tronco_max": 14.4,
+            "pico_s": 3.57
+          },
+          {
+            "rep": 2,
+            "adm_esq": 75.3,
+            "adm_dir": 157.6,
+            "assimetria": 82.3,
+            "inclinacao_tronco_max": 14.0,
+            "pico_s": 8.63
+          },
+          {
+            "rep": 3,
+            "adm_esq": 75.7,
+            "adm_dir": 157.7,
+            "assimetria": 82.0,
+            "inclinacao_tronco_max": 14.2,
+            "pico_s": 13.53
+          },
+          {
+            "rep": 4,
+            "adm_esq": 74.9,
+            "adm_dir": 159.1,
+            "assimetria": 84.2,
+            "inclinacao_tronco_max": 14.2,
+            "pico_s": 18.47
+          },
+          {
+            "rep": 5,
+            "adm_esq": 75.2,
+            "adm_dir": 159.5,
+            "assimetria": 84.4,
+            "inclinacao_tronco_max": 14.6,
+            "pico_s": 23.43
+          }
+        ],
+        "achados": [
+          {
+            "modality": "video",
+            "kind": "adm_reduzida_ombro_esquerdo",
+            "severity": "alto",
+            "message": "ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+            "patient_id": "PAC-0003",
+            "time_ref": "pior repetição em 23.4s",
+            "method": "pose COCO-17 → ângulo ombro-cotovelo/tronco",
+            "evidence": {
+              "adm_media": 75.3,
+              "alvo": 150
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "assimetria_membros_superiores",
+            "severity": "alto",
+            "message": "Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+            "patient_id": "PAC-0003",
+            "time_ref": "23.4s",
+            "method": "comparação bilateral por repetição",
+            "evidence": {
+              "assimetria_media": 83.0,
+              "limite": 20
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "compensacao_tronco",
+            "severity": "moderado",
+            "message": "Compensação com inclinação lateral do tronco de até 15° durante a elevação",
+            "patient_id": "PAC-0003",
+            "time_ref": null,
+            "method": "ângulo quadril→ombros vs. vertical",
+            "evidence": {
+              "inclinacao_max": 14.6,
+              "limite": 10
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "tremor_punho_esquerdo",
+            "severity": "moderado",
+            "message": "Tremor no punho esquerdo (índice 0.322, limite 0.2)",
+            "patient_id": "PAC-0003",
+            "time_ref": null,
+            "method": "energia 4–8 Hz da trajetória do punho",
+            "evidence": {
+              "indice": 0.322
+            }
+          }
+        ],
+        "frames_chave": [
+          {
+            "frame": 702,
+            "motivo": "repetição com maior assimetria"
+          }
+        ]
+      },
+      "achados": [
+        {
+          "modality": "video",
+          "kind": "adm_reduzida_ombro_esquerdo",
+          "severity": "alto",
+          "message": "ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+          "patient_id": "PAC-0003",
+          "time_ref": "pior repetição em 23.4s",
+          "method": "pose COCO-17 → ângulo ombro-cotovelo/tronco",
+          "evidence": {
+            "adm_media": 75.3,
+            "alvo": 150
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "assimetria_membros_superiores",
+          "severity": "alto",
+          "message": "Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+          "patient_id": "PAC-0003",
+          "time_ref": "23.4s",
+          "method": "comparação bilateral por repetição",
+          "evidence": {
+            "assimetria_media": 83.0,
+            "limite": 20
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "compensacao_tronco",
+          "severity": "moderado",
+          "message": "Compensação com inclinação lateral do tronco de até 15° durante a elevação",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "ângulo quadril→ombros vs. vertical",
+          "evidence": {
+            "inclinacao_max": 14.6,
+            "limite": 10
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "tremor_punho_esquerdo",
+          "severity": "moderado",
+          "message": "Tremor no punho esquerdo (índice 0.322, limite 0.2)",
+          "patient_id": "PAC-0003",
+          "time_ref": null,
+          "method": "energia 4–8 Hz da trajetória do punho",
+          "evidence": {
+            "indice": 0.322
+          }
+        }
+      ],
+      "frames_chave": [
+        "output/video/PAC-0003_fisio_ombro_f00702.png"
+      ],
+      "relatorio": "output/video/PAC-0003_fisio_ombro.md",
+      "risco_video": 0.79
+    },
+    "prescriptions": {
+      "n_prescricoes": 3,
+      "ativos_atuais": [
+        "acido_acetilsalicilico",
+        "atorvastatina"
+      ],
+      "n_achados": 0,
+      "risco_prescricoes": 0.0
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 7.9,
+      "saidas_leito": 0,
+      "n_achados": 1,
+      "risco_movimentacao": 0.7
+    }
+  },
+  "achados": {
+    "vitals": [
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 61 bpm, Saturação de O₂ média 100 %, Frequência respiratória média 15 irpm)",
+        "patient_id": "PAC-0003",
+        "time_ref": "t=120s–149s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 120,
+          "fim_s": 149,
+          "extremo": -0.577
+        }
+      }
+    ],
+    "audio": [
+      {
+        "modality": "audio",
+        "kind": "voz_fadiga",
+        "severity": "moderado",
+        "message": "Fadiga / cansaço vocal detectada na voz (score 0.66)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.66,
+          "marcadores": [
+            "taxa de fala (sílabas/s) = 1.77",
+            "proporção de pausas = 0.40",
+            "pausas longas por minuto = 7.32",
+            "duração média das frases (s) = 0.77"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "voz_disartria",
+        "severity": "moderado",
+        "message": "Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.701,
+          "marcadores": [
+            "energia de consoantes (dB) = -38.14",
+            "taxa de articulação (sílabas/s) = 3.13",
+            "perturbação de F0 (jitter %) = 2.99",
+            "duração média das frases (s) = 0.77"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_suspeita_avc",
+        "severity": "critico",
+        "message": "Paciente relatou \"fala está enrolada\" (suspeita avc)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_deficit_neurologico",
+        "severity": "alto",
+        "message": "Paciente relatou \"formigamento\" (deficit neurologico)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_disfagia_risco_aspiracao",
+        "severity": "alto",
+        "message": "Paciente relatou \"engasgo\" (disfagia risco aspiracao)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "sentimento_negativo",
+        "severity": "info",
+        "message": "Sentimento predominantemente negativo na consulta (100%)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "local_lexico",
+        "evidence": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        }
+      }
+    ],
+    "video": [
+      {
+        "modality": "video",
+        "kind": "adm_reduzida_ombro_esquerdo",
+        "severity": "alto",
+        "message": "ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+        "patient_id": "PAC-0003",
+        "time_ref": "pior repetição em 23.4s",
+        "method": "pose COCO-17 → ângulo ombro-cotovelo/tronco",
+        "evidence": {
+          "adm_media": 75.3,
+          "alvo": 150
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "assimetria_membros_superiores",
+        "severity": "alto",
+        "message": "Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+        "patient_id": "PAC-0003",
+        "time_ref": "23.4s",
+        "method": "comparação bilateral por repetição",
+        "evidence": {
+          "assimetria_media": 83.0,
+          "limite": 20
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "compensacao_tronco",
+        "severity": "moderado",
+        "message": "Compensação com inclinação lateral do tronco de até 15° durante a elevação",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "ângulo quadril→ombros vs. vertical",
+        "evidence": {
+          "inclinacao_max": 14.6,
+          "limite": 10
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "tremor_punho_esquerdo",
+        "severity": "moderado",
+        "message": "Tremor no punho esquerdo (índice 0.322, limite 0.2)",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "energia 4–8 Hz da trajetória do punho",
+        "evidence": {
+          "indice": 0.322
+        }
+      }
+    ],
+    "prescriptions": [],
+    "movement": [
+      {
+        "modality": "movement",
+        "kind": "imobilidade_prolongada",
+        "severity": "alto",
+        "message": "6.2 h sem reposicionamento no leito a partir de 11/10 11:45 (meta: mudança de decúbito a cada 2 h)",
+        "patient_id": "PAC-0003",
+        "time_ref": "2026-10-11T11:45:00",
+        "method": "regra: ausência de picos de atividade em período diurno",
+        "evidence": {
+          "duracao_h": 6.2
+        }
+      }
+    ],
+    "fusion": [
+      {
+        "modality": "fusion",
+        "kind": "suspeita_avc",
+        "severity": "critico",
+        "message": "Suspeita de AVC / déficit neurológico agudo — corroborado por 2 modalidade(s): Áudio/voz + texto, Vídeo",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Acionar protocolo AVC (código AVC): avaliação neurológica imediata e escala NIHSS",
+          "evidencias": [
+            "Vídeo: ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+            "Vídeo: Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+            "Áudio/voz + texto: Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+            "Áudio/voz + texto: Paciente relatou \"fala está enrolada\" (suspeita avc)",
+            "Áudio/voz + texto: Paciente relatou \"formigamento\" (deficit neurologico)"
+          ],
+          "modalidades": [
+            "audio",
+            "video"
+          ]
+        }
+      }
+    ]
+  },
+  "fusao": {
+    "patient_id": "PAC-0003",
+    "score": 1.0,
+    "nivel": "critico",
+    "risco_por_modalidade": {
+      "vitals": 0.4,
+      "audio": 1.0,
+      "video": 0.79,
+      "prescriptions": 0.0,
+      "movement": 0.7
+    },
+    "sindromes": [
+      {
+        "modality": "fusion",
+        "kind": "suspeita_avc",
+        "severity": "critico",
+        "message": "Suspeita de AVC / déficit neurológico agudo — corroborado por 2 modalidade(s): Áudio/voz + texto, Vídeo",
+        "patient_id": "PAC-0003",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Acionar protocolo AVC (código AVC): avaliação neurológica imediata e escala NIHSS",
+          "evidencias": [
+            "Vídeo: ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+            "Vídeo: Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+            "Áudio/voz + texto: Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+            "Áudio/voz + texto: Paciente relatou \"fala está enrolada\" (suspeita avc)",
+            "Áudio/voz + texto: Paciente relatou \"formigamento\" (deficit neurologico)"
+          ],
+          "modalidades": [
+            "audio",
+            "video"
+          ]
+        }
+      }
+    ],
+    "acoes_sugeridas": [
+      "Acionar protocolo AVC (código AVC): avaliação neurológica imediata e escala NIHSS"
+    ]
+  },
+  "alertas": [
+    {
+      "alert_id": "9cb20f40",
+      "created_at": "2026-10-17T15:20:15.590447+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "audio",
+      "kind": "termo_suspeita_avc",
+      "title": "🎙️ [P1] PAC-0003 — termo suspeita avc",
+      "message": "Paciente relatou \"fala está enrolada\" (suspeita avc)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "d3e38950",
+      "created_at": "2026-10-17T15:20:15.591520+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "suspeita_avc",
+      "title": "🧩 [P1] PAC-0003 — suspeita avc",
+      "message": "Suspeita de AVC / déficit neurológico agudo — corroborado por 2 modalidade(s): Áudio/voz + texto, Vídeo",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Acionar protocolo AVC (código AVC): avaliação neurológica imediata e escala NIHSS",
+        "evidencias": [
+          "Vídeo: ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+          "Vídeo: Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+          "Áudio/voz + texto: Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+          "Áudio/voz + texto: Paciente relatou \"fala está enrolada\" (suspeita avc)",
+          "Áudio/voz + texto: Paciente relatou \"formigamento\" (deficit neurologico)"
+        ],
+        "modalidades": [
+          "audio",
+          "video"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "45c5578d",
+      "created_at": "2026-10-17T15:20:15.593347+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_deficit_neurologico",
+      "title": "🎙️ [P2] PAC-0003 — termo deficit neurologico",
+      "message": "Paciente relatou \"formigamento\" (deficit neurologico)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "29f6e7a5",
+      "created_at": "2026-10-17T15:20:15.594720+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_disfagia_risco_aspiracao",
+      "title": "🎙️ [P2] PAC-0003 — termo disfagia risco aspiracao",
+      "message": "Paciente relatou \"engasgo\" (disfagia risco aspiracao)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "8c9a1be7",
+      "created_at": "2026-10-17T15:20:15.595742+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "video",
+      "kind": "adm_reduzida_ombro_esquerdo",
+      "title": "🎥 [P2] PAC-0003 — adm reduzida ombro esquerdo",
+      "message": "ADM do ombro esquerdo 75° — 50% do alvo do protocolo (150°)",
+      "time_ref": "pior repetição em 23.4s",
+      "method": "pose COCO-17 → ângulo ombro-cotovelo/tronco",
+      "evidence": {
+        "adm_media": 75.3,
+        "alvo": 150
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "bd0ac8ad",
+      "created_at": "2026-10-17T15:20:15.598973+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "video",
+      "kind": "assimetria_membros_superiores",
+      "title": "🎥 [P2] PAC-0003 — assimetria membros superiores",
+      "message": "Assimetria média de 83° entre os braços (esq 75° × dir 158°)",
+      "time_ref": "23.4s",
+      "method": "comparação bilateral por repetição",
+      "evidence": {
+        "assimetria_media": 83.0,
+        "limite": 20
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "e6e1ffd8",
+      "created_at": "2026-10-17T15:20:15.601012+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "movement",
+      "kind": "imobilidade_prolongada",
+      "title": "🛏️ [P2] PAC-0003 — imobilidade prolongada",
+      "message": "6.2 h sem reposicionamento no leito a partir de 11/10 11:45 (meta: mudança de decúbito a cada 2 h)",
+      "time_ref": "2026-10-11T11:45:00",
+      "method": "regra: ausência de picos de atividade em período diurno",
+      "evidence": {
+        "duracao_h": 6.2
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "312622b1",
+      "created_at": "2026-10-17T15:20:15.602811+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "vitais_padrao_atipico",
+      "title": "❤️ [P3] PAC-0003 — vitais padrao atipico",
+      "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 61 bpm, Saturação de O₂ média 100 %, Frequência respiratória média 15 irpm)",
+      "time_ref": "t=120s–149s",
+      "method": "isolation_forest_populacional",
+      "evidence": {
+        "sinal": "multivariado",
+        "inicio_s": 120,
+        "fim_s": 149,
+        "extremo": -0.577
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "746b04b0",
+      "created_at": "2026-10-17T15:20:15.604473+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "voz_fadiga",
+      "title": "🎙️ [P3] PAC-0003 — voz fadiga",
+      "message": "Fadiga / cansaço vocal detectada na voz (score 0.66)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.66,
+        "marcadores": [
+          "taxa de fala (sílabas/s) = 1.77",
+          "proporção de pausas = 0.40",
+          "pausas longas por minuto = 7.32",
+          "duração média das frases (s) = 0.77"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "aa686a3c",
+      "created_at": "2026-10-17T15:20:15.605967+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "voz_disartria",
+      "title": "🎙️ [P3] PAC-0003 — voz disartria",
+      "message": "Disartria (fala arrastada/imprecisa) detectada na voz (score 0.70)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.701,
+        "marcadores": [
+          "energia de consoantes (dB) = -38.14",
+          "taxa de articulação (sílabas/s) = 3.13",
+          "perturbação de F0 (jitter %) = 2.99",
+          "duração média das frases (s) = 0.77"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "10055ebb",
+      "created_at": "2026-10-17T15:20:15.607664+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "video",
+      "kind": "compensacao_tronco",
+      "title": "🎥 [P3] PAC-0003 — compensacao tronco",
+      "message": "Compensação com inclinação lateral do tronco de até 15° durante a elevação",
+      "time_ref": null,
+      "method": "ângulo quadril→ombros vs. vertical",
+      "evidence": {
+        "inclinacao_max": 14.6,
+        "limite": 10
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "182fb9ed",
+      "created_at": "2026-10-17T15:20:15.609148+00:00",
+      "patient_id": "PAC-0003",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "video",
+      "kind": "tremor_punho_esquerdo",
+      "title": "🎥 [P3] PAC-0003 — tremor punho esquerdo",
+      "message": "Tremor no punho esquerdo (índice 0.322, limite 0.2)",
+      "time_ref": null,
+      "method": "energia 4–8 Hz da trajetória do punho",
+      "evidence": {
+        "indice": 0.322
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    }
+  ]
+}

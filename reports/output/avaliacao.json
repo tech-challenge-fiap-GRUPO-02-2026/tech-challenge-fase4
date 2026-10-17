@@ -1,0 +1,502 @@
+{
+  "audio": {
+    "eventos_acusticos": {
+      "Cough": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 0,
+        "precisao": 0.8,
+        "recall": 1.0
+      },
+      "Breathing": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 11,
+        "precisao": 1.0,
+        "recall": 0.45
+      }
+    },
+    "indicadores_vocais": [
+      {
+        "patient_id": "PAC-0001",
+        "perfil": "normal",
+        "esperado": [],
+        "detectado": [],
+        "acerto": true,
+        "extras": [],
+        "episodios_tosse": 0
+      },
+      {
+        "patient_id": "PAC-0002",
+        "perfil": "respiratorio",
+        "esperado": [
+          "voz_respiratorio"
+        ],
+        "detectado": [
+          "voz_fadiga",
+          "voz_respiratorio"
+        ],
+        "acerto": true,
+        "extras": [
+          "voz_fadiga"
+        ],
+        "episodios_tosse": 2
+      },
+      {
+        "patient_id": "PAC-0003",
+        "perfil": "disartria",
+        "esperado": [
+          "voz_disartria"
+        ],
+        "detectado": [
+          "voz_disartria",
+          "voz_fadiga"
+        ],
+        "acerto": true,
+        "extras": [
+          "voz_fadiga"
+        ],
+        "episodios_tosse": 0
+      },
+      {
+        "patient_id": "PAC-0004",
+        "perfil": "fadiga",
+        "esperado": [
+          "voz_fadiga"
+        ],
+        "detectado": [
+          "voz_fadiga"
+        ],
+        "acerto": true,
+        "extras": [],
+        "episodios_tosse": 1
+      },
+      {
+        "patient_id": "PAC-0005",
+        "perfil": "fadiga_respiratorio",
+        "esperado": [
+          "voz_fadiga",
+          "voz_respiratorio"
+        ],
+        "detectado": [
+          "voz_fadiga",
+          "voz_respiratorio"
+        ],
+        "acerto": true,
+        "extras": [],
+        "episodios_tosse": 2
+      },
+      {
+        "patient_id": "PAC-0006",
+        "perfil": "normal",
+        "esperado": [],
+        "detectado": [],
+        "acerto": true,
+        "extras": [],
+        "episodios_tosse": 0
+      }
+    ],
+    "acuracia_indicadores": 1.0,
+    "audioset_ast": [
+      {
+        "patient_id": "PAC-0001",
+        "perfil": "normal",
+        "classes": {},
+        "detectou_respiratorio": false,
+        "esperado": false
+      },
+      {
+        "patient_id": "PAC-0002",
+        "perfil": "respiratorio",
+        "classes": {
+          "Gasp": 0.449,
+          "Snort": 0.066,
+          "Sigh": 0.172,
+          "Throat clearing": 0.377,
+          "Sneeze": 0.106
+        },
+        "detectou_respiratorio": true,
+        "esperado": true
+      },
+      {
+        "patient_id": "PAC-0003",
+        "perfil": "disartria",
+        "classes": {},
+        "detectou_respiratorio": false,
+        "esperado": false
+      },
+      {
+        "patient_id": "PAC-0004",
+        "perfil": "fadiga",
+        "classes": {
+          "Gasp": 0.145,
+          "Snort": 0.073
+        },
+        "detectou_respiratorio": true,
+        "esperado": false
+      },
+      {
+        "patient_id": "PAC-0005",
+        "perfil": "fadiga_respiratorio",
+        "classes": {
+          "Gasp": 0.289,
+          "Snort": 0.106,
+          "Sneeze": 0.377,
+          "Sigh": 0.068,
+          "Throat clearing": 0.899,
+          "Cough": 0.073
+        },
+        "detectou_respiratorio": true,
+        "esperado": true
+      },
+      {
+        "patient_id": "PAC-0006",
+        "perfil": "normal",
+        "classes": {},
+        "detectou_respiratorio": false,
+        "esperado": false
+      }
+    ]
+  },
+  "vitais_injecao": {
+    "registro_base": "PhysioNet BIDMC 02 (estável)",
+    "injecoes": [
+      {
+        "sinal": "SpO2",
+        "inicio_s": 60,
+        "duracao_s": 40,
+        "alvo": 85.0,
+        "lote_detectou": true,
+        "lote_metodos": [
+          "cusum_deriva",
+          "regra_clinica_news2",
+          "zscore_robusto_janela_60s"
+        ],
+        "tempo_real_detectou": true,
+        "tempo_real_latencia_s": 5.0
+      },
+      {
+        "sinal": "HR",
+        "inicio_s": 150,
+        "duracao_s": 30,
+        "alvo": 142.0,
+        "lote_detectou": true,
+        "lote_metodos": [
+          "cusum_deriva",
+          "regra_clinica_news2",
+          "zscore_robusto_janela_60s"
+        ],
+        "tempo_real_detectou": true,
+        "tempo_real_latencia_s": 5.0
+      },
+      {
+        "sinal": "RESP",
+        "inicio_s": 230,
+        "duracao_s": 35,
+        "alvo": 30.0,
+        "lote_detectou": true,
+        "lote_metodos": [
+          "cusum_deriva",
+          "regra_clinica_news2",
+          "zscore_robusto_janela_60s"
+        ],
+        "tempo_real_detectou": true,
+        "tempo_real_latencia_s": 6.0
+      },
+      {
+        "sinal": "HR",
+        "inicio_s": 320,
+        "duracao_s": 25,
+        "alvo": 38.0,
+        "lote_detectou": true,
+        "lote_metodos": [
+          "regra_clinica_news2",
+          "zscore_robusto_janela_60s"
+        ],
+        "tempo_real_detectou": true,
+        "tempo_real_latencia_s": 5.0
+      },
+      {
+        "sinal": "SBP",
+        "inicio_s": 400,
+        "duracao_s": 40,
+        "alvo": 78.0,
+        "lote_detectou": true,
+        "lote_metodos": [
+          "cusum_deriva",
+          "regra_clinica_news2",
+          "zscore_robusto_janela_60s"
+        ],
+        "tempo_real_detectou": true,
+        "tempo_real_latencia_s": 6.0
+      }
+    ],
+    "recall_lote": 1.0,
+    "recall_tempo_real": 1.0,
+    "latencia_media_tempo_real_s": 5.4,
+    "falsos_positivos_lote": 1,
+    "falsos_positivos_tempo_real": 0
+  },
+  "esperados": {
+    "video": {
+      "pacientes": [
+        {
+          "patient_id": "PAC-0001",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0003",
+          "esperado": [
+            "adm_reduzida",
+            "assimetria",
+            "compensacao_tronco",
+            "tremor_punho_esquerdo"
+          ],
+          "detectado": [
+            "adm_reduzida_ombro_esquerdo",
+            "assimetria_membros_superiores",
+            "compensacao_tronco",
+            "tremor_punho_esquerdo"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0005",
+          "esperado": [
+            "instabilidade_postural",
+            "queda_detectada"
+          ],
+          "detectado": [
+            "instabilidade_postural",
+            "queda_detectada"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0006",
+          "esperado": [
+            "falha_contagem",
+            "instrumento_fora",
+            "quebra_area_esteril"
+          ],
+          "detectado": [
+            "falha_contagem_instrumental",
+            "instrumento_fora_campo_esteril",
+            "quebra_area_esteril"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        }
+      ],
+      "recall": 1.0,
+      "achados_inesperados": 0
+    },
+    "prescriptions": {
+      "pacientes": [
+        {
+          "patient_id": "PAC-0001",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0002",
+          "esperado": [
+            "salto_de_dose"
+          ],
+          "detectado": [
+            "salto_de_dose"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0003",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0004",
+          "esperado": [
+            "conflito_alergia",
+            "salto_de_dose",
+            "dose_acima_maxima",
+            "inicio_alta_vigilancia"
+          ],
+          "detectado": [
+            "conflito_alergia",
+            "salto_de_dose",
+            "dose_acima_maxima",
+            "inicio_alta_vigilancia"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0005",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0006",
+          "esperado": [
+            "duplicidade_terapeutica",
+            "suspensao_anticoagulante",
+            "inicio_alta_vigilancia"
+          ],
+          "detectado": [
+            "inicio_alta_vigilancia",
+            "duplicidade_terapeutica",
+            "suspensao_anticoagulante_sem_substituto"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        }
+      ],
+      "recall": 1.0,
+      "achados_inesperados": 0
+    },
+    "movement": {
+      "pacientes": [
+        {
+          "patient_id": "PAC-0001",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0002",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0003",
+          "esperado": [
+            "imobilidade_prolongada"
+          ],
+          "detectado": [
+            "imobilidade_prolongada"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0004",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0005",
+          "esperado": [
+            "agitacao_noturna",
+            "queda_leito"
+          ],
+          "detectado": [
+            "agitacao_noturna",
+            "queda_leito"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0006",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        }
+      ],
+      "recall": 1.0,
+      "achados_inesperados": 0
+    },
+    "fusion": {
+      "pacientes": [
+        {
+          "patient_id": "PAC-0001",
+          "esperado": [],
+          "detectado": [],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0002",
+          "esperado": [
+            "insuficiencia_respiratoria"
+          ],
+          "detectado": [
+            "insuficiencia_respiratoria"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0003",
+          "esperado": [
+            "suspeita_avc"
+          ],
+          "detectado": [
+            "suspeita_avc"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0004",
+          "esperado": [
+            "possivel_choque",
+            "risco_seguranca_medicamentosa"
+          ],
+          "detectado": [
+            "possivel_choque",
+            "risco_seguranca_medicamentosa"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0005",
+          "esperado": [
+            "queda_confirmada",
+            "insuficiencia_respiratoria",
+            "delirium"
+          ],
+          "detectado": [
+            "insuficiencia_respiratoria",
+            "queda_confirmada",
+            "delirium"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        },
+        {
+          "patient_id": "PAC-0006",
+          "esperado": [
+            "risco_seguranca_medicamentosa"
+          ],
+          "detectado": [
+            "risco_seguranca_medicamentosa"
+          ],
+          "recall": 1.0,
+          "inesperados": []
+        }
+      ],
+      "recall": 1.0,
+      "achados_inesperados": 0
+    }
+  }
+}

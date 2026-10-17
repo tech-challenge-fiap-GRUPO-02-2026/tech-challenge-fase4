@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAC-0006",
+  "perfil_injetado": "normal",
+  "sintese": "Windows SAPI pt-BR (Microsoft Maria)",
+  "prosodia": {
+    "rate": "medium",
+    "pitch": "medium"
+  },
+  "sons_nao_verbais": "ESC-50 (gravações reais)",
+  "eventos_injetados": [],
+  "duracao_s": 17.23
+}

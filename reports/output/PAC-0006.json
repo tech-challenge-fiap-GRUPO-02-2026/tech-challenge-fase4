@@ -1,0 +1,992 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0006",
+    "idade": "63",
+    "sexo": "M",
+    "diagnostico": "Pós-operatório de revascularização do miocárdio",
+    "setor": "UTI cardiológica",
+    "alergias": "nenhuma",
+    "bidmc_record": "46",
+    "audio": "PAC-0006_consulta.wav",
+    "video": "PAC-0006_cirurgia.mp4",
+    "cenario": "Taquipneia real (BIDMC 46) + falha de contagem de instrumental na cirurgia + suspensão abrupta de heparina"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 46",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 0,
+      "estatisticas": {
+        "HR": {
+          "min": 103.0,
+          "media": 106.7,
+          "max": 112.0
+        },
+        "SpO2": {
+          "min": 91.0,
+          "media": 95.6,
+          "max": 98.0
+        },
+        "RESP": {
+          "min": 13.0,
+          "media": 18.5,
+          "max": 29.0
+        },
+        "SBP": {
+          "min": 110.7,
+          "media": 117.9,
+          "max": 125.5
+        },
+        "DBP": {
+          "min": 65.6,
+          "media": 70.1,
+          "max": 74.5
+        }
+      },
+      "n_achados": 7,
+      "risco_vitais": 1.0
+    },
+    "audio": {
+      "patient_id": "PAC-0006",
+      "arquivo": "PAC-0006_consulta.wav",
+      "duracao_s": 17.23,
+      "biomarcadores": {
+        "duration_s": 17.2303,
+        "phonation_time_s": 13.72,
+        "speech_rate_syl_s": 3.1649,
+        "articulation_rate_syl_s": 3.7901,
+        "pause_ratio": 0.1388,
+        "mean_pause_s": 0.38,
+        "long_pauses_per_min": 0.0,
+        "f0_median_hz": 183.908,
+        "f0_std_semitones": 1.9626,
+        "jitter_pct": 1.556,
+        "shimmer_db": 1.5818,
+        "hnr_db": 3.3788,
+        "hf_energy_db": -25.4071,
+        "energy_slope_db_min": -9.3718,
+        "tremor_index": 0.0374,
+        "mean_phrase_s": 1.5244
+      },
+      "eventos_audioset": [],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [],
+        "resumo": {}
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.0,
+          "disartria": 0.006,
+          "respiratorio": 0.0
+        },
+        "marcadores_disparados": {
+          "fadiga": [],
+          "disartria": [],
+          "respiratorio": []
+        },
+        "metricas": {
+          "duration_s": 17.23,
+          "phonation_time_s": 13.72,
+          "speech_rate_syl_s": 3.165,
+          "articulation_rate_syl_s": 3.79,
+          "pause_ratio": 0.139,
+          "mean_pause_s": 0.38,
+          "long_pauses_per_min": 0.0,
+          "f0_median_hz": 183.908,
+          "f0_std_semitones": 1.963,
+          "jitter_pct": 1.556,
+          "shimmer_db": 1.582,
+          "hnr_db": 3.379,
+          "hf_energy_db": -25.407,
+          "energy_slope_db_min": -9.372,
+          "tremor_index": 0.037,
+          "mean_phrase_s": 1.524,
+          "cough_episodes": 0.0,
+          "breaths_per_min": 0.0
+        },
+        "flags": [],
+        "risco_voz": 0.006
+      },
+      "transcricao": {
+        "texto": "Doutor, a cirurgia correu bem, mas sinto uma dor no peito quando respiro fundo. Estou um pouco ansioso. A cicatriz está doendo, mas consigo me mexer na cama. Quero saber quando vou sair da UTI.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "mixed",
+          "positivo": 0.5,
+          "neutro": 0.0,
+          "negativo": 0.5
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "dor no peito",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "possivel_sindrome_coronariana",
+            "negado": false,
+            "offset": 45,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "ansioso",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "ansiedade",
+            "negado": false,
+            "offset": 95,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "doendo",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "dor",
+            "negado": false,
+            "offset": 120,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [
+          "dor no peito"
+        ],
+        "risco_texto": 0.925,
+        "erro_azure": null
+      },
+      "achados": [
+        {
+          "modality": "audio",
+          "kind": "termo_possivel_sindrome_coronariana",
+          "severity": "critico",
+          "message": "Paciente relatou \"dor no peito\" (possivel sindrome coronariana)",
+          "patient_id": "PAC-0006",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        }
+      ],
+      "risco_audio": 0.95
+    },
+    "video": {
+      "patient_id": "PAC-0006",
+      "video": "PAC-0006_cirurgia.mp4",
+      "tipo": "cirurgia",
+      "fonte_deteccao": "detections_sidecar (formato YOLO)",
+      "analise": {
+        "metricas": {
+          "duracao_s": 24.0,
+          "contagem_inicial": {
+            "afastador": 1,
+            "porta_agulha": 1,
+            "bisturi": 1,
+            "tesoura": 1,
+            "pinca": 2
+          },
+          "contagem_final": {
+            "afastador": 1,
+            "pinca": 1,
+            "porta_agulha": 1,
+            "bisturi": 1
+          },
+          "primeira_deteccao_incisao_s": 3.0
+        },
+        "linha_do_tempo": [
+          {
+            "t": 9.0,
+            "evento": "quebra_area_esteril"
+          },
+          {
+            "t": 13.27,
+            "evento": "pinca_fora_campo"
+          },
+          {
+            "t": 24.0,
+            "evento": "contagem_final_divergente"
+          }
+        ],
+        "achados": [
+          {
+            "modality": "video",
+            "kind": "falha_contagem_instrumental",
+            "severity": "critico",
+            "message": "Contagem final de instrumental não confere: 4/6 na mesa — faltam {'tesoura': 1, 'pinca': 1}; detectado(s): tesoura na área da incisão (possível item retido)",
+            "patient_id": "PAC-0006",
+            "time_ref": "fechamento (24.0s)",
+            "method": "YOLO: contagem por classe na mesa (início × fechamento)",
+            "evidence": {
+              "inicial": {
+                "afastador": 1,
+                "porta_agulha": 1,
+                "bisturi": 1,
+                "tesoura": 1,
+                "pinca": 2
+              },
+              "final": {
+                "afastador": 1,
+                "pinca": 1,
+                "porta_agulha": 1,
+                "bisturi": 1
+              },
+              "faltantes": {
+                "tesoura": 1,
+                "pinca": 1
+              },
+              "localizados": [
+                "tesoura na área da incisão"
+              ],
+              "n_faltantes": 2
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "instrumento_fora_campo_esteril",
+            "severity": "alto",
+            "message": "pinca saiu do campo estéril (provável queda) em 13.3s — considerar contaminado",
+            "patient_id": "PAC-0006",
+            "time_ref": "13.3s",
+            "method": "YOLO: posição do instrumento vs. zonas estéreis",
+            "evidence": {
+              "bbox": [
+                277.0,
+                456.0,
+                323.0,
+                474.0
+              ]
+            }
+          },
+          {
+            "modality": "video",
+            "kind": "quebra_area_esteril",
+            "severity": "alto",
+            "message": "Pessoa não paramentada na área estéril entre 9.0s e 12.0s (3.0s)",
+            "patient_id": "PAC-0006",
+            "time_ref": "9.0s–12.0s",
+            "method": "YOLO: pessoa × zonas estéreis",
+            "evidence": {
+              "inicio_s": 9.0,
+              "fim_s": 12.0
+            }
+          }
+        ],
+        "frames_chave": [
+          {
+            "frame": 719,
+            "motivo": "contagem final divergente"
+          },
+          {
+            "frame": 413,
+            "motivo": "pinca fora do campo estéril"
+          },
+          {
+            "frame": 315,
+            "motivo": "quebra de área estéril"
+          }
+        ]
+      },
+      "achados": [
+        {
+          "modality": "video",
+          "kind": "falha_contagem_instrumental",
+          "severity": "critico",
+          "message": "Contagem final de instrumental não confere: 4/6 na mesa — faltam {'tesoura': 1, 'pinca': 1}; detectado(s): tesoura na área da incisão (possível item retido)",
+          "patient_id": "PAC-0006",
+          "time_ref": "fechamento (24.0s)",
+          "method": "YOLO: contagem por classe na mesa (início × fechamento)",
+          "evidence": {
+            "inicial": {
+              "afastador": 1,
+              "porta_agulha": 1,
+              "bisturi": 1,
+              "tesoura": 1,
+              "pinca": 2
+            },
+            "final": {
+              "afastador": 1,
+              "pinca": 1,
+              "porta_agulha": 1,
+              "bisturi": 1
+            },
+            "faltantes": {
+              "tesoura": 1,
+              "pinca": 1
+            },
+            "localizados": [
+              "tesoura na área da incisão"
+            ],
+            "n_faltantes": 2
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "instrumento_fora_campo_esteril",
+          "severity": "alto",
+          "message": "pinca saiu do campo estéril (provável queda) em 13.3s — considerar contaminado",
+          "patient_id": "PAC-0006",
+          "time_ref": "13.3s",
+          "method": "YOLO: posição do instrumento vs. zonas estéreis",
+          "evidence": {
+            "bbox": [
+              277.0,
+              456.0,
+              323.0,
+              474.0
+            ]
+          }
+        },
+        {
+          "modality": "video",
+          "kind": "quebra_area_esteril",
+          "severity": "alto",
+          "message": "Pessoa não paramentada na área estéril entre 9.0s e 12.0s (3.0s)",
+          "patient_id": "PAC-0006",
+          "time_ref": "9.0s–12.0s",
+          "method": "YOLO: pessoa × zonas estéreis",
+          "evidence": {
+            "inicio_s": 9.0,
+            "fim_s": 12.0
+          }
+        }
+      ],
+      "frames_chave": [
+        "output/video/PAC-0006_cirurgia_f00315.png",
+        "output/video/PAC-0006_cirurgia_f00413.png",
+        "output/video/PAC-0006_cirurgia_f00719.png"
+      ],
+      "relatorio": "output/video/PAC-0006_cirurgia.md",
+      "risco_video": 1.0
+    },
+    "prescriptions": {
+      "n_prescricoes": 5,
+      "ativos_atuais": [
+        "metoprolol"
+      ],
+      "n_achados": 3,
+      "risco_prescricoes": 0.76
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 27.6,
+      "saidas_leito": 0,
+      "n_achados": 0,
+      "risco_movimentacao": 0.0
+    }
+  },
+  "achados": {
+    "vitals": [
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 107 bpm, Saturação de O₂ média 94 %, Frequência respiratória média 23 irpm)",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=40s–119s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 40,
+          "fim_s": 119,
+          "extremo": -0.647
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "resp_alto_regra",
+        "severity": "critico",
+        "message": "Frequência respiratória ↑ fora da faixa segura: 29 irpm por 11s",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=86s–96s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "RESP",
+          "inicio_s": 86,
+          "fim_s": 96,
+          "extremo": 29.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "resp_alto_cusum",
+        "severity": "moderado",
+        "message": "Frequência respiratória ↑ deriva sustentada: 29 irpm (basal 18) por 49s",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=88s–136s",
+        "method": "cusum_deriva",
+        "evidence": {
+          "sinal": "RESP",
+          "inicio_s": 88,
+          "fim_s": 136,
+          "extremo": 29.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 107 bpm, Saturação de O₂ média 96 %, Frequência respiratória média 23 irpm)",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=190s–339s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 190,
+          "fim_s": 339,
+          "extremo": -0.608
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "resp_alto_regra",
+        "severity": "alto",
+        "message": "Frequência respiratória ↑ fora da faixa segura: 25 irpm por 26s",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=218s–243s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "RESP",
+          "inicio_s": 218,
+          "fim_s": 243,
+          "extremo": 25.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "resp_alto_cusum",
+        "severity": "moderado",
+        "message": "Frequência respiratória ↑ deriva sustentada: 25 irpm (basal 18) por 56s",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=223s–278s",
+        "method": "cusum_deriva",
+        "evidence": {
+          "sinal": "RESP",
+          "inicio_s": 223,
+          "fim_s": 278,
+          "extremo": 25.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "spo2_baixo_cusum",
+        "severity": "alto",
+        "message": "Saturação de O₂ ↓ deriva sustentada: 92 % (basal 95) por 10s",
+        "patient_id": "PAC-0006",
+        "time_ref": "t=285s–294s",
+        "method": "cusum_deriva",
+        "evidence": {
+          "sinal": "SpO2",
+          "inicio_s": 285,
+          "fim_s": 294,
+          "extremo": 92.0
+        }
+      }
+    ],
+    "audio": [
+      {
+        "modality": "audio",
+        "kind": "termo_possivel_sindrome_coronariana",
+        "severity": "critico",
+        "message": "Paciente relatou \"dor no peito\" (possivel sindrome coronariana)",
+        "patient_id": "PAC-0006",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      }
+    ],
+    "video": [
+      {
+        "modality": "video",
+        "kind": "falha_contagem_instrumental",
+        "severity": "critico",
+        "message": "Contagem final de instrumental não confere: 4/6 na mesa — faltam {'tesoura': 1, 'pinca': 1}; detectado(s): tesoura na área da incisão (possível item retido)",
+        "patient_id": "PAC-0006",
+        "time_ref": "fechamento (24.0s)",
+        "method": "YOLO: contagem por classe na mesa (início × fechamento)",
+        "evidence": {
+          "inicial": {
+            "afastador": 1,
+            "porta_agulha": 1,
+            "bisturi": 1,
+            "tesoura": 1,
+            "pinca": 2
+          },
+          "final": {
+            "afastador": 1,
+            "pinca": 1,
+            "porta_agulha": 1,
+            "bisturi": 1
+          },
+          "faltantes": {
+            "tesoura": 1,
+            "pinca": 1
+          },
+          "localizados": [
+            "tesoura na área da incisão"
+          ],
+          "n_faltantes": 2
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "instrumento_fora_campo_esteril",
+        "severity": "alto",
+        "message": "pinca saiu do campo estéril (provável queda) em 13.3s — considerar contaminado",
+        "patient_id": "PAC-0006",
+        "time_ref": "13.3s",
+        "method": "YOLO: posição do instrumento vs. zonas estéreis",
+        "evidence": {
+          "bbox": [
+            277.0,
+            456.0,
+            323.0,
+            474.0
+          ]
+        }
+      },
+      {
+        "modality": "video",
+        "kind": "quebra_area_esteril",
+        "severity": "alto",
+        "message": "Pessoa não paramentada na área estéril entre 9.0s e 12.0s (3.0s)",
+        "patient_id": "PAC-0006",
+        "time_ref": "9.0s–12.0s",
+        "method": "YOLO: pessoa × zonas estéreis",
+        "evidence": {
+          "inicio_s": 9.0,
+          "fim_s": 12.0
+        }
+      }
+    ],
+    "prescriptions": [
+      {
+        "modality": "prescriptions",
+        "kind": "inicio_alta_vigilancia",
+        "severity": "moderado",
+        "message": "Início de medicamento de alta vigilância (enoxaparina) — exige dupla checagem",
+        "patient_id": "PAC-0006",
+        "time_ref": "2026-10-11T02:00",
+        "method": "regra: lista ISMP de medicamentos potencialmente perigosos",
+        "evidence": {
+          "medicamento": "enoxaparina",
+          "dose_mg": 80,
+          "intervalo_h": 12,
+          "prescritor": "Dra. Lima"
+        }
+      },
+      {
+        "modality": "prescriptions",
+        "kind": "duplicidade_terapeutica",
+        "severity": "alto",
+        "message": "enoxaparina iniciado com heparina ainda ativo (duplicidade de anticoagulante)",
+        "patient_id": "PAC-0006",
+        "time_ref": "2026-10-11T02:00",
+        "method": "regra: duas drogas ativas da mesma classe crítica",
+        "evidence": {
+          "medicamento": "enoxaparina",
+          "dose_mg": 80,
+          "intervalo_h": 12,
+          "prescritor": "Dra. Lima"
+        }
+      },
+      {
+        "modality": "prescriptions",
+        "kind": "suspensao_anticoagulante_sem_substituto",
+        "severity": "alto",
+        "message": "Suspensão de heparina e enoxaparina deixa o paciente sem nenhum anticoagulante ativo",
+        "patient_id": "PAC-0006",
+        "time_ref": "2026-10-11T10:00",
+        "method": "regra: suspensão abrupta de classe crítica",
+        "evidence": {
+          "medicamento": "heparina",
+          "dose_mg": 0,
+          "intervalo_h": 0,
+          "prescritor": "Dra. Lima"
+        }
+      }
+    ],
+    "movement": [],
+    "fusion": [
+      {
+        "modality": "fusion",
+        "kind": "risco_seguranca_medicamentosa",
+        "severity": "critico",
+        "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+        "patient_id": "PAC-0006",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+          "evidencias": [
+            "Prescrições: Suspensão de heparina e enoxaparina deixa o paciente sem nenhum anticoagulante ativo",
+            "Prescrições: enoxaparina iniciado com heparina ainda ativo (duplicidade de anticoagulante)"
+          ],
+          "modalidades": [
+            "prescriptions"
+          ]
+        }
+      }
+    ]
+  },
+  "fusao": {
+    "patient_id": "PAC-0006",
+    "score": 1.0,
+    "nivel": "critico",
+    "risco_por_modalidade": {
+      "vitals": 1.0,
+      "audio": 0.95,
+      "video": 1.0,
+      "prescriptions": 0.76,
+      "movement": 0.0
+    },
+    "sindromes": [
+      {
+        "modality": "fusion",
+        "kind": "risco_seguranca_medicamentosa",
+        "severity": "critico",
+        "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+        "patient_id": "PAC-0006",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+          "evidencias": [
+            "Prescrições: Suspensão de heparina e enoxaparina deixa o paciente sem nenhum anticoagulante ativo",
+            "Prescrições: enoxaparina iniciado com heparina ainda ativo (duplicidade de anticoagulante)"
+          ],
+          "modalidades": [
+            "prescriptions"
+          ]
+        }
+      }
+    ],
+    "acoes_sugeridas": [
+      "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose"
+    ]
+  },
+  "alertas": [
+    {
+      "alert_id": "819efe08",
+      "created_at": "2026-10-17T15:20:46.724907+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "vitals",
+      "kind": "resp_alto_regra",
+      "title": "❤️ [P1] PAC-0006 — resp alto regra",
+      "message": "Frequência respiratória ↑ fora da faixa segura: 29 irpm por 11s",
+      "time_ref": "t=86s–96s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "RESP",
+        "inicio_s": 86,
+        "fim_s": 96,
+        "extremo": 29.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "e1df700a",
+      "created_at": "2026-10-17T15:20:46.726015+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "audio",
+      "kind": "termo_possivel_sindrome_coronariana",
+      "title": "🎙️ [P1] PAC-0006 — termo possivel sindrome coronariana",
+      "message": "Paciente relatou \"dor no peito\" (possivel sindrome coronariana)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "fcb4ad6e",
+      "created_at": "2026-10-17T15:20:46.727052+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "video",
+      "kind": "falha_contagem_instrumental",
+      "title": "🎥 [P1] PAC-0006 — falha contagem instrumental",
+      "message": "Contagem final de instrumental não confere: 4/6 na mesa — faltam {'tesoura': 1, 'pinca': 1}; detectado(s): tesoura na área da incisão (possível item retido)",
+      "time_ref": "fechamento (24.0s)",
+      "method": "YOLO: contagem por classe na mesa (início × fechamento)",
+      "evidence": {
+        "inicial": {
+          "afastador": 1,
+          "porta_agulha": 1,
+          "bisturi": 1,
+          "tesoura": 1,
+          "pinca": 2
+        },
+        "final": {
+          "afastador": 1,
+          "pinca": 1,
+          "porta_agulha": 1,
+          "bisturi": 1
+        },
+        "faltantes": {
+          "tesoura": 1,
+          "pinca": 1
+        },
+        "localizados": [
+          "tesoura na área da incisão"
+        ],
+        "n_faltantes": 2
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "30a94041",
+      "created_at": "2026-10-17T15:20:46.727972+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "risco_seguranca_medicamentosa",
+      "title": "🧩 [P1] PAC-0006 — risco seguranca medicamentosa",
+      "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+        "evidencias": [
+          "Prescrições: Suspensão de heparina e enoxaparina deixa o paciente sem nenhum anticoagulante ativo",
+          "Prescrições: enoxaparina iniciado com heparina ainda ativo (duplicidade de anticoagulante)"
+        ],
+        "modalidades": [
+          "prescriptions"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "0cd0ad02",
+      "created_at": "2026-10-17T15:20:46.728948+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "vitals",
+      "kind": "spo2_baixo_cusum",
+      "title": "❤️ [P2] PAC-0006 — spo2 baixo cusum",
+      "message": "Saturação de O₂ ↓ deriva sustentada: 92 % (basal 95) por 10s",
+      "time_ref": "t=285s–294s",
+      "method": "cusum_deriva",
+      "evidence": {
+        "sinal": "SpO2",
+        "inicio_s": 285,
+        "fim_s": 294,
+        "extremo": 92.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "f395b474",
+      "created_at": "2026-10-17T15:20:46.729900+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "video",
+      "kind": "instrumento_fora_campo_esteril",
+      "title": "🎥 [P2] PAC-0006 — instrumento fora campo esteril",
+      "message": "pinca saiu do campo estéril (provável queda) em 13.3s — considerar contaminado",
+      "time_ref": "13.3s",
+      "method": "YOLO: posição do instrumento vs. zonas estéreis",
+      "evidence": {
+        "bbox": [
+          277.0,
+          456.0,
+          323.0,
+          474.0
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "a67d5973",
+      "created_at": "2026-10-17T15:20:46.730881+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "video",
+      "kind": "quebra_area_esteril",
+      "title": "🎥 [P2] PAC-0006 — quebra area esteril",
+      "message": "Pessoa não paramentada na área estéril entre 9.0s e 12.0s (3.0s)",
+      "time_ref": "9.0s–12.0s",
+      "method": "YOLO: pessoa × zonas estéreis",
+      "evidence": {
+        "inicio_s": 9.0,
+        "fim_s": 12.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "2ef154ff",
+      "created_at": "2026-10-17T15:20:46.731816+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "prescriptions",
+      "kind": "duplicidade_terapeutica",
+      "title": "💊 [P2] PAC-0006 — duplicidade terapeutica",
+      "message": "enoxaparina iniciado com heparina ainda ativo (duplicidade de anticoagulante)",
+      "time_ref": "2026-10-11T02:00",
+      "method": "regra: duas drogas ativas da mesma classe crítica",
+      "evidence": {
+        "medicamento": "enoxaparina",
+        "dose_mg": 80,
+        "intervalo_h": 12,
+        "prescritor": "Dra. Lima"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "762b3a6c",
+      "created_at": "2026-10-17T15:20:46.732722+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "prescriptions",
+      "kind": "suspensao_anticoagulante_sem_substituto",
+      "title": "💊 [P2] PAC-0006 — suspensao anticoagulante sem substituto",
+      "message": "Suspensão de heparina e enoxaparina deixa o paciente sem nenhum anticoagulante ativo",
+      "time_ref": "2026-10-11T10:00",
+      "method": "regra: suspensão abrupta de classe crítica",
+      "evidence": {
+        "medicamento": "heparina",
+        "dose_mg": 0,
+        "intervalo_h": 0,
+        "prescritor": "Dra. Lima"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "3a3f53c4",
+      "created_at": "2026-10-17T15:20:46.733653+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "vitais_padrao_atipico",
+      "title": "❤️ [P3] PAC-0006 — vitais padrao atipico",
+      "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 107 bpm, Saturação de O₂ média 94 %, Frequência respiratória média 23 irpm)",
+      "time_ref": "t=40s–119s",
+      "method": "isolation_forest_populacional",
+      "evidence": {
+        "sinal": "multivariado",
+        "inicio_s": 40,
+        "fim_s": 119,
+        "extremo": -0.647
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "ad70f09a",
+      "created_at": "2026-10-17T15:20:46.734484+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "resp_alto_cusum",
+      "title": "❤️ [P3] PAC-0006 — resp alto cusum",
+      "message": "Frequência respiratória ↑ deriva sustentada: 29 irpm (basal 18) por 49s",
+      "time_ref": "t=88s–136s",
+      "method": "cusum_deriva",
+      "evidence": {
+        "sinal": "RESP",
+        "inicio_s": 88,
+        "fim_s": 136,
+        "extremo": 29.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "78f539bc",
+      "created_at": "2026-10-17T15:20:46.735385+00:00",
+      "patient_id": "PAC-0006",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "prescriptions",
+      "kind": "inicio_alta_vigilancia",
+      "title": "💊 [P3] PAC-0006 — inicio alta vigilancia",
+      "message": "Início de medicamento de alta vigilância (enoxaparina) — exige dupla checagem",
+      "time_ref": "2026-10-11T02:00",
+      "method": "regra: lista ISMP de medicamentos potencialmente perigosos",
+      "evidence": {
+        "medicamento": "enoxaparina",
+        "dose_mg": 80,
+        "intervalo_h": 12,
+        "prescritor": "Dra. Lima"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    }
+  ]
+}

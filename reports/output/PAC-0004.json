@@ -1,0 +1,1187 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0004",
+    "idade": "59",
+    "sexo": "F",
+    "diagnostico": "Sepse de foco urinário",
+    "setor": "UTI",
+    "alergias": "penicilina",
+    "bidmc_record": "25",
+    "audio": "PAC-0004_consulta.wav",
+    "video": "",
+    "cenario": "Taquicardia real (BIDMC 25) + hipotensão + fadiga vocal + prescrição com conflito de alergia"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 25",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 2,
+      "estatisticas": {
+        "HR": {
+          "min": 105.0,
+          "media": 124.3,
+          "max": 139.0
+        },
+        "SpO2": {
+          "min": 97.0,
+          "media": 97.6,
+          "max": 99.0
+        },
+        "RESP": {
+          "min": 15.0,
+          "media": 16.2,
+          "max": 20.0
+        },
+        "SBP": {
+          "min": 71.6,
+          "media": 94.3,
+          "max": 114.4
+        },
+        "DBP": {
+          "min": 40.3,
+          "media": 54.9,
+          "max": 68.8
+        }
+      },
+      "n_achados": 8,
+      "risco_vitais": 1.0
+    },
+    "audio": {
+      "patient_id": "PAC-0004",
+      "arquivo": "PAC-0004_consulta.wav",
+      "duracao_s": 27.35,
+      "biomarcadores": {
+        "duration_s": 27.3547,
+        "phonation_time_s": 15.91,
+        "speech_rate_syl_s": 2.0254,
+        "articulation_rate_syl_s": 3.2055,
+        "pause_ratio": 0.3491,
+        "mean_pause_s": 0.7991,
+        "long_pauses_per_min": 7.1485,
+        "f0_median_hz": 173.913,
+        "f0_std_semitones": 2.122,
+        "jitter_pct": 1.0604,
+        "shimmer_db": 1.1885,
+        "hnr_db": 3.0103,
+        "hf_energy_db": -29.4846,
+        "energy_slope_db_min": -16.8223,
+        "tremor_index": 0.0391,
+        "mean_phrase_s": 1.1364
+      },
+      "eventos_audioset": [
+        {
+          "label": "Cough",
+          "start_s": 6.93,
+          "end_s": 7.14,
+          "peak_db": -25.0,
+          "duration_s": 0.21,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 13.81,
+          "end_s": 14.12,
+          "peak_db": -33.7,
+          "duration_s": 0.31,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        }
+      ],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.145
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.062
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 12.0,
+            "fim_s": 16.0,
+            "score": 0.099
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 12.0,
+            "fim_s": 16.0,
+            "score": 0.073
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 14.0,
+            "fim_s": 18.0,
+            "score": 0.058
+          }
+        ],
+        "resumo": {
+          "Gasp": {
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "janelas": 3,
+            "score_max": 0.145
+          },
+          "Snort": {
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "janelas": 2,
+            "score_max": 0.073
+          }
+        }
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.759,
+          "disartria": 0.16,
+          "respiratorio": 0.361
+        },
+        "marcadores_disparados": {
+          "fadiga": [
+            "taxa de fala (sílabas/s) = 2.03",
+            "proporção de pausas = 0.35",
+            "queda de energia vocal (dB/min) = -16.82",
+            "pausas longas por minuto = 7.15",
+            "duração média das frases (s) = 1.14"
+          ],
+          "disartria": [
+            "taxa de articulação (sílabas/s) = 3.21"
+          ],
+          "respiratorio": [
+            "episódios de tosse = 1.00",
+            "duração média das frases (s) = 1.14",
+            "proporção de pausas = 0.35"
+          ]
+        },
+        "metricas": {
+          "duration_s": 27.355,
+          "phonation_time_s": 15.91,
+          "speech_rate_syl_s": 2.025,
+          "articulation_rate_syl_s": 3.206,
+          "pause_ratio": 0.349,
+          "mean_pause_s": 0.799,
+          "long_pauses_per_min": 7.149,
+          "f0_median_hz": 173.913,
+          "f0_std_semitones": 2.122,
+          "jitter_pct": 1.06,
+          "shimmer_db": 1.188,
+          "hnr_db": 3.01,
+          "hf_energy_db": -29.485,
+          "energy_slope_db_min": -16.822,
+          "tremor_index": 0.039,
+          "mean_phrase_s": 1.136,
+          "cough_episodes": 1.0,
+          "breaths_per_min": 2.193
+        },
+        "flags": [
+          "voz_fadiga"
+        ],
+        "risco_voz": 0.759
+      },
+      "transcricao": {
+        "texto": "Estou muito cansada, sem força nenhuma. Tive febre e calafrios a noite inteira. Sinto tontura quando levanto e meu coração está acelerado. Estou com medo de piorar.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "cansada",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "fadiga",
+            "negado": false,
+            "offset": 12,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "sem força",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "fadiga",
+            "negado": false,
+            "offset": 21,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "febre",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "sinal_infeccioso",
+            "negado": true,
+            "offset": 45,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "calafrios",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "sinal_infeccioso",
+            "negado": false,
+            "offset": 53,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "tontura",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "instabilidade_hemodinamica",
+            "negado": false,
+            "offset": 86,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "coração está acelerado",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "taquicardia_referida",
+            "negado": false,
+            "offset": 115,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "medo",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "ansiedade",
+            "negado": false,
+            "offset": 149,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [
+          "calafrios",
+          "coração está acelerado"
+        ],
+        "risco_texto": 0.7,
+        "erro_azure": null
+      },
+      "achados": [
+        {
+          "modality": "audio",
+          "kind": "voz_fadiga",
+          "severity": "alto",
+          "message": "Fadiga / cansaço vocal detectada na voz (score 0.76)",
+          "patient_id": "PAC-0004",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.759,
+            "marcadores": [
+              "taxa de fala (sílabas/s) = 2.03",
+              "proporção de pausas = 0.35",
+              "queda de energia vocal (dB/min) = -16.82",
+              "pausas longas por minuto = 7.15",
+              "duração média das frases (s) = 1.14"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "tosse_detectada",
+          "severity": "moderado",
+          "message": "1 episódio(s) de tosse durante a consulta",
+          "patient_id": "PAC-0004",
+          "time_ref": null,
+          "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+          "evidence": {
+            "inicios_s": [
+              6.93
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_sinal_infeccioso",
+          "severity": "alto",
+          "message": "Paciente relatou \"calafrios\" (sinal infeccioso)",
+          "patient_id": "PAC-0004",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_taquicardia_referida",
+          "severity": "alto",
+          "message": "Paciente relatou \"coração está acelerado\" (taquicardia referida)",
+          "patient_id": "PAC-0004",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "sentimento_negativo",
+          "severity": "info",
+          "message": "Sentimento predominantemente negativo na consulta (100%)",
+          "patient_id": "PAC-0004",
+          "time_ref": null,
+          "method": "local_lexico",
+          "evidence": {
+            "sentimento": "negative",
+            "positivo": 0.0,
+            "neutro": 0.0,
+            "negativo": 1.0
+          }
+        }
+      ],
+      "risco_audio": 0.79
+    },
+    "video": {
+      "disponivel": false
+    },
+    "prescriptions": {
+      "n_prescricoes": 6,
+      "ativos_atuais": [
+        "noradrenalina",
+        "piperacilina_tazobactam",
+        "vancomicina"
+      ],
+      "n_achados": 4,
+      "risco_prescricoes": 1.0
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 27.6,
+      "saidas_leito": 0,
+      "n_achados": 0,
+      "risco_movimentacao": 0.0
+    }
+  },
+  "achados": {
+    "vitals": [
+      {
+        "modality": "vitals",
+        "kind": "hr_alto_regra",
+        "severity": "alto",
+        "message": "Frequência cardíaca ↑ fora da faixa segura: 129 bpm por 481s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=0s–480s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "HR",
+          "inicio_s": 0,
+          "fim_s": 480,
+          "extremo": 129.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "hr_alto_zscore",
+        "severity": "moderado",
+        "message": "Frequência cardíaca ↑ mudança abrupta: 139 bpm por 6s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=211s–216s",
+        "method": "zscore_robusto_janela_60s",
+        "evidence": {
+          "sinal": "HR",
+          "inicio_s": 211,
+          "fim_s": 216,
+          "extremo": 139.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "sbp_baixo_cusum",
+        "severity": "alto",
+        "message": "Pressão sistólica ↓ deriva sustentada: 72 mmHg (basal 107) por 223s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=258s–480s",
+        "method": "cusum_deriva",
+        "evidence": {
+          "sinal": "SBP",
+          "inicio_s": 258,
+          "fim_s": 480,
+          "extremo": 71.6
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "sbp_baixo_regra",
+        "severity": "critico",
+        "message": "Pressão sistólica ↓ fora da faixa segura: 72 mmHg por 210s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=271s–480s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "SBP",
+          "inicio_s": 271,
+          "fim_s": 480,
+          "extremo": 71.6
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "dbp_baixo_regra",
+        "severity": "alto",
+        "message": "Pressão diastólica ↓ fora da faixa segura: 40 mmHg por 194s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=287s–480s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "DBP",
+          "inicio_s": 287,
+          "fim_s": 480,
+          "extremo": 40.3
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 120 bpm, Saturação de O₂ média 97 %, Frequência respiratória média 17 irpm)",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=380s–409s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 380,
+          "fim_s": 409,
+          "extremo": -0.599
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "hr_baixo_zscore",
+        "severity": "moderado",
+        "message": "Frequência cardíaca ↓ mudança abrupta: 113 bpm por 14s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=396s–409s",
+        "method": "zscore_robusto_janela_60s",
+        "evidence": {
+          "sinal": "HR",
+          "inicio_s": 396,
+          "fim_s": 409,
+          "extremo": 113.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "hr_baixo_zscore",
+        "severity": "moderado",
+        "message": "Frequência cardíaca ↓ mudança abrupta: 105 bpm por 16s",
+        "patient_id": "PAC-0004",
+        "time_ref": "t=465s–480s",
+        "method": "zscore_robusto_janela_60s",
+        "evidence": {
+          "sinal": "HR",
+          "inicio_s": 465,
+          "fim_s": 480,
+          "extremo": 105.0
+        }
+      }
+    ],
+    "audio": [
+      {
+        "modality": "audio",
+        "kind": "voz_fadiga",
+        "severity": "alto",
+        "message": "Fadiga / cansaço vocal detectada na voz (score 0.76)",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.759,
+          "marcadores": [
+            "taxa de fala (sílabas/s) = 2.03",
+            "proporção de pausas = 0.35",
+            "queda de energia vocal (dB/min) = -16.82",
+            "pausas longas por minuto = 7.15",
+            "duração média das frases (s) = 1.14"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "tosse_detectada",
+        "severity": "moderado",
+        "message": "1 episódio(s) de tosse durante a consulta",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+        "evidence": {
+          "inicios_s": [
+            6.93
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_sinal_infeccioso",
+        "severity": "alto",
+        "message": "Paciente relatou \"calafrios\" (sinal infeccioso)",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_taquicardia_referida",
+        "severity": "alto",
+        "message": "Paciente relatou \"coração está acelerado\" (taquicardia referida)",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "sentimento_negativo",
+        "severity": "info",
+        "message": "Sentimento predominantemente negativo na consulta (100%)",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "local_lexico",
+        "evidence": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        }
+      }
+    ],
+    "video": [],
+    "prescriptions": [
+      {
+        "modality": "prescriptions",
+        "kind": "conflito_alergia",
+        "severity": "critico",
+        "message": "piperacilina_tazobactam prescrito para paciente com alergia registrada a penicilina",
+        "patient_id": "PAC-0004",
+        "time_ref": "2026-10-11T04:00",
+        "method": "regra: família farmacológica × alergias do prontuário",
+        "evidence": {
+          "medicamento": "piperacilina_tazobactam",
+          "dose_mg": 4500,
+          "intervalo_h": 6,
+          "prescritor": "Dr. Souza"
+        }
+      },
+      {
+        "modality": "prescriptions",
+        "kind": "salto_de_dose",
+        "severity": "alto",
+        "message": "Dose diária de vancomicina mudou 2.5× (2000 → 5000 mg/dia) por Dr. Souza",
+        "patient_id": "PAC-0004",
+        "time_ref": "2026-10-11T16:00",
+        "method": "regra: variação ≥ 2.5× entre prescrições consecutivas",
+        "evidence": {
+          "medicamento": "vancomicina",
+          "dose_mg": 2500,
+          "intervalo_h": 12,
+          "prescritor": "Dr. Souza",
+          "razao": 2.5
+        }
+      },
+      {
+        "modality": "prescriptions",
+        "kind": "dose_acima_maxima",
+        "severity": "critico",
+        "message": "vancomicina: 5000 mg/dia acima do máximo de referência (4000 mg/dia)",
+        "patient_id": "PAC-0004",
+        "time_ref": "2026-10-11T16:00",
+        "method": "regra: dose diária máxima",
+        "evidence": {
+          "medicamento": "vancomicina",
+          "dose_mg": 2500,
+          "intervalo_h": 12,
+          "prescritor": "Dr. Souza"
+        }
+      },
+      {
+        "modality": "prescriptions",
+        "kind": "inicio_alta_vigilancia",
+        "severity": "moderado",
+        "message": "Início de medicamento de alta vigilância (noradrenalina) — exige dupla checagem",
+        "patient_id": "PAC-0004",
+        "time_ref": "2026-10-11T18:00",
+        "method": "regra: lista ISMP de medicamentos potencialmente perigosos",
+        "evidence": {
+          "medicamento": "noradrenalina",
+          "dose_mg": 8,
+          "intervalo_h": 0,
+          "prescritor": "Dra. Costa"
+        }
+      }
+    ],
+    "movement": [],
+    "fusion": [
+      {
+        "modality": "fusion",
+        "kind": "possivel_choque",
+        "severity": "critico",
+        "message": "Possível choque (séptico/hemodinâmico) — corroborado por 1 modalidade(s): Sinais vitais",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Acionar time de resposta rápida; reavaliar perfusão e protocolo de sepse",
+          "evidencias": [
+            "Sinais vitais: Frequência cardíaca ↑ fora da faixa segura: 129 bpm por 481s",
+            "Sinais vitais: Frequência cardíaca ↑ mudança abrupta: 139 bpm por 6s",
+            "Sinais vitais: Pressão diastólica ↓ fora da faixa segura: 40 mmHg por 194s",
+            "Sinais vitais: Pressão sistólica ↓ deriva sustentada: 72 mmHg (basal 107) por 223s",
+            "Sinais vitais: Pressão sistólica ↓ fora da faixa segura: 72 mmHg por 210s"
+          ],
+          "modalidades": [
+            "vitals"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "risco_seguranca_medicamentosa",
+        "severity": "critico",
+        "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+          "evidencias": [
+            "Prescrições: Dose diária de vancomicina mudou 2.5× (2000 → 5000 mg/dia) por Dr. Souza",
+            "Prescrições: piperacilina_tazobactam prescrito para paciente com alergia registrada a penicilina",
+            "Prescrições: vancomicina: 5000 mg/dia acima do máximo de referência (4000 mg/dia)"
+          ],
+          "modalidades": [
+            "prescriptions"
+          ]
+        }
+      }
+    ]
+  },
+  "fusao": {
+    "patient_id": "PAC-0004",
+    "score": 1.0,
+    "nivel": "critico",
+    "risco_por_modalidade": {
+      "vitals": 1.0,
+      "audio": 0.79,
+      "video": 0.0,
+      "prescriptions": 1.0,
+      "movement": 0.0
+    },
+    "sindromes": [
+      {
+        "modality": "fusion",
+        "kind": "possivel_choque",
+        "severity": "critico",
+        "message": "Possível choque (séptico/hemodinâmico) — corroborado por 1 modalidade(s): Sinais vitais",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Acionar time de resposta rápida; reavaliar perfusão e protocolo de sepse",
+          "evidencias": [
+            "Sinais vitais: Frequência cardíaca ↑ fora da faixa segura: 129 bpm por 481s",
+            "Sinais vitais: Frequência cardíaca ↑ mudança abrupta: 139 bpm por 6s",
+            "Sinais vitais: Pressão diastólica ↓ fora da faixa segura: 40 mmHg por 194s",
+            "Sinais vitais: Pressão sistólica ↓ deriva sustentada: 72 mmHg (basal 107) por 223s",
+            "Sinais vitais: Pressão sistólica ↓ fora da faixa segura: 72 mmHg por 210s"
+          ],
+          "modalidades": [
+            "vitals"
+          ]
+        }
+      },
+      {
+        "modality": "fusion",
+        "kind": "risco_seguranca_medicamentosa",
+        "severity": "critico",
+        "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+        "patient_id": "PAC-0004",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+          "evidencias": [
+            "Prescrições: Dose diária de vancomicina mudou 2.5× (2000 → 5000 mg/dia) por Dr. Souza",
+            "Prescrições: piperacilina_tazobactam prescrito para paciente com alergia registrada a penicilina",
+            "Prescrições: vancomicina: 5000 mg/dia acima do máximo de referência (4000 mg/dia)"
+          ],
+          "modalidades": [
+            "prescriptions"
+          ]
+        }
+      }
+    ],
+    "acoes_sugeridas": [
+      "Acionar time de resposta rápida; reavaliar perfusão e protocolo de sepse",
+      "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose"
+    ]
+  },
+  "alertas": [
+    {
+      "alert_id": "aa85c40c",
+      "created_at": "2026-10-17T15:20:25.997611+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "vitals",
+      "kind": "sbp_baixo_regra",
+      "title": "❤️ [P1] PAC-0004 — sbp baixo regra",
+      "message": "Pressão sistólica ↓ fora da faixa segura: 72 mmHg por 210s",
+      "time_ref": "t=271s–480s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "SBP",
+        "inicio_s": 271,
+        "fim_s": 480,
+        "extremo": 71.6
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "f400d0b6",
+      "created_at": "2026-10-17T15:20:25.998760+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "prescriptions",
+      "kind": "conflito_alergia",
+      "title": "💊 [P1] PAC-0004 — conflito alergia",
+      "message": "piperacilina_tazobactam prescrito para paciente com alergia registrada a penicilina",
+      "time_ref": "2026-10-11T04:00",
+      "method": "regra: família farmacológica × alergias do prontuário",
+      "evidence": {
+        "medicamento": "piperacilina_tazobactam",
+        "dose_mg": 4500,
+        "intervalo_h": 6,
+        "prescritor": "Dr. Souza"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "10385e6c",
+      "created_at": "2026-10-17T15:20:25.999666+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "prescriptions",
+      "kind": "dose_acima_maxima",
+      "title": "💊 [P1] PAC-0004 — dose acima maxima",
+      "message": "vancomicina: 5000 mg/dia acima do máximo de referência (4000 mg/dia)",
+      "time_ref": "2026-10-11T16:00",
+      "method": "regra: dose diária máxima",
+      "evidence": {
+        "medicamento": "vancomicina",
+        "dose_mg": 2500,
+        "intervalo_h": 12,
+        "prescritor": "Dr. Souza"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "478987a3",
+      "created_at": "2026-10-17T15:20:26.000565+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "possivel_choque",
+      "title": "🧩 [P1] PAC-0004 — possivel choque",
+      "message": "Possível choque (séptico/hemodinâmico) — corroborado por 1 modalidade(s): Sinais vitais",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Acionar time de resposta rápida; reavaliar perfusão e protocolo de sepse",
+        "evidencias": [
+          "Sinais vitais: Frequência cardíaca ↑ fora da faixa segura: 129 bpm por 481s",
+          "Sinais vitais: Frequência cardíaca ↑ mudança abrupta: 139 bpm por 6s",
+          "Sinais vitais: Pressão diastólica ↓ fora da faixa segura: 40 mmHg por 194s",
+          "Sinais vitais: Pressão sistólica ↓ deriva sustentada: 72 mmHg (basal 107) por 223s",
+          "Sinais vitais: Pressão sistólica ↓ fora da faixa segura: 72 mmHg por 210s"
+        ],
+        "modalidades": [
+          "vitals"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "80b4e814",
+      "created_at": "2026-10-17T15:20:26.001683+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "risco_seguranca_medicamentosa",
+      "title": "🧩 [P1] PAC-0004 — risco seguranca medicamentosa",
+      "message": "Risco de evento adverso medicamentoso — corroborado por 1 modalidade(s): Prescrições",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Farmácia clínica + médico prescritor revisarem a prescrição antes da próxima dose",
+        "evidencias": [
+          "Prescrições: Dose diária de vancomicina mudou 2.5× (2000 → 5000 mg/dia) por Dr. Souza",
+          "Prescrições: piperacilina_tazobactam prescrito para paciente com alergia registrada a penicilina",
+          "Prescrições: vancomicina: 5000 mg/dia acima do máximo de referência (4000 mg/dia)"
+        ],
+        "modalidades": [
+          "prescriptions"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "b8002a7d",
+      "created_at": "2026-10-17T15:20:26.002897+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "vitals",
+      "kind": "hr_alto_regra",
+      "title": "❤️ [P2] PAC-0004 — hr alto regra",
+      "message": "Frequência cardíaca ↑ fora da faixa segura: 129 bpm por 481s",
+      "time_ref": "t=0s–480s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "HR",
+        "inicio_s": 0,
+        "fim_s": 480,
+        "extremo": 129.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "839c73bf",
+      "created_at": "2026-10-17T15:20:26.003900+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "vitals",
+      "kind": "sbp_baixo_cusum",
+      "title": "❤️ [P2] PAC-0004 — sbp baixo cusum",
+      "message": "Pressão sistólica ↓ deriva sustentada: 72 mmHg (basal 107) por 223s",
+      "time_ref": "t=258s–480s",
+      "method": "cusum_deriva",
+      "evidence": {
+        "sinal": "SBP",
+        "inicio_s": 258,
+        "fim_s": 480,
+        "extremo": 71.6
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "197dc8eb",
+      "created_at": "2026-10-17T15:20:26.004926+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "vitals",
+      "kind": "dbp_baixo_regra",
+      "title": "❤️ [P2] PAC-0004 — dbp baixo regra",
+      "message": "Pressão diastólica ↓ fora da faixa segura: 40 mmHg por 194s",
+      "time_ref": "t=287s–480s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "DBP",
+        "inicio_s": 287,
+        "fim_s": 480,
+        "extremo": 40.3
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "626a6bb2",
+      "created_at": "2026-10-17T15:20:26.005792+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "voz_fadiga",
+      "title": "🎙️ [P2] PAC-0004 — voz fadiga",
+      "message": "Fadiga / cansaço vocal detectada na voz (score 0.76)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.759,
+        "marcadores": [
+          "taxa de fala (sílabas/s) = 2.03",
+          "proporção de pausas = 0.35",
+          "queda de energia vocal (dB/min) = -16.82",
+          "pausas longas por minuto = 7.15",
+          "duração média das frases (s) = 1.14"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "64ba4477",
+      "created_at": "2026-10-17T15:20:26.006657+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_sinal_infeccioso",
+      "title": "🎙️ [P2] PAC-0004 — termo sinal infeccioso",
+      "message": "Paciente relatou \"calafrios\" (sinal infeccioso)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "7c549012",
+      "created_at": "2026-10-17T15:20:26.007512+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_taquicardia_referida",
+      "title": "🎙️ [P2] PAC-0004 — termo taquicardia referida",
+      "message": "Paciente relatou \"coração está acelerado\" (taquicardia referida)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "3cdaed81",
+      "created_at": "2026-10-17T15:20:26.008345+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "prescriptions",
+      "kind": "salto_de_dose",
+      "title": "💊 [P2] PAC-0004 — salto de dose",
+      "message": "Dose diária de vancomicina mudou 2.5× (2000 → 5000 mg/dia) por Dr. Souza",
+      "time_ref": "2026-10-11T16:00",
+      "method": "regra: variação ≥ 2.5× entre prescrições consecutivas",
+      "evidence": {
+        "medicamento": "vancomicina",
+        "dose_mg": 2500,
+        "intervalo_h": 12,
+        "prescritor": "Dr. Souza",
+        "razao": 2.5
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "f3fd106d",
+      "created_at": "2026-10-17T15:20:26.009255+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "hr_alto_zscore",
+      "title": "❤️ [P3] PAC-0004 — hr alto zscore",
+      "message": "Frequência cardíaca ↑ mudança abrupta: 139 bpm por 6s",
+      "time_ref": "t=211s–216s",
+      "method": "zscore_robusto_janela_60s",
+      "evidence": {
+        "sinal": "HR",
+        "inicio_s": 211,
+        "fim_s": 216,
+        "extremo": 139.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "4c3948b6",
+      "created_at": "2026-10-17T15:20:26.010103+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "vitais_padrao_atipico",
+      "title": "❤️ [P3] PAC-0004 — vitais padrao atipico",
+      "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 120 bpm, Saturação de O₂ média 97 %, Frequência respiratória média 17 irpm)",
+      "time_ref": "t=380s–409s",
+      "method": "isolation_forest_populacional",
+      "evidence": {
+        "sinal": "multivariado",
+        "inicio_s": 380,
+        "fim_s": 409,
+        "extremo": -0.599
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "c31dc4d3",
+      "created_at": "2026-10-17T15:20:26.010945+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "hr_baixo_zscore",
+      "title": "❤️ [P3] PAC-0004 — hr baixo zscore",
+      "message": "Frequência cardíaca ↓ mudança abrupta: 113 bpm por 14s",
+      "time_ref": "t=396s–409s",
+      "method": "zscore_robusto_janela_60s",
+      "evidence": {
+        "sinal": "HR",
+        "inicio_s": 396,
+        "fim_s": 409,
+        "extremo": 113.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "1a6c388a",
+      "created_at": "2026-10-17T15:20:26.011760+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "tosse_detectada",
+      "title": "🎙️ [P3] PAC-0004 — tosse detectada",
+      "message": "1 episódio(s) de tosse durante a consulta",
+      "time_ref": null,
+      "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+      "evidence": {
+        "inicios_s": [
+          6.93
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "32ffbcab",
+      "created_at": "2026-10-17T15:20:26.012599+00:00",
+      "patient_id": "PAC-0004",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "prescriptions",
+      "kind": "inicio_alta_vigilancia",
+      "title": "💊 [P3] PAC-0004 — inicio alta vigilancia",
+      "message": "Início de medicamento de alta vigilância (noradrenalina) — exige dupla checagem",
+      "time_ref": "2026-10-11T18:00",
+      "method": "regra: lista ISMP de medicamentos potencialmente perigosos",
+      "evidence": {
+        "medicamento": "noradrenalina",
+        "dose_mg": 8,
+        "intervalo_h": 0,
+        "prescritor": "Dra. Costa"
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    }
+  ]
+}

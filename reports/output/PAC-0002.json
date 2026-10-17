@@ -1,0 +1,1100 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0002",
+    "idade": "72",
+    "sexo": "F",
+    "diagnostico": "DPOC exacerbada",
+    "setor": "UTI",
+    "alergias": "dipirona",
+    "bidmc_record": "32",
+    "audio": "PAC-0002_consulta.wav",
+    "video": "",
+    "cenario": "Hipoxemia persistente real (BIDMC 32) + voz com sinais respiratórios + salto de corticoide"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 32",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 0,
+      "estatisticas": {
+        "HR": {
+          "min": 80.0,
+          "media": 81.1,
+          "max": 83.0
+        },
+        "SpO2": {
+          "min": 83.0,
+          "media": 84.7,
+          "max": 87.0
+        },
+        "RESP": {
+          "min": 23.0,
+          "media": 24.7,
+          "max": 26.0
+        },
+        "SBP": {
+          "min": 126.6,
+          "media": 134.0,
+          "max": 140.3
+        },
+        "DBP": {
+          "min": 77.6,
+          "media": 81.9,
+          "max": 86.9
+        }
+      },
+      "n_achados": 3,
+      "risco_vitais": 1.0
+    },
+    "audio": {
+      "patient_id": "PAC-0002",
+      "arquivo": "PAC-0002_consulta.wav",
+      "duracao_s": 34.72,
+      "biomarcadores": {
+        "duration_s": 34.7248,
+        "phonation_time_s": 15.86,
+        "speech_rate_syl_s": 2.0795,
+        "articulation_rate_syl_s": 4.2875,
+        "pause_ratio": 0.508,
+        "mean_pause_s": 0.8305,
+        "long_pauses_per_min": 14.6789,
+        "f0_median_hz": 188.2353,
+        "f0_std_semitones": 2.8914,
+        "jitter_pct": 3.0028,
+        "shimmer_db": 1.6192,
+        "hnr_db": 3.2706,
+        "hf_energy_db": -26.245,
+        "energy_slope_db_min": -0.8234,
+        "tremor_index": 0.0501,
+        "mean_phrase_s": 0.7209
+      },
+      "eventos_audioset": [
+        {
+          "label": "Breathing",
+          "start_s": 0.98,
+          "end_s": 1.56,
+          "peak_db": -28.9,
+          "duration_s": 0.58,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 9.88,
+          "end_s": 10.21,
+          "peak_db": -36.3,
+          "duration_s": 0.33,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 11.45,
+          "end_s": 12.03,
+          "peak_db": -29.0,
+          "duration_s": 0.58,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Cough",
+          "start_s": 12.77,
+          "end_s": 13.0,
+          "peak_db": -15.8,
+          "duration_s": 0.23,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 18.81,
+          "end_s": 19.14,
+          "peak_db": -29.5,
+          "duration_s": 0.33,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 20.51,
+          "end_s": 20.83,
+          "peak_db": -36.9,
+          "duration_s": 0.32,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        },
+        {
+          "label": "Cough",
+          "start_s": 28.0,
+          "end_s": 28.09,
+          "peak_db": -17.7,
+          "duration_s": 0.09,
+          "mid": "/m/01b_21",
+          "nome_pt": "Tosse"
+        },
+        {
+          "label": "Breathing",
+          "start_s": 30.63,
+          "end_s": 31.34,
+          "peak_db": -29.8,
+          "duration_s": 0.71,
+          "mid": "/m/0lyf6",
+          "nome_pt": "Respiração"
+        }
+      ],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 0.0,
+            "fim_s": 4.0,
+            "score": 0.102
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 0.0,
+            "fim_s": 4.0,
+            "score": 0.061
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 0.0,
+            "fim_s": 4.0,
+            "score": 0.054
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 2.0,
+            "fim_s": 6.0,
+            "score": 0.449
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 4.0,
+            "fim_s": 8.0,
+            "score": 0.442
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 4.0,
+            "fim_s": 8.0,
+            "score": 0.051
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 6.0,
+            "fim_s": 10.0,
+            "score": 0.112
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 8.0,
+            "fim_s": 12.0,
+            "score": 0.131
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 8.0,
+            "fim_s": 12.0,
+            "score": 0.066
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.322
+          },
+          {
+            "label": "Sneeze",
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "inicio_s": 10.0,
+            "fim_s": 14.0,
+            "score": 0.106
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 12.0,
+            "fim_s": 16.0,
+            "score": 0.377
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 16.0,
+            "fim_s": 20.0,
+            "score": 0.187
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 18.0,
+            "fim_s": 22.0,
+            "score": 0.1
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 20.0,
+            "fim_s": 24.0,
+            "score": 0.22
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 20.0,
+            "fim_s": 24.0,
+            "score": 0.057
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 22.0,
+            "fim_s": 26.0,
+            "score": 0.265
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 24.0,
+            "fim_s": 28.0,
+            "score": 0.078
+          },
+          {
+            "label": "Throat clearing",
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "inicio_s": 26.0,
+            "fim_s": 30.0,
+            "score": 0.154
+          },
+          {
+            "label": "Sigh",
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "inicio_s": 28.0,
+            "fim_s": 32.0,
+            "score": 0.172
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 28.0,
+            "fim_s": 32.0,
+            "score": 0.072
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 30.0,
+            "fim_s": 34.0,
+            "score": 0.18
+          },
+          {
+            "label": "Snort",
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "inicio_s": 30.0,
+            "fim_s": 34.0,
+            "score": 0.055
+          },
+          {
+            "label": "Gasp",
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "inicio_s": 32.0,
+            "fim_s": 34.72,
+            "score": 0.084
+          }
+        ],
+        "resumo": {
+          "Gasp": {
+            "nome_pt": "Arquejo",
+            "mid": "/m/07s0dtb",
+            "janelas": 12,
+            "score_max": 0.449
+          },
+          "Snort": {
+            "nome_pt": "Bufo nasal",
+            "mid": "/m/07q0yl5",
+            "janelas": 4,
+            "score_max": 0.066
+          },
+          "Sigh": {
+            "nome_pt": "Suspiro",
+            "mid": "/m/07plz5l",
+            "janelas": 3,
+            "score_max": 0.172
+          },
+          "Throat clearing": {
+            "nome_pt": "Pigarro",
+            "mid": "/m/0dl9sf8",
+            "janelas": 4,
+            "score_max": 0.377
+          },
+          "Sneeze": {
+            "nome_pt": "Espirro",
+            "mid": "/m/01hsr_",
+            "janelas": 1,
+            "score_max": 0.106
+          }
+        }
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.613,
+          "disartria": 0.22,
+          "respiratorio": 0.875
+        },
+        "marcadores_disparados": {
+          "fadiga": [
+            "taxa de fala (sílabas/s) = 2.08",
+            "proporção de pausas = 0.51",
+            "pausas longas por minuto = 14.68",
+            "duração média das frases (s) = 0.72"
+          ],
+          "disartria": [
+            "perturbação de F0 (jitter %) = 3.00",
+            "duração média das frases (s) = 0.72"
+          ],
+          "respiratorio": [
+            "episódios de tosse = 2.00",
+            "inspirações audíveis por minuto = 10.37",
+            "duração média das frases (s) = 0.72",
+            "proporção de pausas = 0.51"
+          ]
+        },
+        "metricas": {
+          "duration_s": 34.725,
+          "phonation_time_s": 15.86,
+          "speech_rate_syl_s": 2.08,
+          "articulation_rate_syl_s": 4.288,
+          "pause_ratio": 0.508,
+          "mean_pause_s": 0.831,
+          "long_pauses_per_min": 14.679,
+          "f0_median_hz": 188.235,
+          "f0_std_semitones": 2.891,
+          "jitter_pct": 3.003,
+          "shimmer_db": 1.619,
+          "hnr_db": 3.271,
+          "hf_energy_db": -26.245,
+          "energy_slope_db_min": -0.823,
+          "tremor_index": 0.05,
+          "mean_phrase_s": 0.721,
+          "cough_episodes": 2.0,
+          "breaths_per_min": 10.367
+        },
+        "flags": [
+          "voz_fadiga",
+          "voz_respiratorio"
+        ],
+        "risco_voz": 0.875
+      },
+      "transcricao": {
+        "texto": "Doutora, estou com muita falta de ar. Não consigo falar uma frase inteira sem parar. A tosse piorou de noite, com catarro amarelado. Sinto um chiado no peito quando respiro. Estou cansada só de sentar na cama.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "falta de ar",
+            "categoria": "SymptomOrSign",
+            "severidade": "critico",
+            "sinal": "desconforto_respiratorio",
+            "negado": false,
+            "offset": 25,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "tosse",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "sintoma_respiratorio",
+            "negado": true,
+            "offset": 87,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "catarro",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "sintoma_respiratorio",
+            "negado": false,
+            "offset": 114,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "chiado no peito",
+            "categoria": "SymptomOrSign",
+            "severidade": "alto",
+            "sinal": "broncoespasmo",
+            "negado": false,
+            "offset": 142,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          },
+          {
+            "texto": "cansada",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "fadiga",
+            "negado": false,
+            "offset": 180,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [
+          "chiado no peito",
+          "falta de ar"
+        ],
+        "risco_texto": 1.0,
+        "erro_azure": null
+      },
+      "achados": [
+        {
+          "modality": "audio",
+          "kind": "voz_fadiga",
+          "severity": "moderado",
+          "message": "Fadiga / cansaço vocal detectada na voz (score 0.61)",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.613,
+            "marcadores": [
+              "taxa de fala (sílabas/s) = 2.08",
+              "proporção de pausas = 0.51",
+              "pausas longas por minuto = 14.68",
+              "duração média das frases (s) = 0.72"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "voz_respiratorio",
+          "severity": "alto",
+          "message": "Dificuldade respiratória detectada na voz (score 0.88)",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+          "evidence": {
+            "score": 0.875,
+            "marcadores": [
+              "episódios de tosse = 2.00",
+              "inspirações audíveis por minuto = 10.37",
+              "duração média das frases (s) = 0.72",
+              "proporção de pausas = 0.51"
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "tosse_detectada",
+          "severity": "moderado",
+          "message": "2 episódio(s) de tosse durante a consulta",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+          "evidence": {
+            "inicios_s": [
+              12.77,
+              28.0
+            ]
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_desconforto_respiratorio",
+          "severity": "critico",
+          "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "termo_broncoespasmo",
+          "severity": "alto",
+          "message": "Paciente relatou \"chiado no peito\" (broncoespasmo)",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "local_lexico sobre a transcrição",
+          "evidence": {
+            "categoria": "SymptomOrSign",
+            "confianca": 1.0
+          }
+        },
+        {
+          "modality": "audio",
+          "kind": "sentimento_negativo",
+          "severity": "info",
+          "message": "Sentimento predominantemente negativo na consulta (100%)",
+          "patient_id": "PAC-0002",
+          "time_ref": null,
+          "method": "local_lexico",
+          "evidence": {
+            "sentimento": "negative",
+            "positivo": 0.0,
+            "neutro": 0.0,
+            "negativo": 1.0
+          }
+        }
+      ],
+      "risco_audio": 1.0
+    },
+    "video": {
+      "disponivel": false
+    },
+    "prescriptions": {
+      "n_prescricoes": 4,
+      "ativos_atuais": [
+        "metilprednisolona",
+        "salbutamol"
+      ],
+      "n_achados": 1,
+      "risco_prescricoes": 0.7
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 28.2,
+      "saidas_leito": 0,
+      "n_achados": 0,
+      "risco_movimentacao": 0.0
+    }
+  },
+  "achados": {
+    "vitals": [
+      {
+        "modality": "vitals",
+        "kind": "resp_alto_regra",
+        "severity": "critico",
+        "message": "Frequência respiratória ↑ fora da faixa segura: 26 irpm por 481s",
+        "patient_id": "PAC-0002",
+        "time_ref": "t=0s–480s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "RESP",
+          "inicio_s": 0,
+          "fim_s": 480,
+          "extremo": 26.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "spo2_baixo_regra",
+        "severity": "critico",
+        "message": "Saturação de O₂ ↓ fora da faixa segura: 83 % por 481s",
+        "patient_id": "PAC-0002",
+        "time_ref": "t=0s–480s",
+        "method": "regra_clinica_news2",
+        "evidence": {
+          "sinal": "SpO2",
+          "inicio_s": 0,
+          "fim_s": 480,
+          "extremo": 83.0
+        }
+      },
+      {
+        "modality": "vitals",
+        "kind": "vitais_padrao_atipico",
+        "severity": "moderado",
+        "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 81 bpm, Saturação de O₂ média 85 %, Frequência respiratória média 25 irpm)",
+        "patient_id": "PAC-0002",
+        "time_ref": "t=110s–219s",
+        "method": "isolation_forest_populacional",
+        "evidence": {
+          "sinal": "multivariado",
+          "inicio_s": 110,
+          "fim_s": 219,
+          "extremo": -0.615
+        }
+      }
+    ],
+    "audio": [
+      {
+        "modality": "audio",
+        "kind": "voz_fadiga",
+        "severity": "moderado",
+        "message": "Fadiga / cansaço vocal detectada na voz (score 0.61)",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.613,
+          "marcadores": [
+            "taxa de fala (sílabas/s) = 2.08",
+            "proporção de pausas = 0.51",
+            "pausas longas por minuto = 14.68",
+            "duração média das frases (s) = 0.72"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "voz_respiratorio",
+        "severity": "alto",
+        "message": "Dificuldade respiratória detectada na voz (score 0.88)",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+        "evidence": {
+          "score": 0.875,
+          "marcadores": [
+            "episódios de tosse = 2.00",
+            "inspirações audíveis por minuto = 10.37",
+            "duração média das frases (s) = 0.72",
+            "proporção de pausas = 0.51"
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "tosse_detectada",
+        "severity": "moderado",
+        "message": "2 episódio(s) de tosse durante a consulta",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+        "evidence": {
+          "inicios_s": [
+            12.77,
+            28.0
+          ]
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_desconforto_respiratorio",
+        "severity": "critico",
+        "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "termo_broncoespasmo",
+        "severity": "alto",
+        "message": "Paciente relatou \"chiado no peito\" (broncoespasmo)",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "local_lexico sobre a transcrição",
+        "evidence": {
+          "categoria": "SymptomOrSign",
+          "confianca": 1.0
+        }
+      },
+      {
+        "modality": "audio",
+        "kind": "sentimento_negativo",
+        "severity": "info",
+        "message": "Sentimento predominantemente negativo na consulta (100%)",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "local_lexico",
+        "evidence": {
+          "sentimento": "negative",
+          "positivo": 0.0,
+          "neutro": 0.0,
+          "negativo": 1.0
+        }
+      }
+    ],
+    "video": [],
+    "prescriptions": [
+      {
+        "modality": "prescriptions",
+        "kind": "salto_de_dose",
+        "severity": "alto",
+        "message": "Dose diária de metilprednisolona mudou 5.0× (80 → 400 mg/dia) por Dr. Souza",
+        "patient_id": "PAC-0002",
+        "time_ref": "2026-10-11T14:00",
+        "method": "regra: variação ≥ 2.5× entre prescrições consecutivas",
+        "evidence": {
+          "medicamento": "metilprednisolona",
+          "dose_mg": 200,
+          "intervalo_h": 12,
+          "prescritor": "Dr. Souza",
+          "razao": 5.0
+        }
+      }
+    ],
+    "movement": [],
+    "fusion": [
+      {
+        "modality": "fusion",
+        "kind": "insuficiencia_respiratoria",
+        "severity": "critico",
+        "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+          "evidencias": [
+            "Sinais vitais: Frequência respiratória ↑ fora da faixa segura: 26 irpm por 481s",
+            "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 83 % por 481s",
+            "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+            "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.88)",
+            "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+          ],
+          "modalidades": [
+            "audio",
+            "vitals"
+          ]
+        }
+      }
+    ]
+  },
+  "fusao": {
+    "patient_id": "PAC-0002",
+    "score": 1.0,
+    "nivel": "critico",
+    "risco_por_modalidade": {
+      "vitals": 1.0,
+      "audio": 1.0,
+      "video": 0.0,
+      "prescriptions": 0.7,
+      "movement": 0.0
+    },
+    "sindromes": [
+      {
+        "modality": "fusion",
+        "kind": "insuficiencia_respiratoria",
+        "severity": "critico",
+        "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+        "patient_id": "PAC-0002",
+        "time_ref": null,
+        "method": "fusão multimodal (regras de síndrome)",
+        "evidence": {
+          "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+          "evidencias": [
+            "Sinais vitais: Frequência respiratória ↑ fora da faixa segura: 26 irpm por 481s",
+            "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 83 % por 481s",
+            "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+            "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.88)",
+            "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+          ],
+          "modalidades": [
+            "audio",
+            "vitals"
+          ]
+        }
+      }
+    ],
+    "acoes_sugeridas": [
+      "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria"
+    ]
+  },
+  "alertas": [
+    {
+      "alert_id": "72cf769d",
+      "created_at": "2026-10-17T15:19:56.697354+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "vitals",
+      "kind": "resp_alto_regra",
+      "title": "❤️ [P1] PAC-0002 — resp alto regra",
+      "message": "Frequência respiratória ↑ fora da faixa segura: 26 irpm por 481s",
+      "time_ref": "t=0s–480s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "RESP",
+        "inicio_s": 0,
+        "fim_s": 480,
+        "extremo": 26.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "206f552b",
+      "created_at": "2026-10-17T15:19:56.698525+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "vitals",
+      "kind": "spo2_baixo_regra",
+      "title": "❤️ [P1] PAC-0002 — spo2 baixo regra",
+      "message": "Saturação de O₂ ↓ fora da faixa segura: 83 % por 481s",
+      "time_ref": "t=0s–480s",
+      "method": "regra_clinica_news2",
+      "evidence": {
+        "sinal": "SpO2",
+        "inicio_s": 0,
+        "fim_s": 480,
+        "extremo": 83.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "f6918dfa",
+      "created_at": "2026-10-17T15:19:56.699535+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "audio",
+      "kind": "termo_desconforto_respiratorio",
+      "title": "🎙️ [P1] PAC-0002 — termo desconforto respiratorio",
+      "message": "Paciente relatou \"falta de ar\" (desconforto respiratorio)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "99c71fc7",
+      "created_at": "2026-10-17T15:19:56.700503+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "critico",
+      "priority": "P1",
+      "route_to": "Time de resposta rápida + médico plantonista",
+      "deadline_min": 0,
+      "modality": "fusion",
+      "kind": "insuficiencia_respiratoria",
+      "title": "🧩 [P1] PAC-0002 — insuficiencia respiratoria",
+      "message": "Desconforto/insuficiência respiratória — corroborado por 2 modalidade(s): Áudio/voz + texto, Sinais vitais",
+      "time_ref": null,
+      "method": "fusão multimodal (regras de síndrome)",
+      "evidence": {
+        "acao_sugerida": "Avaliação médica imediata da via aérea e oxigenação; considerar gasometria",
+        "evidencias": [
+          "Sinais vitais: Frequência respiratória ↑ fora da faixa segura: 26 irpm por 481s",
+          "Sinais vitais: Saturação de O₂ ↓ fora da faixa segura: 83 % por 481s",
+          "Áudio/voz + texto: 2 episódio(s) de tosse durante a consulta",
+          "Áudio/voz + texto: Dificuldade respiratória detectada na voz (score 0.88)",
+          "Áudio/voz + texto: Paciente relatou \"falta de ar\" (desconforto respiratorio)"
+        ],
+        "modalidades": [
+          "audio",
+          "vitals"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "949badc2",
+      "created_at": "2026-10-17T15:19:56.701456+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "voz_respiratorio",
+      "title": "🎙️ [P2] PAC-0002 — voz respiratorio",
+      "message": "Dificuldade respiratória detectada na voz (score 0.88)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.875,
+        "marcadores": [
+          "episódios de tosse = 2.00",
+          "inspirações audíveis por minuto = 10.37",
+          "duração média das frases (s) = 0.72",
+          "proporção de pausas = 0.51"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "7267fa72",
+      "created_at": "2026-10-17T15:19:56.702434+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "audio",
+      "kind": "termo_broncoespasmo",
+      "title": "🎙️ [P2] PAC-0002 — termo broncoespasmo",
+      "message": "Paciente relatou \"chiado no peito\" (broncoespasmo)",
+      "time_ref": null,
+      "method": "local_lexico sobre a transcrição",
+      "evidence": {
+        "categoria": "SymptomOrSign",
+        "confianca": 1.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "ed114558",
+      "created_at": "2026-10-17T15:19:56.703320+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "alto",
+      "priority": "P2",
+      "route_to": "Médico assistente + enfermagem do setor",
+      "deadline_min": 15,
+      "modality": "prescriptions",
+      "kind": "salto_de_dose",
+      "title": "💊 [P2] PAC-0002 — salto de dose",
+      "message": "Dose diária de metilprednisolona mudou 5.0× (80 → 400 mg/dia) por Dr. Souza",
+      "time_ref": "2026-10-11T14:00",
+      "method": "regra: variação ≥ 2.5× entre prescrições consecutivas",
+      "evidence": {
+        "medicamento": "metilprednisolona",
+        "dose_mg": 200,
+        "intervalo_h": 12,
+        "prescritor": "Dr. Souza",
+        "razao": 5.0
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "e70558a8",
+      "created_at": "2026-10-17T15:19:56.704425+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "vitals",
+      "kind": "vitais_padrao_atipico",
+      "title": "❤️ [P3] PAC-0002 — vitais padrao atipico",
+      "message": "Padrão multivariado atípico vs. população PhysioNet (Frequência cardíaca média 81 bpm, Saturação de O₂ média 85 %, Frequência respiratória média 25 irpm)",
+      "time_ref": "t=110s–219s",
+      "method": "isolation_forest_populacional",
+      "evidence": {
+        "sinal": "multivariado",
+        "inicio_s": 110,
+        "fim_s": 219,
+        "extremo": -0.615
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "53f1ce9e",
+      "created_at": "2026-10-17T15:19:56.705348+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "voz_fadiga",
+      "title": "🎙️ [P3] PAC-0002 — voz fadiga",
+      "message": "Fadiga / cansaço vocal detectada na voz (score 0.61)",
+      "time_ref": null,
+      "method": "biomarcadores acústicos (prosódia, F0, energia, eventos AudioSet)",
+      "evidence": {
+        "score": 0.613,
+        "marcadores": [
+          "taxa de fala (sílabas/s) = 2.08",
+          "proporção de pausas = 0.51",
+          "pausas longas por minuto = 14.68",
+          "duração média das frases (s) = 0.72"
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    },
+    {
+      "alert_id": "30674b19",
+      "created_at": "2026-10-17T15:19:56.706306+00:00",
+      "patient_id": "PAC-0002",
+      "severity": "moderado",
+      "priority": "P3",
+      "route_to": "Painel da enfermagem",
+      "deadline_min": 60,
+      "modality": "audio",
+      "kind": "tosse_detectada",
+      "title": "🎙️ [P3] PAC-0002 — tosse detectada",
+      "message": "2 episódio(s) de tosse durante a consulta",
+      "time_ref": null,
+      "method": "detector acústico (classe AudioSet Cough /m/01b_21)",
+      "evidence": {
+        "inicios_s": [
+          12.77,
+          28.0
+        ]
+      },
+      "status": "novo",
+      "acknowledged_by": null,
+      "acknowledged_at": null
+    }
+  ]
+}

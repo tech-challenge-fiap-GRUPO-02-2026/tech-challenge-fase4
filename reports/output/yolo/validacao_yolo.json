@@ -1,0 +1,209 @@
+[
+  {
+    "imagem": "bus.jpg",
+    "pessoas_detectadas_pose": 4,
+    "keypoints_confiaveis_pessoa_principal": 16,
+    "openpose18_shape": [
+      18,
+      3
+    ],
+    "abducao_ombro_esq_graus": 22.2,
+    "abducao_ombro_dir_graus": 19.1,
+    "inclinacao_tronco_graus": -0.5,
+    "objetos_coco": [
+      "bus",
+      "person",
+      "stop sign"
+    ],
+    "keypoints": {
+      "nariz": [
+        143.8,
+        443.5,
+        1.0
+      ],
+      "olho_esq": [
+        149.1,
+        435.2,
+        0.9
+      ],
+      "olho_dir": [
+        133.7,
+        434.7,
+        1.0
+      ],
+      "orelha_esq": [
+        152.0,
+        440.7,
+        0.4
+      ],
+      "orelha_dir": [
+        107.3,
+        439.0,
+        0.9
+      ],
+      "ombro_esq": [
+        163.2,
+        494.3,
+        1.0
+      ],
+      "ombro_dir": [
+        88.7,
+        496.4,
+        1.0
+      ],
+      "cotovelo_esq": [
+        191.3,
+        561.6,
+        0.9
+      ],
+      "cotovelo_dir": [
+        115.7,
+        572.1,
+        1.0
+      ],
+      "punho_esq": [
+        157.4,
+        537.6,
+        0.9
+      ],
+      "punho_dir": [
+        149.5,
+        565.3,
+        1.0
+      ],
+      "quadril_esq": [
+        156.2,
+        641.2,
+        1.0
+      ],
+      "quadril_dir": [
+        98.2,
+        642.8,
+        1.0
+      ],
+      "joelho_esq": [
+        182.2,
+        750.8,
+        1.0
+      ],
+      "joelho_dir": [
+        90.5,
+        759.1,
+        1.0
+      ],
+      "tornozelo_esq": [
+        189.3,
+        852.2,
+        1.0
+      ],
+      "tornozelo_dir": [
+        72.6,
+        867.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "imagem": "zidane.jpg",
+    "pessoas_detectadas_pose": 2,
+    "keypoints_confiaveis_pessoa_principal": 9,
+    "openpose18_shape": [
+      18,
+      3
+    ],
+    "abducao_ombro_esq_graus": 84.1,
+    "abducao_ombro_dir_graus": 16.8,
+    "inclinacao_tronco_graus": 17.9,
+    "objetos_coco": [
+      "person",
+      "tie"
+    ],
+    "keypoints": {
+      "nariz": [
+        647.9,
+        353.4,
+        1.0
+      ],
+      "olho_esq": [
+        647.3,
+        328.5,
+        0.5
+      ],
+      "olho_dir": [
+        624.0,
+        328.6,
+        1.0
+      ],
+      "orelha_esq": [
+        615.7,
+        330.8,
+        0.0
+      ],
+      "orelha_dir": [
+        526.4,
+        325.9,
+        1.0
+      ],
+      "ombro_esq": [
+        629.3,
+        413.1,
+        1.0
+      ],
+      "ombro_dir": [
+        322.8,
+        426.7,
+        0.9
+      ],
+      "cotovelo_esq": [
+        797.7,
+        487.6,
+        0.9
+      ],
+      "cotovelo_dir": [
+        200.3,
+        603.1,
+        0.6
+      ],
+      "punho_esq": [
+        994.7,
+        488.4,
+        0.7
+      ],
+      "punho_dir": [
+        295.5,
+        716.5,
+        0.4
+      ],
+      "quadril_esq": [
+        477.1,
+        690.0,
+        0.3
+      ],
+      "quadril_dir": [
+        293.7,
+        709.7,
+        0.1
+      ],
+      "joelho_esq": [
+        615.6,
+        612.1,
+        0.0
+      ],
+      "joelho_dir": [
+        430.5,
+        579.2,
+        0.0
+      ],
+      "tornozelo_esq": [
+        663.9,
+        666.9,
+        0.0
+      ],
+      "tornozelo_dir": [
+        561.0,
+        543.9,
+        0.0
+      ]
+    }
+  }
+]

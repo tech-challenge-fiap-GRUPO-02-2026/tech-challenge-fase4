@@ -1,0 +1,12 @@
+{
+  "patient_id": "PAC-0003",
+  "perfil_injetado": "disartria",
+  "sintese": "Windows SAPI pt-BR (Microsoft Maria)",
+  "prosodia": {
+    "rate": "-45%",
+    "pitch": "-8%"
+  },
+  "sons_nao_verbais": "ESC-50 (gravações reais)",
+  "eventos_injetados": [],
+  "duracao_s": 34.64
+}

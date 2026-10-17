@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Monitor Multimodal</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>"/>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f4f7f6; --surface:#fcfcfb; --surface-2:#ffffff; --border:rgba(11,11,11,.10);
+  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7;
+  --brand:#065F46; --brand-2:#059669; --brand-soft:#D1FAE5;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#6250d6;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --band:rgba(208,59,59,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0d0d0d; --surface:#1a1a19; --surface-2:#222220; --border:rgba(255,255,255,.10);
+    --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781; --grid:#2c2c2a; --axis:#383835;
+    --brand:#34D399; --brand-2:#10B981; --brand-soft:#0f2e25;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --band:rgba(208,59,59,.12);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0d0d0d; --surface:#1a1a19; --surface-2:#222220; --border:rgba(255,255,255,.10);
+  --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781; --grid:#2c2c2a; --axis:#383835;
+  --brand:#34D399; --brand-2:#10B981; --brand-soft:#0f2e25;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --band:rgba(208,59,59,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5}
+header{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#064E3B;color:#fff;flex-wrap:wrap}
+header h1{font-size:1.05rem;font-weight:700}
+header .sub{opacity:.85;font-size:.8rem}
+header .spacer{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:600;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);color:var(--ink);padding:6px 12px;font-weight:600}
+button.primary{background:var(--brand-2);border-color:transparent;color:#fff}
+button:disabled{opacity:.5;cursor:default}
+.layout{display:grid;grid-template-columns:250px 1fr 340px;gap:16px;padding:16px;max-width:1600px;margin:0 auto}
+@media(max-width:1200px){.layout{grid-template-columns:220px 1fr}.alerts-col{grid-column:1/-1}}
+@media(max-width:760px){.layout{grid-template-columns:1fr;padding:12px}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px}
+.card h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;font-weight:700}
+.stack{display:flex;flex-direction:column;gap:16px;min-width:0}
+.patient{display:block;width:100%;text-align:left;padding:10px;border-radius:10px;border:1px solid transparent;background:transparent;margin-bottom:4px}
+.patient:hover{background:var(--brand-soft)}
+.patient.active{border-color:var(--brand-2);background:var(--brand-soft)}
+.patient .id{font-weight:700}
+.patient .dx{font-size:.78rem;color:var(--ink-2);font-weight:400}
+.sev{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.sev::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.sev.critico{color:var(--critical)} .sev.alto{color:var(--serious)} .sev.moderado{color:#b7860b} .sev.baixo,.sev.info{color:var(--good)}
+:root[data-theme="dark"] .sev.moderado{color:var(--warning)}
+.ph{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.ph .who{flex:1;min-width:220px}
+.ph h3{font-size:1.25rem}
+.ph .meta{color:var(--ink-2);font-size:.85rem}
+.scenario{margin-top:6px;font-size:.8rem;color:var(--muted)}
+.hero{text-align:right}
+.hero .num{font-size:2.6rem;font-weight:800;line-height:1}
+.hero .lbl{font-size:.75rem;color:var(--muted)}
+.mods{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+@media(max-width:900px){.mods{grid-template-columns:repeat(2,1fr)}}
+.mod{border:1px solid var(--border);border-radius:10px;padding:10px;background:var(--surface-2)}
+.mod .n{font-size:.75rem;color:var(--muted)}
+.mod .v{font-size:1.2rem;font-weight:700}
+.meter{height:6px;border-radius:4px;background:var(--grid);margin-top:6px;overflow:hidden}
+.meter i{display:block;height:100%;border-radius:4px;background:var(--ink-2)}
+.syn{border-left:4px solid var(--critical);background:var(--surface-2);border-radius:8px;padding:10px 12px;margin-top:10px}
+.syn.alto{border-color:var(--serious)}
+.syn b{display:block}
+.syn .act{font-size:.82rem;color:var(--ink-2);margin-top:2px}
+.syn details{font-size:.78rem;color:var(--muted);margin-top:4px}
+.vitals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:760px){.vitals-grid{grid-template-columns:1fr}}
+.vchart{border:1px solid var(--border);border-radius:10px;padding:8px 10px;background:var(--surface-2);position:relative}
+.vchart .top{display:flex;justify-content:space-between;align-items:baseline}
+.vchart .name{font-size:.8rem;color:var(--ink-2);font-weight:600}
+.vchart .val{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums}
+.vchart .val small{font-size:.75rem;color:var(--muted);font-weight:600}
+.vchart canvas{width:100%;height:110px;display:block}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:.72rem;padding:3px 7px;border-radius:6px;display:none;white-space:nowrap}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.controls select{font:inherit;padding:5px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);color:var(--ink)}
+.status-line{font-size:.8rem;color:var(--muted)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:12px;overflow-x:auto}
+.tabs button{border:none;border-bottom:2px solid transparent;border-radius:0;background:none;color:var(--muted);padding:8px 12px}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--brand-2)}
+.finding{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--border)}
+.finding:first-child{border-top:none}
+.finding .msg{flex:1}
+.finding .how{font-size:.75rem;color:var(--muted)}
+.media-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px}
+@media(max-width:900px){.media-row{grid-template-columns:1fr}}
+video,audio{width:100%;border-radius:8px;background:#000}
+audio{background:none}
+.frames{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.frames img{width:160px;border-radius:6px;border:1px solid var(--border);cursor:zoom-in}
+.transcript{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:.9rem}
+.transcript mark{background:none;color:var(--critical);font-weight:700;text-decoration:underline}
+.transcript mark.neg{color:var(--muted);text-decoration:line-through}
+.bars .row{display:grid;grid-template-columns:150px 1fr 44px;gap:8px;align-items:center;font-size:.82rem;margin:4px 0}
+.bars .track{height:10px;background:var(--grid);border-radius:4px;position:relative}
+.bars .track i{position:absolute;inset:0 auto 0 0;border-radius:4px;background:var(--s1)}
+.bars .track .th{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink-2)}
+.bars .num{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{text-align:left;color:var(--muted);font-weight:600;padding:6px;border-bottom:1px solid var(--border)}
+td{padding:6px;border-bottom:1px solid var(--border);color:var(--ink-2);font-variant-numeric:tabular-nums}
+.alert{border:1px solid var(--border);border-left:4px solid var(--critical);border-radius:8px;padding:8px 10px;margin-bottom:8px;background:var(--surface-2)}
+.alert.alto{border-left-color:var(--serious)} .alert.moderado{border-left-color:var(--warning)}
+.alert .t{font-weight:700;font-size:.85rem}
+.alert .m{font-size:.82rem;color:var(--ink-2)}
+.alert .r{font-size:.72rem;color:var(--muted);margin-top:4px;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.alert.ack{opacity:.55}
+.alert.new{animation:flash 1.2s ease-out}
+@keyframes flash{from{box-shadow:0 0 0 3px var(--critical)}to{box-shadow:none}}
+.alerts-list{max-height:calc(100vh - 170px);overflow:auto}
+.empty{color:var(--muted);font-size:.85rem;padding:6px 0}
+.warn{font-size:.78rem;color:var(--muted);margin-top:8px}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:50}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:8px}
+</style>
+</head>
+<body>
+<header>
+  <span style="font-size:1.4rem">🩺</span>
+  <div><h1>Monitoramento Multimodal de Pacientes</h1><div class="sub">Tech Challenge Fase 4 · vídeo · áudio · texto · sinais vitais · prescrições · movimentação</div></div>
+  <div class="spacer"></div>
+  <span class="pill" id="azure-pill">☁️ Azure: verificando…</span>
+  <button id="theme-btn" title="Alternar tema" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)">◐</button>
+</header>
+
+<div class="layout">
+  <aside class="card" style="align-self:start">
+    <h2>Pacientes</h2>
+    <div id="patients"><div class="empty">Carregando…</div></div>
+  </aside>
+
+  <main class="stack">
+    <section class="card" id="overview"><div class="empty">Selecione um paciente.</div></section>
+
+    <section class="card">
+      <h2>Sinais vitais em tempo real — PhysioNet BIDMC</h2>
+      <div class="controls">
+        <button class="primary" id="stream-btn">▶ Iniciar monitor</button>
+        <label class="status-line">Velocidade
+          <select id="speed"><option value="4">4×</option><option value="8" selected>8×</option><option value="20">20×</option><option value="60">60×</option></select>
+        </label>
+        <span class="status-line" id="stream-status">Parado.</span>
+      </div>
+      <div class="vitals-grid" id="vitals"></div>
+      <p class="warn">Faixa sombreada = fora da faixa segura (limiares NEWS2 de <code>src/config.py</code>). Alertas de tempo real exigem persistência de 10 s.</p>
+    </section>
+
+    <section class="card">
+      <div class="tabs" id="tabs">
+        <button data-tab="video" class="on">🎥 Vídeo</button>
+        <button data-tab="audio">🎙️ Áudio + texto</button>
+        <button data-tab="vitals">❤️ Vitais (lote)</button>
+        <button data-tab="prescriptions">💊 Prescrições</button>
+        <button data-tab="movement">🛏️ Movimentação</button>
+      </div>
+      <div id="tab-body"></div>
+    </section>
+  </main>
+
+  <aside class="card alerts-col" style="align-self:start">
+    <h2>Alertas para a equipe <span id="alert-count"></span></h2>
+    <div class="alerts-list" id="alerts"><div class="empty">Nenhum alerta ainda.</div></div>
+  </aside>
+</div>
+<div class="lightbox" id="lightbox"><img alt="frame anotado"/></div>
+
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const SEV_LABEL = {critico:"crítico", alto:"alto", moderado:"moderado", baixo:"baixo", info:"info"};
+const sev = s => `<span class="sev ${s}">${SEV_LABEL[s] || s}</span>`;
+const MOD = {vitals:"Sinais vitais", audio:"Áudio + texto", video:"Vídeo", prescriptions:"Prescrições", movement:"Movimentação"};
+let current = null, data = null, tab = "video", es = null;
+
+// ---------- tema ----------
+$("#theme-btn").onclick = () => {
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", r.dataset.theme); } catch (e) {}
+  charts.forEach(c => c.draw());
+};
+try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// ---------- pacientes ----------
+async function loadPatients() {
+  const rows = await (await fetch("/api/patients")).json();
+  $("#patients").innerHTML = rows.map(p => `
+    <button class="patient" data-id="${p.patient_id}">
+      <div style="display:flex;justify-content:space-between;gap:6px"><span class="id">${p.patient_id}</span>${sev(p.nivel)}</div>
+      <div class="dx">${esc(p.diagnostico)}</div>
+      <div class="dx" style="color:var(--muted)">${esc(p.setor)} · ${p.idade}a · risco ${p.risco.toFixed(2)}</div>
+    </button>`).join("");
+  document.querySelectorAll(".patient").forEach(b => b.onclick = () => select(b.dataset.id));
+  select(rows[0].patient_id);
+}
+
+async function select(pid) {
+  current = pid;
+  document.querySelectorAll(".patient").forEach(b => b.classList.toggle("active", b.dataset.id === pid));
+  data = await (await fetch(`/api/patient/${pid}`)).json();
+  renderOverview(); renderTab(); resetCharts();
+}
+
+function renderOverview() {
+  const p = data.paciente, f = data.fusao;
+  const mods = Object.entries(f.risco_por_modalidade).map(([m, r]) => `
+    <div class="mod"><div class="n">${MOD[m]}</div><div class="v">${r.toFixed(2)}</div>
+    <div class="meter" role="meter" aria-valuenow="${r}" aria-valuemin="0" aria-valuemax="1"><i style="width:${r*100}%"></i></div></div>`).join("");
+  const syn = f.sindromes.length ? f.sindromes.map(s => `
+    <div class="syn ${s.severity}"><b>🧩 ${esc(s.message)}</b>
+      <div class="act">→ ${esc(s.evidence.acao_sugerida)}</div>
+      <details><summary>Evidências (${s.evidence.evidencias.length})</summary>${s.evidence.evidencias.map(e => `<div>• ${esc(e)}</div>`).join("")}</details>
+    </div>`).join("") : `<div class="empty" style="margin-top:10px">Nenhuma síndrome multimodal identificada.</div>`;
+  $("#overview").innerHTML = `
+    <div class="ph">
+      <div class="who"><h3>${p.patient_id} · ${esc(p.diagnostico)}</h3>
+        <div class="meta">${p.idade} anos · ${p.sexo} · ${esc(p.setor)} · alergias: ${esc(p.alergias)}</div>
+        <div class="scenario">Cenário: ${esc(p.cenario)}</div>
+        <button style="margin-top:8px" id="reanalyze">↻ Reanalisar e emitir alertas</button></div>
+      <div class="hero"><div class="lbl">Risco fundido</div><div class="num">${f.score.toFixed(2)}</div><div style="margin-top:6px">${sev(f.nivel)}</div></div>
+    </div>
+    <div class="mods">${mods}</div>${syn}`;
+  $("#reanalyze").onclick = async () => {
+    $("#reanalyze").disabled = true;
+    data = await (await fetch(`/api/patient/${current}/analyze`, {method:"POST"})).json();
+    renderOverview(); renderTab(); loadAlerts();
+  };
+}
+
+// ---------- abas ----------
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
+  tab = b.dataset.tab;
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b));
+  renderTab();
+});
+const findingsList = fs => fs.length ? fs.map(f => `
+  <div class="finding">${sev(f.severity)}<div class="msg">${esc(f.message)}
+  <div class="how">${esc(f.method || "")}${f.time_ref ? " · " + esc(f.time_ref) : ""}</div></div></div>`).join("")
+  : `<div class="empty">Nenhuma anomalia detectada nesta modalidade.</div>`;
+
+function renderTab() {
+  const m = data.modalidades, A = data.achados, body = $("#tab-body");
+  if (tab === "video") {
+    const v = m.video;
+    if (!v.video) { body.innerHTML = `<div class="empty">Sem vídeo para este paciente.</div>`; return; }
+    const metr = v.analise.metricas || {};
+    body.innerHTML = `<div class="media-row">
+      <div><video controls preload="metadata" src="/media/video/${encodeURIComponent(v.video)}"></video>
+      <div class="frames">${(v.frames_chave||[]).map(p => `<img src="/media/${p}" alt="frame-chave anotado">`).join("")}</div></div>
+      <div><div class="how" style="color:var(--muted);font-size:.78rem">Detecção: ${esc(v.fonte_deteccao)} · relatório: <code>reports/${esc(v.relatorio)}</code></div>
+      ${findingsList(A.video)}
+      <table style="margin-top:10px"><thead><tr><th>Métrica</th><th>Valor</th></tr></thead><tbody>
+      ${Object.entries(metr).map(([k, x]) => `<tr><td>${esc(k)}</td><td>${esc(typeof x === "object" ? JSON.stringify(x) : x)}</td></tr>`).join("")}</tbody></table></div></div>`;
+    body.querySelectorAll(".frames img").forEach(img => img.onclick = () => { $("#lightbox img").src = img.src; $("#lightbox").style.display = "flex"; });
+  } else if (tab === "audio") {
+    const a = m.audio;
+    if (!a.arquivo) { body.innerHTML = `<div class="empty">Sem áudio para este paciente.</div>`; return; }
+    const tx = a.transcricao, ta = a.analise_texto, vs = a.avaliacao_vocal.scores;
+    let text = esc(tx.texto);
+    [...ta.termos].sort((x, y) => y.texto.length - x.texto.length).forEach(t => {
+      text = text.replace(new RegExp(`(${t.texto.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "i"), `<mark class="${t.negado ? "neg" : ""}" title="${t.categoria} · ${t.severidade}${t.negado ? " · negado" : ""}">$1</mark>`);
+    });
+    const ast = a.classificador_audioset_ast;
+    body.innerHTML = `<div class="media-row"><div>
+      <audio controls preload="metadata" src="/media/audio/${encodeURIComponent(a.arquivo)}"></audio>
+      <h2 style="margin-top:12px">Transcrição · ${esc(tx.provider)}${tx.wer_vs_referencia != null ? ` · WER ${(tx.wer_vs_referencia*100).toFixed(1)}%` : ""}</h2>
+      <div class="transcript">${text}</div>
+      <div class="how" style="margin-top:6px;font-size:.78rem;color:var(--muted)">Texto: ${esc(ta.provider)} · sentimento ${esc(ta.sentimento.sentimento)} (neg ${(ta.sentimento.negativo*100).toFixed(0)}%)</div>
+      <h2 style="margin-top:14px">Indicadores vocais</h2>
+      <div class="bars">${Object.entries(vs).map(([k, x]) => `<div class="row"><span>${{fadiga:"Fadiga",disartria:"Disartria",respiratorio:"Respiratório"}[k]}</span>
+        <span class="track" title="${k}: ${x.toFixed(2)} (limiar 0.50)"><i style="width:${Math.min(100,x*100)}%"></i><span class="th" style="left:50%"></span></span><span class="num">${x.toFixed(2)}</span></div>`).join("")}</div>
+      <div class="how" style="font-size:.75rem;color:var(--muted)">Traço vertical = limiar de alerta (0,50).</div>
+      </div><div>${findingsList(A.audio)}
+      <h2 style="margin-top:12px">Eventos acústicos (classes AudioSet)</h2>
+      <table><thead><tr><th>Classe</th><th>mid</th><th>Início</th><th>Duração</th></tr></thead><tbody>
+      ${a.eventos_audioset.map(e => `<tr><td>${esc(e.nome_pt)}</td><td>${esc(e.mid)}</td><td>${e.start_s}s</td><td>${e.duration_s}s</td></tr>`).join("") || `<tr><td colspan="4">nenhum</td></tr>`}</tbody></table>
+      ${ast ? `<h2 style="margin-top:12px">Classificador AST (AudioSet)</h2><table><thead><tr><th>Classe</th><th>janelas</th><th>score máx</th></tr></thead><tbody>
+      ${Object.entries(ast.resumo).map(([k, s]) => `<tr><td>${esc(s.nome_pt)}</td><td>${s.janelas}</td><td>${s.score_max.toFixed(2)}</td></tr>`).join("") || `<tr><td colspan="3">nenhum som respiratório</td></tr>`}</tbody></table>` : ""}
+      </div></div>`;
+  } else if (tab === "vitals") {
+    const v = m.vitals;
+    body.innerHTML = `<div class="how" style="font-size:.8rem;color:var(--muted);margin-bottom:8px">${esc(v.fonte)} · ${v.duracao_s}s · ${v.amostras_faltantes_interpoladas} amostras interpoladas</div>
+      <table><thead><tr><th>Sinal</th><th>Mín</th><th>Média</th><th>Máx</th></tr></thead><tbody>
+      ${Object.entries(v.estatisticas).map(([k, s]) => `<tr><td>${k}</td><td>${s.min}</td><td>${s.media}</td><td>${s.max}</td></tr>`).join("")}</tbody></table>
+      <div style="margin-top:10px">${findingsList(A.vitals)}</div>`;
+  } else {
+    const k = tab, s = m[k];
+    body.innerHTML = `<div class="how" style="font-size:.8rem;color:var(--muted);margin-bottom:8px">${esc(JSON.stringify(s))}</div>${findingsList(A[k])}`;
+  }
+}
+$("#lightbox").onclick = () => $("#lightbox").style.display = "none";
+
+// ---------- gráficos de vitais (small multiples, um eixo por sinal) ----------
+const SIGNALS = [
+  {k:"HR", name:"Frequência cardíaca", unit:"bpm", color:"--s1", lim:[50,110], dom:[30,160]},
+  {k:"SpO2", name:"Saturação de O₂", unit:"%", color:"--s3", lim:[92,101], dom:[78,101]},
+  {k:"RESP", name:"Frequência respiratória", unit:"irpm", color:"--s2", lim:[11,21], dom:[0,40]},
+  {k:"SBP", name:"Pressão sistólica", unit:"mmHg", color:"--s4", lim:[100,180], dom:[50,200]},
+];
+const WINDOW = 120;
+const charts = SIGNALS.map(s => {
+  const el = document.createElement("div");
+  el.className = "vchart";
+  el.innerHTML = `<div class="top"><span class="name">${s.name}</span><span class="val" id="v-${s.k}">—<small> ${s.unit}</small></span></div><canvas></canvas><div class="tip"></div>`;
+  $("#vitals").appendChild(el);
+  const cv = $("canvas", el), tip = $(".tip", el);
+  const c = {s, pts: [], hover: null, draw() {
+    const dpr = devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    const g = cv.getContext("2d"); g.scale(dpr, dpr); g.clearRect(0, 0, W, H);
+    const pad = {l: 30, r: 6, t: 6, b: 16}, iw = W - pad.l - pad.r, ih = H - pad.t - pad.b;
+    const [lo, hi] = s.dom, y = v => pad.t + ih * (1 - (Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo));
+    const t1 = this.pts.length ? this.pts[this.pts.length - 1][0] : WINDOW, t0 = Math.max(0, t1 - WINDOW);
+    const x = t => pad.l + iw * (t - t0) / WINDOW;
+    g.fillStyle = css("--band");
+    g.fillRect(pad.l, pad.t, iw, y(s.lim[1]) - pad.t); g.fillRect(pad.l, y(s.lim[0]), iw, pad.t + ih - y(s.lim[0]));
+    g.strokeStyle = css("--grid"); g.lineWidth = 1; g.fillStyle = css("--muted"); g.font = "10px system-ui";
+    [s.lim[0], s.lim[1]].forEach(v => { if (v < hi) { g.beginPath(); g.moveTo(pad.l, y(v)); g.lineTo(pad.l + iw, y(v)); g.stroke(); g.fillText(v, 2, y(v) + 3); } });
+    g.strokeStyle = css("--axis"); g.beginPath(); g.moveTo(pad.l, pad.t + ih); g.lineTo(pad.l + iw, pad.t + ih); g.stroke();
+    g.fillText(`${Math.round(t0)}s`, pad.l, H - 3); g.fillText(`${Math.round(t1)}s`, pad.l + iw - 22, H - 3);
+    const vis = this.pts.filter(p => p[0] >= t0);
+    if (vis.length > 1) {
+      g.strokeStyle = css(s.color); g.lineWidth = 2; g.lineJoin = "round"; g.beginPath();
+      vis.forEach((p, i) => i ? g.lineTo(x(p[0]), y(p[1])) : g.moveTo(x(p[0]), y(p[1]))); g.stroke();
+      const last = vis[vis.length - 1];
+      g.fillStyle = css(s.color); g.strokeStyle = css("--surface-2"); g.lineWidth = 2;
+      g.beginPath(); g.arc(x(last[0]), y(last[1]), 4, 0, 7); g.fill(); g.stroke();
+    }
+    if (this.hover != null && vis.length) {
+      const tt = t0 + (this.hover - pad.l) / iw * WINDOW;
+      const p = vis.reduce((a, b) => Math.abs(b[0] - tt) < Math.abs(a[0] - tt) ? b : a);
+      g.strokeStyle = css("--muted"); g.lineWidth = 1; g.beginPath(); g.moveTo(x(p[0]), pad.t); g.lineTo(x(p[0]), pad.t + ih); g.stroke();
+      tip.style.display = "block"; tip.textContent = `t=${p[0]}s · ${p[1].toFixed(0)} ${s.unit}`;
+      tip.style.left = Math.min(W - 110, x(p[0]) + 14) + "px"; tip.style.top = "34px";
+    } else tip.style.display = "none";
+  }};
+  cv.onmousemove = e => { c.hover = e.offsetX; c.draw(); };
+  cv.onmouseleave = () => { c.hover = null; c.draw(); };
+  return c;
+});
+function resetCharts() {
+  if (es) { es.close(); es = null; $("#stream-btn").textContent = "▶ Iniciar monitor"; }
+  charts.forEach(c => { c.pts = []; $(`#v-${c.s.k}`).innerHTML = `—<small> ${c.s.unit}</small>`; c.draw(); });
+  $("#stream-status").textContent = "Parado.";
+}
+addEventListener("resize", () => charts.forEach(c => c.draw()));
+
+$("#stream-btn").onclick = () => {
+  if (es) { resetCharts(); return; }
+  charts.forEach(c => c.pts = []);
+  es = new EventSource(`/api/stream?patient_id=${current}&speed=${$("#speed").value}`);
+  $("#stream-btn").textContent = "■ Parar";
+  es.addEventListener("start", e => { const d = JSON.parse(e.data); $("#stream-status").textContent = `Ao vivo: ${d.fonte}`; });
+  es.addEventListener("vitals", e => {
+    const d = JSON.parse(e.data);
+    charts.forEach(c => { if (d[c.s.k] != null) { c.pts.push([d.t, d[c.s.k]]); $(`#v-${c.s.k}`).innerHTML = `${d[c.s.k].toFixed(0)}<small> ${c.s.unit}</small>`; } });
+    if (d.t % 1 === 0) charts.forEach(c => c.draw());
+  });
+  es.addEventListener("alert", e => addAlert(JSON.parse(e.data), true));
+  es.addEventListener("end", () => { $("#stream-status").textContent = "Registro concluído."; es.close(); es = null; $("#stream-btn").textContent = "▶ Iniciar monitor"; });
+  es.onerror = () => { if (es) { es.close(); es = null; $("#stream-btn").textContent = "▶ Iniciar monitor"; } };
+};
+
+// ---------- alertas ----------
+const alertHTML = (a, fresh) => `
+  <div class="alert ${a.severity} ${a.status === "reconhecido" ? "ack" : ""} ${fresh ? "new" : ""}" id="al-${a.alert_id}">
+    <div class="t">${esc(a.title)}</div><div class="m">${esc(a.message)}</div>
+    <div class="r"><span>${sev(a.severity)} ${esc(a.route_to)}</span>
+    ${a.status === "reconhecido" ? `<span>✔ ${esc(a.acknowledged_by)}</span>` : `<button data-ack="${a.alert_id}">Reconhecer</button>`}</div>
+  </div>`;
+function bindAck(root) {
+  root.querySelectorAll("[data-ack]").forEach(b => b.onclick = async () => {
+    const a = await (await fetch(`/api/alerts/${b.dataset.ack}/ack`, {method: "POST", body: JSON.stringify({user: "enf. plantão"})})).json();
+    $(`#al-${a.alert_id}`).outerHTML = alertHTML(a, false);
+  });
+}
+async function loadAlerts() {
+  const list = await (await fetch("/api/alerts?n=60")).json();
+  $("#alerts").innerHTML = list.length ? list.map(a => alertHTML(a, false)).join("") : `<div class="empty">Nenhum alerta ainda — inicie o monitor ou reanalise um paciente.</div>`;
+  $("#alert-count").textContent = list.length ? `(${list.length})` : "";
+  bindAck($("#alerts"));
+}
+function addAlert(a, fresh) {
+  const box = $("#alerts");
+  if ($(".empty", box)) box.innerHTML = "";
+  box.insertAdjacentHTML("afterbegin", alertHTML(a, fresh));
+  bindAck(box);
+  $("#alert-count").textContent = `(${box.children.length})`;
+}
+
+(async () => {
+  const st = await (await fetch("/api/azure/status")).json();
+  const on = st.speech_to_text.configurado || st.text_analytics.configurado;
+  $("#azure-pill").textContent = `☁️ Azure: Speech ${st.speech_to_text.configurado ? "✔" : "—"} · Text Analytics ${st.text_analytics.configurado ? "✔" : "—"}${on ? "" : " (fallback local)"}`;
+  await loadPatients(); loadAlerts();
+})();
+</script>
+</body>
+</html>

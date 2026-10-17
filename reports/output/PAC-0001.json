@@ -1,0 +1,264 @@
+{
+  "paciente": {
+    "patient_id": "PAC-0001",
+    "idade": "45",
+    "sexo": "M",
+    "diagnostico": "Pós-operatório de colecistectomia videolaparoscópica",
+    "setor": "Enfermaria cirúrgica",
+    "alergias": "nenhuma",
+    "bidmc_record": "02",
+    "audio": "PAC-0001_consulta.wav",
+    "video": "PAC-0001_fisio_ombro.mp4",
+    "cenario": "Controle — evolução esperada, sem anomalias injetadas"
+  },
+  "modalidades": {
+    "vitals": {
+      "fonte": "PhysioNet BIDMC registro 02",
+      "duracao_s": 480,
+      "amostras_faltantes_interpoladas": 0,
+      "estatisticas": {
+        "HR": {
+          "min": 87.0,
+          "media": 91.1,
+          "max": 95.0
+        },
+        "SpO2": {
+          "min": 99.0,
+          "media": 100.0,
+          "max": 100.0
+        },
+        "RESP": {
+          "min": 14.0,
+          "media": 15.4,
+          "max": 19.0
+        },
+        "SBP": {
+          "min": 115.5,
+          "media": 122.0,
+          "max": 128.1
+        },
+        "DBP": {
+          "min": 73.0,
+          "media": 77.9,
+          "max": 83.2
+        }
+      },
+      "n_achados": 0,
+      "risco_vitais": 0.0
+    },
+    "audio": {
+      "patient_id": "PAC-0001",
+      "arquivo": "PAC-0001_consulta.wav",
+      "duracao_s": 18.4,
+      "biomarcadores": {
+        "duration_s": 18.4021,
+        "phonation_time_s": 14.57,
+        "speech_rate_syl_s": 2.9027,
+        "articulation_rate_syl_s": 3.5003,
+        "pause_ratio": 0.1571,
+        "mean_pause_s": 0.552,
+        "long_pauses_per_min": 0.0,
+        "f0_median_hz": 186.0465,
+        "f0_std_semitones": 2.0441,
+        "jitter_pct": 1.4419,
+        "shimmer_db": 1.5169,
+        "hnr_db": 3.3965,
+        "hf_energy_db": -22.9458,
+        "energy_slope_db_min": -9.1437,
+        "tremor_index": 0.0588,
+        "mean_phrase_s": 2.0814
+      },
+      "eventos_audioset": [],
+      "classificador_audioset_ast": {
+        "modelo": "MIT/ast-finetuned-audioset-10-10-0.4593",
+        "deteccoes": [],
+        "resumo": {}
+      },
+      "avaliacao_vocal": {
+        "scores": {
+          "fadiga": 0.0,
+          "disartria": 0.0,
+          "respiratorio": 0.0
+        },
+        "marcadores_disparados": {
+          "fadiga": [],
+          "disartria": [],
+          "respiratorio": []
+        },
+        "metricas": {
+          "duration_s": 18.402,
+          "phonation_time_s": 14.57,
+          "speech_rate_syl_s": 2.903,
+          "articulation_rate_syl_s": 3.5,
+          "pause_ratio": 0.157,
+          "mean_pause_s": 0.552,
+          "long_pauses_per_min": 0.0,
+          "f0_median_hz": 186.047,
+          "f0_std_semitones": 2.044,
+          "jitter_pct": 1.442,
+          "shimmer_db": 1.517,
+          "hnr_db": 3.397,
+          "hf_energy_db": -22.946,
+          "energy_slope_db_min": -9.144,
+          "tremor_index": 0.059,
+          "mean_phrase_s": 2.081,
+          "cough_episodes": 0.0,
+          "breaths_per_min": 0.0
+        },
+        "flags": [],
+        "risco_voz": 0.0
+      },
+      "transcricao": {
+        "texto": "Bom dia, doutor. Estou me sentindo bem melhor hoje. A dor da cirurgia diminuiu bastante e consegui caminhar pelo corredor. Dormi bem a noite toda e estou com fome. Acho que já posso ir para casa em breve.",
+        "provider": "local_referencia",
+        "confianca": null,
+        "segmentos": [],
+        "wer_vs_referencia": null,
+        "erro_azure": null
+      },
+      "analise_texto": {
+        "provider": "local_lexico",
+        "sentimento": {
+          "sentimento": "positive",
+          "positivo": 0.83,
+          "neutro": 0.0,
+          "negativo": 0.17
+        },
+        "frases_chave": [],
+        "termos": [
+          {
+            "texto": "dor",
+            "categoria": "SymptomOrSign",
+            "severidade": "moderado",
+            "sinal": "dor",
+            "negado": false,
+            "offset": 54,
+            "confianca": 1.0,
+            "fonte": "lexico_local"
+          }
+        ],
+        "termos_criticos": [],
+        "risco_texto": 0.35,
+        "erro_azure": null
+      },
+      "achados": [],
+      "risco_audio": 0.0
+    },
+    "video": {
+      "patient_id": "PAC-0001",
+      "video": "PAC-0001_fisio_ombro.mp4",
+      "tipo": "abducao_ombro",
+      "fonte_deteccao": "keypoints_sidecar (COCO-17)",
+      "analise": {
+        "exercicio": "abducao_ombro",
+        "protocolo": {
+          "nome": "Abdução de ombro bilateral",
+          "adm_alvo_graus": 150,
+          "adm_minima_pct": 0.6,
+          "assimetria_max_graus": 20,
+          "inclinacao_tronco_max_graus": 10,
+          "tremor_max": 0.2
+        },
+        "repeticoes": 5,
+        "metricas": {
+          "adm_media_esq": 165.2,
+          "adm_media_dir": 162.0,
+          "assimetria_media": 3.3,
+          "inclinacao_tronco_max": 2.1,
+          "tremor_esq": 0.1048,
+          "tremor_dir": 0.1096
+        },
+        "por_repeticao": [
+          {
+            "rep": 1,
+            "adm_esq": 164.2,
+            "adm_dir": 161.3,
+            "assimetria": 3.0,
+            "inclinacao_tronco_max": 1.9,
+            "pico_s": 3.0
+          },
+          {
+            "rep": 2,
+            "adm_esq": 166.0,
+            "adm_dir": 161.7,
+            "assimetria": 4.3,
+            "inclinacao_tronco_max": 1.6,
+            "pico_s": 6.97
+          },
+          {
+            "rep": 3,
+            "adm_esq": 165.8,
+            "adm_dir": 162.5,
+            "assimetria": 3.3,
+            "inclinacao_tronco_max": 1.8,
+            "pico_s": 11.03
+          },
+          {
+            "rep": 4,
+            "adm_esq": 165.7,
+            "adm_dir": 162.1,
+            "assimetria": 3.6,
+            "inclinacao_tronco_max": 1.7,
+            "pico_s": 15.0
+          },
+          {
+            "rep": 5,
+            "adm_esq": 164.4,
+            "adm_dir": 162.2,
+            "assimetria": 2.2,
+            "inclinacao_tronco_max": 2.1,
+            "pico_s": 19.0
+          }
+        ],
+        "achados": [],
+        "frames_chave": []
+      },
+      "achados": [],
+      "frames_chave": [],
+      "relatorio": "output/video/PAC-0001_fisio_ombro.md",
+      "risco_video": 0.0
+    },
+    "prescriptions": {
+      "n_prescricoes": 4,
+      "ativos_atuais": [
+        "dipirona",
+        "omeprazol"
+      ],
+      "n_achados": 0,
+      "risco_prescricoes": 0.0
+    },
+    "movement": {
+      "periodo": [
+        "2026-10-10 08:00:00",
+        "2026-10-12 07:55:00"
+      ],
+      "atividade_media": 27.8,
+      "saidas_leito": 0,
+      "n_achados": 0,
+      "risco_movimentacao": 0.0
+    }
+  },
+  "achados": {
+    "vitals": [],
+    "audio": [],
+    "video": [],
+    "prescriptions": [],
+    "movement": [],
+    "fusion": []
+  },
+  "fusao": {
+    "patient_id": "PAC-0001",
+    "score": 0.0,
+    "nivel": "baixo",
+    "risco_por_modalidade": {
+      "vitals": 0.0,
+      "audio": 0.0,
+      "video": 0.0,
+      "prescriptions": 0.0,
+      "movement": 0.0
+    },
+    "sindromes": [],
+    "acoes_sugeridas": []
+  },
+  "alertas": []
+}

@@ -1,0 +1,47 @@
+{
+  "fonte": "ESC-50 (Piczak 2015) — clipes Freesound.org",
+  "licenca": "CC BY-NC 3.0 — uso acadêmico, não comercial, com atribuição",
+  "url": "https://github.com/karolpiczak/ESC-50",
+  "clipes": [
+    {
+      "arquivo": "cough_4-155650-A-24.wav",
+      "original": "4-155650-A-24.wav",
+      "classe_audioset": "Cough"
+    },
+    {
+      "arquivo": "cough_1-53663-A-24.wav",
+      "original": "1-53663-A-24.wav",
+      "classe_audioset": "Cough"
+    },
+    {
+      "arquivo": "cough_1-19118-A-24.wav",
+      "original": "1-19118-A-24.wav",
+      "classe_audioset": "Cough"
+    },
+    {
+      "arquivo": "cough_5-184871-A-24.wav",
+      "original": "5-184871-A-24.wav",
+      "classe_audioset": "Cough"
+    },
+    {
+      "arquivo": "breathing_5-260164-A-23.wav",
+      "original": "5-260164-A-23.wav",
+      "classe_audioset": "Breathing"
+    },
+    {
+      "arquivo": "breathing_4-210000-B-23.wav",
+      "original": "4-210000-B-23.wav",
+      "classe_audioset": "Breathing"
+    },
+    {
+      "arquivo": "breathing_3-112557-B-23.wav",
+      "original": "3-112557-B-23.wav",
+      "classe_audioset": "Breathing"
+    },
+    {
+      "arquivo": "breathing_3-151206-A-23.wav",
+      "original": "3-151206-A-23.wav",
+      "classe_audioset": "Breathing"
+    }
+  ]
+}

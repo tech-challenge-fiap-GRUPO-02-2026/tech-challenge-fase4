@@ -1,0 +1,11 @@
+# Dependências principais — suficientes para rodar TODO o pipeline multimodal
+# (áudio, vídeo via keypoints/detecções, sinais vitais, prescrições,
+# movimentação, fusão, alertas, painel web e os testes), sem GPU e sem
+# chaves de API. Azure é acessado via REST (stdlib), sem SDK obrigatória.
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+scikit-learn>=1.4
+opencv-python-headless>=4.9
+imageio-ffmpeg>=0.5
+pytest>=8.0

@@ -1,0 +1,8 @@
+# Modelos de deep learning (opcionais):
+#  - YOLOv8-pose / YOLOv8 (Ultralytics) para vídeos reais (pose estilo OpenPose + objetos)
+#  - Audio Spectrogram Transformer treinado no AudioSet (transformers)
+# CPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2
+torchvision>=0.17
+ultralytics>=8.1
+transformers>=4.40

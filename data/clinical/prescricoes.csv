@@ -1,0 +1,26 @@
+patient_id,timestamp,medicamento,classe,dose_mg,intervalo_h,via,acao,prescritor
+PAC-0001,2026-10-10T08:00:00,dipirona,analgesico,1000,6,EV,iniciar,Dr. Ramos
+PAC-0001,2026-10-10T08:00:00,omeprazol,protetor_gastrico,40,24,EV,iniciar,Dr. Ramos
+PAC-0001,2026-10-11T08:00:00,dipirona,analgesico,1000,6,VO,ajustar,Dr. Ramos
+PAC-0001,2026-10-12T08:00:00,omeprazol,protetor_gastrico,20,24,VO,ajustar,Dr. Ramos
+PAC-0002,2026-10-10T08:00:00,metilprednisolona,corticoide,40,12,EV,iniciar,Dra. Lima
+PAC-0002,2026-10-10T08:00:00,salbutamol,broncodilatador,5,4,INAL,iniciar,Dra. Lima
+PAC-0002,2026-10-10T20:00:00,metilprednisolona,corticoide,40,12,EV,ajustar,Dra. Lima
+PAC-0002,2026-10-11T14:00:00,metilprednisolona,corticoide,200,12,EV,ajustar,Dr. Souza
+PAC-0003,2026-10-10T08:00:00,acido_acetilsalicilico,antiagregante,100,24,VO,iniciar,Dr. Alves
+PAC-0003,2026-10-10T08:00:00,atorvastatina,estatina,40,24,VO,iniciar,Dr. Alves
+PAC-0003,2026-10-11T20:00:00,atorvastatina,estatina,80,24,VO,ajustar,Dr. Alves
+PAC-0004,2026-10-10T08:00:00,ceftriaxona,antibiotico,2000,24,EV,iniciar,Dra. Costa
+PAC-0004,2026-10-11T04:00:00,ceftriaxona,antibiotico,0,0,EV,suspender,Dra. Costa
+PAC-0004,2026-10-11T04:00:00,piperacilina_tazobactam,antibiotico,4500,6,EV,iniciar,Dr. Souza
+PAC-0004,2026-10-11T04:00:00,vancomicina,antibiotico,1000,12,EV,iniciar,Dr. Souza
+PAC-0004,2026-10-11T16:00:00,vancomicina,antibiotico,2500,12,EV,ajustar,Dr. Souza
+PAC-0004,2026-10-11T18:00:00,noradrenalina,vasopressor,8,0,EV,iniciar,Dra. Costa
+PAC-0005,2026-10-10T08:00:00,amoxicilina_clavulanato,antibiotico,1000,8,EV,iniciar,Dr. Ramos
+PAC-0005,2026-10-10T08:00:00,enoxaparina,anticoagulante,40,24,SC,iniciar,Dr. Ramos
+PAC-0005,2026-10-12T08:00:00,amoxicilina_clavulanato,antibiotico,875,12,VO,ajustar,Dr. Ramos
+PAC-0006,2026-10-10T08:00:00,heparina,anticoagulante,25000,24,EV,iniciar,Dr. Alves
+PAC-0006,2026-10-10T08:00:00,metoprolol,betabloqueador,50,12,VO,iniciar,Dr. Alves
+PAC-0006,2026-10-11T02:00:00,enoxaparina,anticoagulante,80,12,SC,iniciar,Dra. Lima
+PAC-0006,2026-10-11T10:00:00,heparina,anticoagulante,0,0,EV,suspender,Dra. Lima
+PAC-0006,2026-10-11T10:00:00,enoxaparina,anticoagulante,0,0,SC,suspender,Dra. Lima

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="theme-color" content="#1E1B4B"/>
+<title>Tech Challenge Fase 4 — Monitoramento Multimodal · FIAP 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>"/>
+<style>
+:root{
+  --i950:#0B0A1F; --i900:#1E1B4B; --i800:#312E81; --i700:#4338CA; --i600:#4F46E5;
+  --i500:#6366F1; --i400:#818CF8; --i200:#C7D2FE; --i100:#E0E7FF; --i50:#EEF2FF;
+  --cy:#06B6D4; --cy2:#22D3EE; --cy-soft:#CFFAFE; --pk:#D946EF;
+  --tx:#0F0E24; --tx2:#3F3D56; --mu:#6B6A80; --bd:#E4E4F0; --bg:#F7F7FC; --wh:#FFFFFF;
+  --sh:0 1px 2px rgba(15,14,36,.05),0 8px 24px rgba(67,56,202,.07);
+  --sh2:0 12px 40px rgba(67,56,202,.18);
+  --r:16px; --r2px:10px; --nav-h:62px;
+  --grad:linear-gradient(120deg,var(--i600),var(--pk) 55%,var(--cy));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;font-size:15px;overflow-x:hidden}
+img,svg{max-width:100%}
+code{font-family:'Cascadia Code',Consolas,monospace;font-size:.88em;background:var(--i50);color:var(--i700);padding:1px 6px;border-radius:5px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid var(--bd);height:var(--nav-h);display:flex;align-items:center;padding:0 28px;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;padding:7px 13px;border-radius:999px;font-size:.78rem;font-weight:600;color:var(--mu);text-decoration:none;transition:background .15s,color .15s}
+nav a:hover{background:var(--i50);color:var(--i700)}
+nav .nav-brand{font-weight:800;font-size:.95rem;margin-right:10px;white-space:nowrap;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .nav-sep{width:1px;height:22px;background:var(--bd);flex-shrink:0;margin:0 8px}
+nav .nav-gh{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:var(--i900);color:#fff!important;padding:8px 18px;font-weight:700}
+nav .nav-gh:hover{background:var(--i700)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:96px 24px 76px;
+  background:radial-gradient(1200px 600px at 10% -10%,#4338CA 0%,transparent 60%),
+             radial-gradient(900px 500px at 100% 0%,#A21CAF 0%,transparent 55%),
+             radial-gradient(800px 500px at 50% 120%,#0891B2 0%,transparent 60%),var(--i950)}
+.hero::before{content:'';position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:42px 42px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.hero::after{content:'';position:absolute;width:520px;height:520px;border-radius:50%;left:50%;top:-260px;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(34,211,238,.35),transparent 65%);filter:blur(20px);animation:pulse 7s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:.9;transform:translateX(-50%) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.hero::after{animation:none}}
+.hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;backdrop-filter:blur(6px)}
+.hero-tag::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--cy2);box-shadow:0 0 0 4px rgba(34,211,238,.25)}
+.hero h1{font-size:2.7rem;font-weight:800;line-height:1.18;margin-bottom:18px;letter-spacing:-.01em}
+.hero h1{text-wrap:balance}
+.hero p{font-size:1.07rem;color:rgba(255,255,255,.82);max-width:700px;margin:0 auto 28px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.hero-badges img{height:24px;border-radius:5px}
+.hero-warn{margin-top:26px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);
+  padding:10px 18px;border-radius:12px;font-size:.85rem;font-weight:600;color:#FDE68A}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(217,70,239,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(217,70,239,.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;font-size:.9rem;text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.3);transition:transform .15s,background .15s}
+.btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+.btn-outline{background:#fff;color:var(--i700);border:1.5px solid var(--i200)}
+.btn-outline:hover{background:var(--i50);transform:translateY(-2px)}
+
+/* STATS */
+.stats-strip{max-width:1120px;margin:-38px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(6,1fr);
+  background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden}
+@media(max-width:900px){.stats-strip{grid-template-columns:repeat(3,1fr);margin:-30px 16px 0}}
+@media(max-width:520px){.stats-strip{grid-template-columns:repeat(2,1fr)}}
+.stat{text-align:center;padding:22px 12px;border-right:1px solid var(--bd)}
+.stat:last-child{border-right:none}
+.stat .num{font-size:1.75rem;font-weight:800;line-height:1.15;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:.74rem;color:var(--mu);font-weight:600;margin-top:4px}
+
+/* SECTIONS */
+section{padding:76px 24px;max-width:1120px;margin:0 auto}
+.section-alt{max-width:none;background:linear-gradient(180deg,var(--wh),var(--i50));border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);
+  padding-left:max(24px,calc((100% - 1072px) / 2));padding-right:max(24px,calc((100% - 1072px) / 2))}
+.section-eyebrow{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--i600);
+  background:var(--i50);border:1px solid var(--i100);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.section-alt .section-eyebrow{background:var(--wh)}
+.section-title{font-size:1.9rem;font-weight:800;margin-bottom:14px;letter-spacing:-.01em;text-wrap:balance}
+.section-lead{color:var(--tx2);max-width:760px;margin-bottom:34px;font-size:1.01rem}
+
+/* GRID / CARDS */
+.grid{display:grid;gap:20px}
+.grid-2{grid-template-columns:repeat(2,1fr)} .grid-3{grid-template-columns:repeat(3,1fr)} .grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.card{position:relative;background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:24px;box-shadow:var(--sh);
+  transition:transform .18s,box-shadow .18s,border-color .18s;display:block;text-decoration:none;color:inherit;overflow:hidden}
+.card::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:0;transition:opacity .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--i200)}
+.card:hover::before{opacity:1}
+.card .icon{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:12px;font-size:1.35rem;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--i50),var(--cy-soft));border:1px solid var(--i100)}
+.card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
+a.card:hover h3{color:var(--i700)}
+.card p{font-size:.88rem;color:var(--mu);line-height:1.65}
+
+/* FLOW */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:10px}
+.flow-step{background:var(--wh);border:1px solid var(--i200);border-radius:14px;padding:16px 18px;font-size:.84rem;font-weight:700;color:var(--i800);
+  text-align:center;min-width:150px;box-shadow:var(--sh);position:relative}
+.flow-step::before{content:'';position:absolute;left:14px;right:14px;top:-1px;height:3px;border-radius:0 0 4px 4px;background:var(--grad)}
+.flow-step small{display:block;font-weight:500;color:var(--mu);margin-top:4px;font-size:.74rem}
+.flow-arrow{color:var(--i400);font-size:1.4rem;font-weight:800}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--bd);box-shadow:var(--sh);background:var(--wh)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{background:var(--i900);color:#fff;text-align:left;padding:13px 18px;font-weight:700;font-size:.8rem;letter-spacing:.03em}
+td{padding:13px 18px;border-top:1px solid var(--bd);color:var(--tx2);vertical-align:top}
+tr:nth-child(even) td{background:#FAFAFE}
+tr:hover td{background:var(--i50)}
+td strong{color:var(--tx)}
+
+/* CALLOUTS */
+.safety-box{background:linear-gradient(135deg,var(--i50),#fff 70%);border:1px solid var(--i200);border-left:5px solid var(--i600);border-radius:var(--r);padding:26px 30px;box-shadow:var(--sh)}
+.safety-box h3{color:var(--i800);margin-bottom:12px;font-size:1.08rem}
+.safety-box ul{margin-left:20px;color:var(--tx2);font-size:.92rem;line-height:1.95}
+.safety-box.cyan{background:linear-gradient(135deg,#ECFEFF,#fff 70%);border-color:#A5F3FC;border-left-color:var(--cy)}
+.safety-box.cyan h3{color:#0E7490}
+
+/* CODE */
+.codeblock{background:linear-gradient(160deg,#14122E,#0B0A1F);color:#E0E7FF;border-radius:var(--r);border:1px solid #2A2752;
+  padding:20px 22px;font-family:'Cascadia Code',Consolas,monospace;font-size:.83rem;overflow-x:auto;line-height:1.75;white-space:pre;box-shadow:var(--sh2)}
+.codeblock .muted{color:#7C7AA8}
+
+/* TEAM */
+.team-list{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.team-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.team-list{grid-template-columns:1fr}}
+.team-list li{background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:20px;box-shadow:var(--sh);text-align:center;transition:transform .18s,box-shadow .18s}
+.team-list li:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.team-list li::before{content:attr(data-ini);display:grid;place-items:center;width:54px;height:54px;margin:0 auto 12px;border-radius:50%;
+  background:var(--grad);color:#fff;font-weight:800;font-size:1.05rem;box-shadow:0 6px 18px rgba(99,102,241,.35)}
+.team-list strong{display:block;color:var(--tx);margin-bottom:4px;font-size:.92rem}
+.team-list span{color:var(--mu);font-size:.78rem;word-break:break-all}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:8px}
+
+/* FOOTER */
+footer{background:var(--i950);color:#A5A3C9;text-align:center;padding:42px 24px;font-size:.82rem;position:relative}
+footer::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad)}
+footer a{color:var(--cy2);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:700px){.hero{padding:72px 16px 64px}.hero h1{font-size:1.8rem}section{padding:56px 16px}.section-title{font-size:1.5rem}nav{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">🩺 Fase 4</span>
+  <div class="nav-sep"></div>
+  <a href="#visao-geral">Visão Geral</a>
+  <a href="#fluxo">Fluxo</a>
+  <a href="#datasets">Datasets</a>
+  <a href="#modelos">Modelos</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#azure">Azure</a>
+  <a href="#alertas">Alertas</a>
+  <a href="#execucao">Execução</a>
+  <a href="#docs">Documentação</a>
+  <a href="#equipe">Equipe</a>
+  <a href="#video">Vídeo</a>
+  <a class="nav-gh" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4" target="_blank" rel="noopener">🐙 GitHub</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">Tech Challenge · Fase 4 · FIAP</span>
+    <h1>Monitoramento Multimodal de Pacientes<br>Vídeo · Áudio · Texto · Sinais Vitais</h1>
+    <p>
+      Análise e fusão de dados médicos multimodais com YOLOv8, biomarcadores vocais,
+      Azure Speech to Text e Text Analytics, e detecção de anomalias em tempo real
+      sobre sinais vitais reais do PhysioNet — com alertas priorizados para a equipe médica.
+    </p>
+    <div class="hero-badges">
+      <img src="https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white" alt="Python">
+      <img src="https://img.shields.io/badge/YOLOv8-Pose%20%2B%20Objetos-00FFFF" alt="YOLOv8">
+      <img src="https://img.shields.io/badge/Azure-Speech%20%2B%20Text%20Analytics-0078D4?logo=microsoftazure&logoColor=white" alt="Azure">
+      <img src="https://img.shields.io/badge/PhysioNet-BIDMC-B91C1C" alt="PhysioNet">
+      <img src="https://img.shields.io/badge/AudioSet-Ontologia%20%2B%20AST-orange" alt="AudioSet">
+      <img src="https://img.shields.io/badge/pytest-40%20passed-0A9EDC?logo=pytest&logoColor=white" alt="pytest">
+    </div>
+    <div class="hero-warn">⚠️ Apoio à decisão — aciona protocolos e avaliação humana, nunca prescreve</div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4" target="_blank" rel="noopener">🐙 Ver Repositório no GitHub</a>
+      <a class="btn-ghost" href="#resultados">📊 Ver Resultados</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats-strip">
+  <div class="stat"><div class="num">5</div><div class="lbl">Modalidades fundidas</div></div>
+  <div class="stat"><div class="num">53</div><div class="lbl">Registros PhysioNet reais</div></div>
+  <div class="stat"><div class="num">22</div><div class="lbl">Classes AudioSet clínicas</div></div>
+  <div class="stat"><div class="num">100%</div><div class="lbl">Recall nos cenários injetados</div></div>
+  <div class="stat"><div class="num">5,4 s</div><div class="lbl">Latência média do alerta</div></div>
+  <div class="stat"><div class="num">40</div><div class="lbl">Testes automatizados</div></div>
+</div>
+
+<section id="visao-geral">
+  <div class="section-eyebrow">Visão Geral</div>
+  <h2 class="section-title">Do sinal bruto ao alerta para a equipe</h2>
+  <p class="section-lead">
+    Com a IA já integrada a exames, documentos e decisões clínicas (Fases 2 e 3), o hospital
+    passa a monitorar continuamente os pacientes. Cada modalidade tem seu detector
+    especializado; todos falam o mesmo "idioma" (<code>Finding</code>), o que permite fundir
+    evidências e reconhecer quadros que nenhuma fonte isolada confirmaria.
+  </p>
+  <div class="grid grid-4">
+    <div class="card"><span class="icon">🎥</span><h3>Análise de Vídeo</h3><p><strong>YOLOv8-pose</strong> (layout OpenPose) para postura em fisioterapia e <strong>YOLOv8</strong> para instrumental e áreas críticas em cirurgia, com relatório automático de desvios.</p></div>
+    <div class="card"><span class="icon">🎙️</span><h3>Análise de Áudio</h3><p>Biomarcadores de <strong>fadiga, disartria e dificuldade respiratória</strong>, eventos AudioSet, <strong>Azure Speech to Text</strong> e <strong>Text Analytics</strong>.</p></div>
+    <div class="card"><span class="icon">❤️</span><h3>Detecção de Anomalias</h3><p>Sinais vitais (NEWS2, z-score, CUSUM, Isolation Forest), prescrições e movimentação — em lote e <strong>em tempo real</strong>.</p></div>
+    <div class="card"><span class="icon">🧩</span><h3>Fusão + Alertas</h3><p>Risco fundido, síndromes multimodais (AVC, choque, queda...) e alertas P1/P2/P3 roteados, deduplicados e auditados.</p></div>
+  </div>
+</section>
+
+<section id="fluxo" class="section-alt">
+  <div class="section-eyebrow">Fluxo Multimodal</div>
+  <h2 class="section-title">Pipeline ponta a ponta</h2>
+  <p class="section-lead">Diagrama completo (Mermaid) em <code>docs/architecture.md</code>.</p>
+  <div class="flow">
+    <div class="flow-step">Vídeo · Áudio · Vitais<br>Prescrições · Actigrafia<small>fontes multimodais</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Detectores<br>por modalidade<small>YOLOv8 · voz · Azure · IForest</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Fusão<br>multimodal<small>risco + síndromes</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">AlertManager<small>P1/P2/P3 · dedup</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Equipe médica<small>painel SSE · Teams/Logic Apps</small></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Auditoria<small>logs/audit_log.jsonl</small></div>
+  </div>
+</section>
+
+<section id="datasets">
+  <div class="section-eyebrow">Datasets</div>
+  <h2 class="section-title">Os datasets sugeridos no enunciado, usados de verdade</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dataset</th><th>Uso no projeto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PhysioNet BIDMC</strong> (sugerido)</td><td>53 registros reais de UTI (FC, SpO₂, FR a 1 Hz). 6 mapeados para pacientes — incl. SpO₂ real de 83% (BIDMC 32) e FC de 139 bpm (BIDMC 25); 47 treinam o Isolation Forest populacional.</td></tr>
+        <tr><td><strong>Google AudioSet</strong> (sugerido)</td><td>Ontologia de 632 classes + segmentos de avaliação → catálogo de 22 classes clínicas com <code>mid</code> oficial; classificador <strong>AST</strong> treinado no AudioSet confirma sons respiratórios.</td></tr>
+        <tr><td><strong>ESC-50</strong></td><td>8 gravações reais de tosse/respiração (o AudioSet não distribui áudio), escolhidas pelo próprio AST.</td></tr>
+        <tr><td>Sintéticos com ground truth</td><td>Consultas em pt-BR (voz real sintetizada + perfis vocais), vídeos por modelo cinemático COCO-17, prescrições, actigrafia e PA — cada anomalia injetada é registrada e avaliada.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="modelos" class="section-alt">
+  <div class="section-eyebrow">Modelos</div>
+  <h2 class="section-title">Modelos aplicados em cada tipo de dado</h2>
+  <div class="grid grid-2">
+    <div class="card"><span class="icon">🧍</span><h3>Postura (fisioterapia)</h3><p>YOLOv8n-pose → OpenPose COCO-18. ADM por repetição, assimetria bilateral, compensação de tronco, tremor 4–8 Hz e detecção de queda.</p></div>
+    <div class="card"><span class="icon">✂️</span><h3>Cirurgia</h3><p>YOLOv8 (ou pesos fine-tuned de instrumental): contagem início × fechamento, item retido na incisão, instrumento fora do campo, invasão de área estéril.</p></div>
+    <div class="card"><span class="icon">🗣️</span><h3>Voz</h3><p>F0, jitter, shimmer, HNR, taxa de fala, pausas, energia e tremor → scores de fadiga, disartria e respiratório. Tosse/respiração rotuladas com AudioSet + AST.</p></div>
+    <div class="card"><span class="icon">☁️</span><h3>Azure</h3><p>Speech to Text (pt-BR, WER), Sentiment Analysis, Key Phrases e Text Analytics for Health, com léxico clínico e negação para severidade.</p></div>
+    <div class="card"><span class="icon">📈</span><h3>Sinais vitais</h3><p>Regras NEWS2 com persistência, z-score robusto, CUSUM, Isolation Forest populacional e monitor online EWMA com rearme.</p></div>
+    <div class="card"><span class="icon">💊</span><h3>Prescrições e movimentação</h3><p>Farmacovigilância (alergia, dose, ISMP, duplicidade, suspensão) e actigrafia (queda, imobilidade, agitação noturna, Isolation Forest horário).</p></div>
+  </div>
+</section>
+
+<section id="resultados">
+  <div class="section-eyebrow">Resultados</div>
+  <h2 class="section-title">Números reais da execução</h2>
+  <p class="section-lead">Gerados por <code>python -m src.main evaluate</code> e <code>run-all</code> — detalhes em <code>reports/avaliacao.md</code>.</p>
+  <div class="table-wrap" style="margin-bottom:24px">
+    <table>
+      <thead><tr><th>Avaliação</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>Indicadores vocais (perfil injetado × detectado)</td><td><strong>6/6 (100%)</strong></td></tr>
+        <tr><td>Tosse — precisão / recall</td><td>0,80 / 1,00</td></tr>
+        <tr><td>Respiração audível — precisão / recall</td><td>1,00 / 0,45 (limitação conhecida)</td></tr>
+        <tr><td>Vitais com injeção controlada — lote / tempo real</td><td><strong>100% / 100%</strong> · latência média 5,4 s</td></tr>
+        <tr><td>Vídeo, prescrições, movimentação, síndromes</td><td><strong>100% de recall</strong>, 0 achados inesperados</td></tr>
+        <tr><td>Paciente controle (PAC-0001)</td><td>risco 0,00 — nenhum alerta</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Paciente</th><th>Cenário</th><th>Risco</th><th>Síndromes</th></tr></thead>
+      <tbody>
+        <tr><td>PAC-0001</td><td>Pós-op. colecistectomia (controle)</td><td>0,00 baixo</td><td>—</td></tr>
+        <tr><td>PAC-0002</td><td>DPOC — SpO₂ real 83%</td><td>1,00 crítico</td><td>Insuficiência respiratória</td></tr>
+        <tr><td>PAC-0003</td><td>AVC — disartria + hemiparesia</td><td>1,00 crítico</td><td>Suspeita de AVC</td></tr>
+        <tr><td>PAC-0004</td><td>Sepse — taquicardia + hipotensão</td><td>1,00 crítico</td><td>Possível choque · evento medicamentoso</td></tr>
+        <tr><td>PAC-0005</td><td>Pneumonia — queda</td><td>1,00 crítico</td><td>Queda · insuf. respiratória · delirium</td></tr>
+        <tr><td>PAC-0006</td><td>Pós-op. cardíaco</td><td>1,00 crítico</td><td>Evento medicamentoso + tesoura retida</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="azure" class="section-alt">
+  <div class="section-eyebrow">Nuvem</div>
+  <h2 class="section-title">Integração com Azure Cognitive Services</h2>
+  <div class="safety-box cyan">
+    <h3>☁️ REST puro, credenciais por variável de ambiente, fallback explícito</h3>
+    <ul>
+      <li><strong>Speech to Text</strong> — transcrição pt-BR com confiança e WER contra a referência.</li>
+      <li><strong>Text Analytics</strong> — sentimento (opinion mining), frases-chave e <strong>Text Analytics for Health</strong> (entidades clínicas com negação).</li>
+      <li><strong>Entrega de alertas</strong> — webhook para Microsoft Teams / Azure Logic Apps.</li>
+      <li>Sem chave, o sistema usa fallbacks locais e informa o <code>provider</code> usado em cada resultado — nunca finge ser Azure.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="alertas">
+  <div class="section-eyebrow">Alertas</div>
+  <h2 class="section-title">Fluxo final do alerta à equipe médica</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Severidade</th><th>Prioridade</th><th>Destino</th><th>Prazo</th></tr></thead>
+      <tbody>
+        <tr><td>Crítico</td><td>P1</td><td>Time de resposta rápida + médico plantonista (webhook)</td><td>imediato</td></tr>
+        <tr><td>Alto</td><td>P2</td><td>Médico assistente + enfermagem do setor (webhook)</td><td>≤ 15 min</td></tr>
+        <tr><td>Moderado</td><td>P3</td><td>Painel da enfermagem</td><td>≤ 60 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="section-lead" style="margin-top:20px">Deduplicação de 5 min por paciente/tipo, persistência mínima de 10 s nos vitais, reconhecimento (ack) auditado e painel web com monitor em tempo real (Server-Sent Events).</p>
+</section>
+
+<section id="execucao" class="section-alt">
+  <div class="section-eyebrow">Execução</div>
+  <h2 class="section-title">Como rodar o projeto</h2>
+  <div class="codeblock">
+<span class="muted"># 1. dependências (suficientes para todo o pipeline, sem GPU e sem chave)</span>
+pip install -r requirements.txt
+<span class="muted"># opcional: YOLOv8 + AST (AudioSet)</span>
+pip install -r requirements-ml.txt
+
+<span class="muted"># 2. todos os pacientes e métricas</span>
+python -m src.main run-all
+python -m src.main evaluate
+
+<span class="muted"># 3. por modalidade</span>
+python -m src.main video --patient-id PAC-0006
+python -m src.main audio --patient-id PAC-0003 --audioset-model
+python -m src.main monitor --patient-id PAC-0004 --speed 20
+
+<span class="muted"># 4. painel da equipe médica (ou duplo clique em iniciar_painel.bat)</span>
+python -m src.main serve --open
+
+<span class="muted"># 5. testes</span>
+python -m pytest -q   <span class="muted"># 40 passed</span>
+  </div>
+</section>
+
+<section id="docs">
+  <div class="section-eyebrow">Documentação</div>
+  <h2 class="section-title">Onde encontrar cada entregável</h2>
+  <div class="grid grid-2">
+    <a class="card" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4/blob/main/reports/relatorio_tecnico.md" target="_blank" rel="noopener"><span class="icon">📄</span><h3>Relatório Técnico</h3><p><code>reports/relatorio_tecnico.md</code> — fluxo multimodal, modelos, resultados e exemplos de anomalias.</p></a>
+    <a class="card" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4/blob/main/reports/avaliacao.md" target="_blank" rel="noopener"><span class="icon">📊</span><h3>Avaliação</h3><p><code>reports/avaliacao.md</code> — métricas de cada detector contra o ground truth.</p></a>
+    <a class="card" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4/blob/main/docs/architecture.md" target="_blank" rel="noopener"><span class="icon">🗺️</span><h3>Arquitetura</h3><p><code>docs/architecture.md</code> — diagrama, camadas e integração Azure.</p></a>
+    <a class="card" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4" target="_blank" rel="noopener"><span class="icon">🐙</span><h3>Código-fonte Completo</h3><p>Repositório GitHub — código, datasets, testes e scripts.</p></a>
+  </div>
+</section>
+
+<section id="equipe">
+  <div class="section-eyebrow">Equipe</div>
+  <h2 class="section-title">Grupo 2026</h2>
+  <ul class="team-list">
+    <li data-ini="WL"><strong>Wilson Lima da Silva</strong><span>wilson.slima@gmail.com</span></li>
+    <li data-ini="GL"><strong>Gustavo Lopes da Silva</strong><span>gustavo_lsilva@hotmail.com</span></li>
+    <li data-ini="FS"><strong>Felipe Soeiro Lopes</strong><span>felipesoeiro.contato@outlook.com.br</span></li>
+    <li data-ini="VT"><strong>Vinicius Tavares Sousa da Silva</strong><span>viniciustavares2014@gmail.com</span></li>
+  </ul>
+</section>
+
+<section id="video" class="section-alt" style="text-align:center">
+  <div class="section-eyebrow">Demonstração</div>
+  <h2 class="section-title">Vídeo do Projeto</h2>
+  <p class="section-lead" style="margin-left:auto;margin-right:auto;text-align:center">
+    Vídeo de até 15 minutos: análise de áudio e vídeo, detecção e resposta a anomalias,
+    integração Azure e o fluxo final do alerta à equipe médica. <em>Link em breve.</em>
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-outline" href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4#readme" target="_blank" rel="noopener">📘 Ver README completo</a>
+  </div>
+</section>
+
+<footer>
+  <p>Tech Challenge Fase 4 · Pós-Graduação IA Para Desenvolvedores · FIAP · 2026</p>
+  <p style="margin-top:6px">Projeto acadêmico com dados abertos/sintéticos — não utilizar em ambiente clínico real sem validação institucional e aprovação ética.</p>
+  <p style="margin-top:14px">
+    <a href="https://github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4" target="_blank" rel="noopener">🐙 github.com/tech-challenge-fiap-GRUPO-02-2026/tech-challenge-fase4</a>
+  </p>
+</footer>
+
+</body>
+</html>
