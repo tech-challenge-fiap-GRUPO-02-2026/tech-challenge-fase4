@@ -1,0 +1,35 @@
+services:
+  painel:
+    build:
+      context: .
+      args:
+        INSTALL_ML: ${INSTALL_ML:-false}
+    image: monitoramento-multimodal
+    ports:
+      # exposto apenas no host local; troque por "8766:8766" para acesso na rede
+      - "127.0.0.1:8766:8766"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+
+  # Execuções pontuais da CLI: docker compose run --rm cli run-all
+  cli:
+    build:
+      context: .
+      args:
+        INSTALL_ML: ${INSTALL_ML:-false}
+    image: monitoramento-multimodal
+    entrypoint: ["python", "-m", "src.main"]
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./data:/app/data
+    profiles: ["cli"]
