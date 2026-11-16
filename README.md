@@ -225,7 +225,59 @@ Validação do YOLOv8 real (pose + objetos) em imagens públicas: `python script
 
 ---
 
-## 📁 Estrutura do Projeto
+## � Execução com Docker
+
+O projeto roda inteiramente em containers, sem instalar Python localmente. A
+imagem é definida no [`Dockerfile`](Dockerfile) (base `python:3.11-slim`) e a
+orquestração no [`docker-compose.yml`](docker-compose.yml), com dois serviços:
+
+| Serviço | Papel | Observações |
+|---|---|---|
+| `painel` | Painel web da equipe médica em `http://127.0.0.1:8766` | Publica a porta apenas no host local; sobe com `restart: unless-stopped` |
+| `cli` | Execuções pontuais de `python -m src.main` | Fica no profile `cli`, ou seja, só é acionado via `docker compose run --rm cli <comando>` |
+
+Ambos compartilham os volumes `./reports`, `./logs` e `./data` (resultados e dados
+persistem no host) e leem o arquivo `.env` quando presente (opcional). O argumento
+de build `INSTALL_ML` controla a instalação dos modelos de deep learning (torch,
+YOLOv8, AST):
+
+```bash
+INSTALL_ML=true docker compose build   # imagem com YOLOv8/AST; padrão é false
+```
+
+### 📜 Scripts `.sh`
+
+Os scripts na raiz encapsulam os comandos Docker mais comuns. Dê permissão de
+execução uma vez (`chmod +x *.sh`) e rode com `./nome-do-script.sh`:
+
+| Script | Comando executado | Função |
+|---|---|---|
+| [`run-build-docker-image.sh`](run-build-docker-image.sh) | `docker compose build --no-cache` | Constrói a imagem do zero, sem cache |
+| [`run-painel-docker.sh`](run-painel-docker.sh) | `docker compose run --rm --service-ports painel` | Sobe o painel web em `http://127.0.0.1:8766` (`--service-ports` publica a porta, que o `run` ignora por padrão) |
+| [`run-generate-data-docker.sh`](run-generate-data-docker.sh) | `docker compose run --rm cli generate-data` | Regenera consultas, vídeos e dados clínicos com ground truth |
+| [`run-all-docker.sh`](run-all-docker.sh) | `docker compose run --rm cli run-all` | Processa todos os pacientes e grava os relatórios em `reports/` |
+| [`run-evaluate-docker.sh`](run-evaluate-docker.sh) | `docker compose run --rm cli evaluate` | Calcula as métricas → `reports/avaliacao.md` |
+| [`run-tests-docker.sh`](run-tests-docker.sh) | `docker compose run --rm --entrypoint python cli -m pytest -q` | Roda a suíte de testes (pytest) dentro do container |
+
+Cada script (exceto o de build) executa `docker compose down` antes e depois, para
+garantir um ambiente limpo e liberar a porta/containers ao terminar.
+
+Sequência típica do zero:
+
+```bash
+./run-build-docker-image.sh      # 1. constrói a imagem
+./run-generate-data-docker.sh    # 2. (opcional) regenera os dados sintéticos
+./run-all-docker.sh              # 3. processa todos os pacientes → reports/
+./run-painel-docker.sh           # 4. abre o painel em http://127.0.0.1:8766
+```
+
+> `iniciar_painel.sh` (Linux/Mac) e `iniciar_painel.bat` (Windows) **não usam
+> Docker**: sobem o painel a partir do ambiente virtual local (`.venv`) e abrem o
+> navegador automaticamente.
+
+---
+
+## �📁 Estrutura do Projeto
 
 ```
 tech-challenge-fase4/
@@ -248,8 +300,11 @@ tech-challenge-fase4/
 ├── docs/                # arquitetura, roteiro do vídeo
 ├── tests/               # 40 testes (pytest)
 ├── scripts/             # validação YOLOv8 real
+├── Dockerfile           # imagem python:3.11-slim (ARG INSTALL_ML p/ torch/YOLO/AST)
+├── docker-compose.yml   # serviços painel (web) e cli (execuções pontuais)
+├── run-*.sh             # atalhos Docker (build, painel, generate-data, run-all, evaluate, tests)
 ├── index.html           # página de apresentação
-└── iniciar_painel.bat / .sh
+└── iniciar_painel.bat / .sh  # painel via .venv local (sem Docker)
 ```
 
 ---
