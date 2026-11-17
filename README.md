@@ -15,8 +15,8 @@
 </p>
 
 <p>
-  <a href="#-vídeo-de-demonstração">
-    <img alt="Vídeo" src="https://img.shields.io/badge/%E2%96%B6%20Demonstra%C3%A7%C3%A3o-em%20breve-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
+  <a href="https://www.youtube.com/watch?v=LJqnqRhELFE">
+     <img alt="Assistir no YouTube" src="https://img.shields.io/badge/%E2%96%B6%20Assistir%20Demonstra%C3%A7%C3%A3o-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
   </a>
   <a href="https://tech-challenge-fiap-grupo-02-2026.github.io/tech-challenge-fase4/">
     <img alt="Página do Projeto" src="https://img.shields.io/badge/%F0%9F%8C%90%20P%C3%A1gina%20do%20Projeto-064E3B?style=for-the-badge&logoColor=white">
